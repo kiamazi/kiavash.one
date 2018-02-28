@@ -45,10 +45,6 @@
                     <section class="content">
                         {{ post.body.more }}
                     </section>
-                
-                    <p class="article-more-link">
-                    <a href="{{ post.url }}">#</a>
-                    </p>
 
                     <section class="meta">
                     <hr>
