@@ -32,6 +32,7 @@ lists:
 
 namespace:
  میرا : mira
+ سلام دنیا : hello world
 plugins:
  - Jdate
 
