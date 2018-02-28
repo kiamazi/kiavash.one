@@ -1,0 +1,38 @@
+
+title: تجربه باز
+description: بدون شک من کیاوش هستم، در مورد هیچ چیز دیگری اطمینان ندارم
+author: کیاوش
+language: Farsi
+
+url: http://kiavash.one/
+root: /
+
+icon: /static/img/logo.png
+css: kiavone.css
+
+static: /static/
+imageurl: /img/
+
+default_extension: md
+
+permalink: :year/:mounth/:day/:title/
+
+default_markup: mmd
+
+post_num: 5
+archive_post_num: 20
+feed_output: atom.xml
+
+template: kiavone
+google_analytics: UA-114921404-1
+
+lists:
+ - categories
+ - tags
+
+namespace:
+
+plugins:
+ - Jdate
+
+

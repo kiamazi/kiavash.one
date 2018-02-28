@@ -1,0 +1,21 @@
+
+title: تجربه باز
+description: بدون شک من کیاوش هستم، در مورد هیچ چیز دیگری اطمینان ندارم
+
+author: Kiavash
+email: kiavash@gmail.com
+
+timezone: +03:30
+
+url: http://kiavash.one
+root: /
+static: /static
+imageurl: /static/images
+
+default_floor: blog
+
+disqus_shortname: kiavash
+google_analytics: UA-114921404-1
+
+twitter: http://twitter.com/kiavash
+github: http://github.com/kiamazi

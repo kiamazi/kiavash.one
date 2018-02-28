@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="Farsi">
+    <head>
+        <title>{{ TITLE }}</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="{{ DESCRIPTION }}">
+        <meta name="keywords" content="">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="{{ TitleContent }}">
+        <meta property="og:url" content="{{ URL }}">
+        <meta property="og:site_name" content="{{ TITLE }}">
+        <meta property="og:description" content="{{ HeadDesc | html }}">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="{{ TitleContent }}">
+        <meta name="twitter:description" content="{{ HeadDesc | html | truncate(50) }}">
+        <link rel="alternative" href="{{ SITE.root }}atom.xml" title="{{ TITLE }}" type="application/atom+xml">
+        <link rel="short icon" href="{{ SITE.icon }}">
+        <link rel="stylesheet" href="/static/theme/kiavone/css/kiavone.css" type="text/css">
+        <link rel="stylesheet" href="/static/theme/kiavone/css/agate.css" type="text/css">
+    </head>
+
+
+<body>
+
+    <header>
+        <section id="intro">
+            <a href="/">
+            <strong>کیاوش</strong>.one
+            </a>
+        </section>
+    </header>
+
+    <section class="main">
+        <section id="content" class="container">
+            {{ FOREACH post IN POSTS }}
+                <article id="{{ post.slug }}" class="article article-type-" itemscope itemprop="blogPost">
+                    <h1 class="title" itemprop="name">
+                    <a href="{{ post.url }}" itemprop="url">{{ post.title }}</a>
+                    </h1>
+                    {{ IF post.date }}
+                    <h4 class="time"><time datetime="{{ post.date }}" itemprop="datePublished">{{ post.CALENDAR.jday_name }}، {{ post.CALENDAR.jday | $FarsiNum }}&nbsp;{{ post.CALENDAR.jmonth_name }}&nbsp;{{ post.CALENDAR.jyear | $FarsiNum }}</time></h4>
+	                {{ END }}
+                    <section class="content">
+                        {{ post.body.more }}
+                    </section>
+                
+                    <p class="article-more-link">
+                    <a href="{{ post.url }}">#</a>
+                    </p>
+
+                    <section class="meta">
+                    <hr>
+                      {{ IF post.categories }}
+                        <span>
+                            {{- IF post.categories -}}
+                            دسته بندی:
+                            {{- FOREACH cat IN post.categories -}}
+                                <a href="{{ cat.url }}">{{ cat.name }}</a>
+                                {{- IF (loop.index != loop.max) -}}،&nbsp;{{- END -}}
+                            {{- END -}}
+                            {{- END -}}
+                            {{- IF post.tags -}}
+                            برچسب‌ها:
+                            {{- FOREACH tag IN post.tags -}}
+                                <a href="{{ tag.url }}">{{ tag.name }}</a>
+                                {{- IF (loop.index != loop.max) -}}،&nbsp;{{- END -}}
+                            {{- END -}}
+                            {{- END -}}
+                        </span>
+                      {{ END }}
+                    </section>
+                    {{ IF SITE.disqus_shortname }}
+                    <section class="comments">
+                      <div id="disqus_thread">
+                        <script>
+                          var disqus_shortname = '{{ SITE.disqus_shortname }}';
+                          (function(){
+                            var dsq = document.createElement('script');
+                            dsq.type = 'text/javascript';
+                            dsq.async = true;
+                            dsq.src = '//' + disqus_shortname + '.disqus.com/{{ IF (post.comment != 'false') }}embed.js{{ ELSE }}count.js{{ END }}';
+                            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                            })();
+                        </script>
+                        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                        </div>
+                    </section>
+                    {{ END }}
+                </article>
+            {{ END }}
+        </section>
+
+<!-- Paging -->
+        <section id="pager">
+            <nav class="container">
+            {{ IF PAGE.next }}
+			  <a class="extend next" rel="next" href="{{ PAGE.next.url }}"><i>→</i><span>{{ PAGE.next.title }}</span></a>
+			{{- END }}
+
+			{{ IF PAGE.prev }}
+			  <a class="extend prev" rel="prev" href="{{ PAGE.prev.url }}"><span>{{ PAGE.prev.title }} </span><i>←</i></a>
+			{{- END }}
+            </nav>
+        </section>
+<!-- /Paging -->
+<!-- /Content -->
+
+    </section>
+    
+    <section class="sidebar">
+
+        <section id="intro">
+            <a href="/">
+            <strong>کیاوش</strong>.one
+            </a>
+        </section>
+
+        <section id="socials">
+            <ul>
+                <li><a href="github.com/kiamazi">گیت هاب</a></li>
+                <li><a href="twitter.com/kiavash">توییتر</a></li>
+            </ul>
+        </section>
+
+        <section class="archivebar">			
+        {{- IF TAGS_ARCHIVE -}}
+            <ul>
+			{{- FOREACH cat IN CATEGORIES_ARCHIVE -}}
+			<li><a href="{{ cat.url }}">{{ cat.name }}</a></li>
+            {{ END -}}
+            </ul>
+        {{- END -}}
+        <hr>
+        {{- IF TAGS_ARCHIVE -}}
+            <ul class="tags">
+			{{- FOREACH tag IN TAGS_ARCHIVE -}}
+			<li><a href="{{ tag.url }}">{{ tag.name }}</a></li>
+			{{ ' - ' IF (loop.index != loop.max) }}
+            {{ END -}}
+            </ul>
+		{{- END -}}
+        </section>
+    </section>
+
+<!-- Footer -->
+<footer>
+        <section class="copyright">
+            <p class="container">
+            مطالب تحت لیسانس <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" rel="license" target="_blank">کریتیو کامنز</a> منتشر می‌شوند.
+            </p>
+            <p>قدرت گرفته توسط <a href="https://miraxy.github.io/fa/">میرا</a></p>
+        </section>
+    </footer>
+<!-- /Footer -->
+<!-- Scripts -->
+
+    <script src="{{ MainSTATIC }}/js/highlight.pack.js"></script>
+    <script src="{{ MainSTATIC }}/js/highlightjs-line-numbers.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+        hljs.initLineNumbersOnLoad();
+    </script>
+
+<!-- /Scripts -->
+
+</body>
+</html>
