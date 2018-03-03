@@ -44,35 +44,13 @@
         <section id="content" class="container">
             {{ FOREACH post IN POSTS }}
                 <article id="{{ post.slug }}" class="article article-type-" itemscope itemprop="blogPost">
-                    <h1 class="title" itemprop="name">
+                    <h1 class="list-title" itemprop="name">
                     <a href="{{ post.url }}" itemprop="url">{{ post.title }}</a>
                     </h1>
-                    {{ IF post.date }}
-                    <h4 class="time"><time datetime="{{ post.date }}" itemprop="datePublished">{{ post.CALENDAR.jday_name }}، {{ post.CALENDAR.jday | $FarsiNum }}&nbsp;{{ post.CALENDAR.jmonth_name }}&nbsp;{{ post.CALENDAR.jyear | $FarsiNum }}</time></h4>
+                    {{ IF post.date }} - 
+                    <h4 class="list-time"><time datetime="{{ post.date }}" itemprop="datePublished">
+                    {{ post.CALENDAR.jyear | $FarsiNum }}/{{ post.CALENDAR.jmonth | $FarsiNum }}/{{ post.CALENDAR.jday | $FarsiNum }}</time></h4>
 	                {{ END }}
-                    <section class="content">
-                        {{ post.body.more }}
-                    </section>
-
-                    <section class="meta">
-                    <hr>
-                        <span>
-                            {{- IF post.categories -}}
-                            دسته بندی:
-                            {{- FOREACH cat IN post.categories -}}
-                                <a href="{{ cat.url }}">{{ cat.name }}</a>
-                                {{- IF (loop.index != loop.max) -}}،&nbsp;{{- END -}}
-                            {{- END -}}
-                            {{- END -}}
-                            {{- IF post.tags -}}
-                            برچسب‌ها:
-                            {{- FOREACH tag IN post.tags -}}
-                                <a href="{{ tag.url }}">{{ tag.name }}</a>
-                                {{- IF (loop.index != loop.max) -}}،&nbsp;{{- END -}}
-                            {{- END -}}
-                            {{- END -}}
-                        </span>
-                    </section>
                 </article>
             {{ END }}
         </section>
@@ -111,14 +89,14 @@
         </section>
 
         <section class="archivebar">			
-        {{- IF TAGS_ARCHIVE -}}
+        {{- IF CATEGORIES_ARCHIVE -}}
             <ul>
 			{{- FOREACH cat IN CATEGORIES_ARCHIVE -}}
 			<li><a href="{{ cat.url }}">{{ cat.name }}</a></li>
             {{ END -}}
             </ul>
+            <hr>
         {{- END -}}
-        <hr>
         {{- IF TAGS_ARCHIVE -}}
             <ul class="tags">
 			{{- FOREACH tag IN TAGS_ARCHIVE -}}

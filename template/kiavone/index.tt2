@@ -111,14 +111,14 @@
         </section>
 
         <section class="archivebar">			
-        {{- IF TAGS_ARCHIVE -}}
+        {{- IF CATEGORIES_ARCHIVE -}}
             <ul>
 			{{- FOREACH cat IN CATEGORIES_ARCHIVE -}}
 			<li><a href="{{ cat.url }}">{{ cat.name }}</a></li>
             {{ END -}}
             </ul>
+            <hr>
         {{- END -}}
-        <hr>
         {{- IF TAGS_ARCHIVE -}}
             <ul class="tags">
 			{{- FOREACH tag IN TAGS_ARCHIVE -}}

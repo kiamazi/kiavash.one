@@ -20,7 +20,7 @@ permalink: :year/:mounth/:day/:title/
 default_markup: mmd
 
 post_num: 5
-archive_post_num: 20
+archive_post_num: all
 feed_output: atom.xml
 
 template: kiavone

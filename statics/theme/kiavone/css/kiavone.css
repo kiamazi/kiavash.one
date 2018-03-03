@@ -244,6 +244,17 @@ header {
   margin-top: 5px;
 }
 
+#content article h1.list-title {
+  font-size: 16px;
+  display: inline;
+}
+#content article h4.list-time {
+  font-size: 14px;
+  color: #aaabd3;
+  font-weight: 400;
+  display: inline;
+}
+
 /*.article {
   border-bottom: 3px solid #ddd;
 }*/
