@@ -56,7 +56,6 @@
 
                     <section class="meta">
                     <hr>
-                      {{ IF post.categories }}
                         <span>
                             {{- IF post.categories -}}
                             دسته بندی:
@@ -73,7 +72,6 @@
                             {{- END -}}
                             {{- END -}}
                         </span>
-                      {{ END }}
                     </section>
                     {{ IF SITE.disqus_shortname }}
                     <section class="comments">
