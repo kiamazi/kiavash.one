@@ -77,17 +77,12 @@
                     <section class="comments">
                       <div id="disqus_thread">
                         <script>
-                          var disqus_shortname = '{{ SITE.disqus_shortname }}';
-                          (function(){
-                            var dsq = document.createElement('script');
-                            dsq.type = 'text/javascript';
-                            dsq.async = true;
-                            dsq.src = '//' + disqus_shortname + '.disqus.com/{{ IF (post.comment != 'false') }}embed.js{{ ELSE }}count.js{{ END }}';
-                            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                            })();
+                        var idcomments_acct = 'b0a26c97865ca5233efed27ec742b491';
+                        var idcomments_post_id;
+                        var idcomments_post_url;
                         </script>
-                        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                        </div>
+                        <span id="IDCommentsPostTitle" style="display:none"></span>
+                        <script type='text/javascript' src='https://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
                     </section>
                     {{ END }}
                 </article>
