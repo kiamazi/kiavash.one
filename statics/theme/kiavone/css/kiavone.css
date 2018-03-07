@@ -8,7 +8,9 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizelegibility;
-  position: relative;
+  position: absolute;
+  min-height: 100%;
+  width: 100%;
   margin: 0 auto;
   line-height: 1.8;
 }
@@ -45,6 +47,11 @@ header {
   padding-right: 95px;
   padding-top: 75px;
 }
+/*
+.main {
+  min-height: 100vh;
+}
+*/
 
 .container {
   margin: 0 auto;
@@ -58,11 +65,15 @@ header {
   bottom: 0;
   width: 300px;
   z-index: 1;
-  padding: 0 10px 0 10px;
   background-color: #f5f5f5;
   border-right: 1px solid #dddddd;
   direction: rtl;
   text-align: center;
+}
+.sidebar_inner {
+  background-color: #f5f5f5;
+  padding: 0 10px 0 10px;
+
 }
 
 .archivebar {
@@ -87,8 +98,8 @@ header {
 }
 
 #intro {
-  padding-top: 4.235801032rem;
-  padding-bottom: 4.235801032rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
   border-bottom: 1px solid #dedede;
   font-size: 1.618rem;
   color: #666;
@@ -339,6 +350,7 @@ footer .copyright p {
 
 header {
   display: none;
+  text-align: right;
 }
 
 @media screen and (max-width: 1024px) {

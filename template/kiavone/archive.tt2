@@ -1,44 +1,12 @@
-<!DOCTYPE html>
-<html lang="Farsi">
-    <head>
-        <title>{{ TITLE }} | {{ ArchiveTITLE }}</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="description" content="{{ DESCRIPTION }}">
-        <meta name="keywords" content="">
-        <meta property="og:type" content="website">
-        <meta property="og:title" content="{{ TitleContent }}">
-        <meta property="og:url" content="{{ URL }}">
-        <meta property="og:site_name" content="{{ TITLE }}">
-        <meta property="og:description" content="{{ HeadDesc | html }}">
-        <meta name="twitter:card" content="summary">
-        <meta name="twitter:title" content="{{ TitleContent }}">
-        <meta name="twitter:description" content="{{ HeadDesc | html | truncate(50) }}">
-        <link rel="alternative" href="{{ SITE.root }}atom.xml" title="{{ TITLE }}" type="application/atom+xml">
-        <link rel="short icon" href="{{ SITE.icon }}">
-        <link rel="stylesheet" href="/static/theme/kiavone/css/kiavone.css" type="text/css">
-        <link rel="stylesheet" href="/static/theme/kiavone/css/magula.css" type="text/css">
-        <link href="https://cdn.rawgit.com/rastikerdar/sahel-font/v1.0.0-alpha17/dist/font-face.css" rel="stylesheet" type="text/css" />
-    </head>
 
+{{ INCLUDE head 
+	TitleContent =  ArchiveTITLE 
+	HeadDesc     =  SITE.description
+}}
 
 <body>
 
-    <header>
-        <section id="intro">
-            <a href="/">
-            <strong>کیاوش</strong>.one
-            </a>
-        </section>
-        <section id="socials">
-                <ul>
-                    <li><a href="github.com/kiamazi">گیت هاب</a></li>/
-                    <li><a href="twitter.com/kiavash">توییتر</a></li>/
-                    <li><a href="kiavash.one/atom.xml">خوراک</a></li>
-                </ul>
-        </section>
-    </header>
+    {{ INCLUDE header }}
 
     <section class="main">
         <section id="content" class="container">
@@ -74,6 +42,7 @@
     
     <section class="sidebar">
 
+    <div class="sidebar_inner">
         <section id="intro">
             <a href="/">
             <strong>کیاوش</strong>.one
@@ -106,6 +75,7 @@
             </ul>
 		{{- END -}}
         </section>
+    </div>
     </section>
 
 <!-- Footer -->
