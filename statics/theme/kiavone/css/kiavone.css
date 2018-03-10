@@ -69,11 +69,7 @@ header {
   border-right: 1px solid #dddddd;
   direction: rtl;
   text-align: center;
-}
-.sidebar_inner {
-  background-color: #f5f5f5;
   padding: 0 10px 0 10px;
-
 }
 
 .archivebar {

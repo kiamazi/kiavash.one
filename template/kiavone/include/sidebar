@@ -1,0 +1,34 @@
+    <section class="sidebar">
+        <section id="intro">
+            <a href="/">
+            {{ TITLE }}
+            </a>
+        </section>
+
+        <section id="socials">
+            <ul>
+                <li><a href="//github.com/kiamazi">گیت هاب</a></li>
+                <li><a href="//twitter.com/kiavash">توییتر</a></li>
+                <li><a href="/atom.xml">خوراک</a></li>
+            </ul>
+        </section>
+
+        <section class="archivebar">			
+        {{- IF CATEGORIES_ARCHIVE -}}
+            <ul>
+			{{- FOREACH cat IN CATEGORIES_ARCHIVE -}}
+			<li><a href="{{ cat.url }}">{{ cat.name }}</a></li>
+            {{ END -}}
+            </ul>
+            <hr>
+        {{- END -}}
+        {{- IF TAG_ARCHIVE -}}
+            <ul class="tags">
+			{{- FOREACH tag IN TAG_ARCHIVE -}}
+			<li><a href="{{ tag.url }}">{{ tag.name }}</a></li>
+			{{ ' - ' IF (loop.index != loop.max) }}
+            {{ END -}}
+            </ul>
+		{{- END -}}
+        </section>
+    </section>

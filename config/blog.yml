@@ -27,8 +27,7 @@ template: kiavone
 google_analytics: UA-114921404-1
 
 lists:
- - categories
- - tags
+ - tag
 
 namespace:
  میرا : mira
