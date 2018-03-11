@@ -32,7 +32,7 @@
                                 {{- IF (loop.index != loop.max) -}}،&nbsp;{{- END -}}
                             {{- END -}}
                             {{- END -}}
-                            {{- IF post.tags -}}
+                            {{- IF post.tag -}}
                             برچسب‌ها:
                             {{- FOREACH tag IN post.tag -}}
                                 <a href="{{ tag.url }}">{{ tag.name }}</a>
