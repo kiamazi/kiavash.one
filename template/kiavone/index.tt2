@@ -34,7 +34,7 @@
                             {{- END -}}
                             {{- IF post.tags -}}
                             برچسب‌ها:
-                            {{- FOREACH tag IN post.tags -}}
+                            {{- FOREACH tag IN post.tag -}}
                                 <a href="{{ tag.url }}">{{ tag.name }}</a>
                                 {{- IF (loop.index != loop.max) -}}،&nbsp;{{- END -}}
                             {{- END -}}
