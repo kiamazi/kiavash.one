@@ -30,8 +30,7 @@ lists:
  - tag
 
 namespace:
- میرا : mira
- تجربه : experience
+
 plugins:
  - Jdate
 
