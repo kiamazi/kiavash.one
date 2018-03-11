@@ -25,7 +25,7 @@
                     <section class="meta">
                     <hr>
                         <span>
-                            {{- IF post.categories -}}
+                            {{- IF post.categories AND CATEGORIES_ARCHIVE -}}
                             دسته بندی:
                             {{- FOREACH cat IN post.categories -}}
                                 <a href="{{ cat.url }}">{{ cat.name }}</a>
