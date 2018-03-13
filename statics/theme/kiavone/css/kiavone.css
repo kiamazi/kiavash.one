@@ -34,6 +34,7 @@ code,
 pre {
   direction: ltr;
   text-align: left;
+  font-size: 14px;
 }
 
 .hljs-ln-n {
@@ -47,11 +48,6 @@ header {
   padding-right: 95px;
   padding-top: 75px;
 }
-/*
-.main {
-  min-height: 100vh;
-}
-*/
 
 .container {
   margin: 0 auto;
