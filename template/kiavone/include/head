@@ -28,4 +28,14 @@
         <link rel="stylesheet" href="/static/theme/kiavone/css/kiavone.css" type="text/css">
         <link rel="stylesheet" href="/static/theme/kiavone/css/magula.css" type="text/css">
         <link href="https://cdn.rawgit.com/rastikerdar/sahel-font/v1.0.0-alpha17/dist/font-face.css" rel="stylesheet" type="text/css" />
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114921404-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-114921404-1');
+</script>
+
     </head>
