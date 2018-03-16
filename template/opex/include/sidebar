@@ -1,0 +1,44 @@
+      <div id="beta">
+        <div id="beta-inner">
+          <aside class="side-box">
+            اگر دوست داشته باشید می‌تونید من رو جاهای دیگه هم پیدا کنید
+            <ul>
+              <li><a href="#">گیت‌هاب</a></li>
+              <li><a href="#">توییتر‍</a></li>
+            </ul>
+          </aside>
+          {{- IF CATEGORIES_ARCHIVE -}}
+          <aside class="side-box">
+            <h2>دسته‌بندی‌ها</h2>
+            <ul>
+              {{- FOREACH cat IN CATEGORIES_ARCHIVE -}}
+              <li><a href="{{ cat.url }}">{{ cat.name }}</a></li>
+              {{ END -}}
+            </ul>
+          </aside>
+          {{- END -}}
+          {{- IF TAGS_ARCHIVE -}}
+          <aside class="side-box">
+            <h2>برچسب‌ها</h2>
+            <ul class="tags">
+              {{- FOREACH tag IN TAGS_ARCHIVE -}}
+              <li class="side-links"><a href="{{ tag.url }}">{{ tag.name }}</a></li>
+              {{# - ' - ' IF (loop.index != loop.max) -}}
+              {{ END -}}
+            </ul>
+            {{- END -}}
+          </aside>
+
+          <div class="side-box">
+            <h2>لینک‌ها</h2>
+            <ul>
+            <li class="side-links">
+              <a href="#">لینک</a>
+            </li>
+            <li class="side-links">
+              <a href="#">لینک</a>
+            </li>
+          </div>
+
+        </div>
+      </div>

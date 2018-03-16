@@ -4,8 +4,8 @@ date: 2018-03-13 21:54:13
 title: اتصال دامنه شخصی به صفحات گیت‌هاب و فعال کردن https با کمک cloudflare
 _index: cloudflare
 categories:
-  - سایت
-tag:
+  - اینترنت
+tags:
   - cloudflare
   - https
   - گیت‌هاب

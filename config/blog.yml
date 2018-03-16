@@ -20,14 +20,15 @@ permalink: :year/:mounth/:day/:title/
 default_markup: mmd
 
 post_num: 5
-archive_post_num: all
+archive_post_num: 5
 feed_output: atom.xml
 
-template: kiavone
+template: opex
 google_analytics: UA-114921404-1
 
 lists:
- - tag
+ - tags
+ - categories
 
 namespace:
 

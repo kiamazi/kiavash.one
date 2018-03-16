@@ -1,0 +1,72 @@
+{{ INCLUDE head
+    TitleContent =  TITLE
+    HeadDesc     =  DESCRIPTION
+}}
+
+{{ INCLUDE header }}
+
+  <section id="content">
+    <div id="content-inner">
+      <div id="alpha">
+        <div id="alpha-inner">
+          {{ FOREACH post IN POSTS }}
+          <article id="{{ post.slug }}" itemscope itemprop="blogPost">
+            <h1 class="entry-title" itemprop="name">
+            <a href="{{ post.url }}" itemprop="url">{{ post.title }}</a>
+            </h1>
+            {{ IF post.date }}
+            <div class="entry-date"><time datetime="{{ post.date }}" itemprop="datePublished">{{ post.CALENDAR.jday_name }}، {{ post.CALENDAR.jday | $FarsiNum }}&nbsp;{{ post.CALENDAR.jmonth_name }}&nbsp;{{ post.CALENDAR.jyear | $FarsiNum }}</time></div>
+        	  {{ END }}
+            <section class="entry-body">
+            {{ post.body.more }}
+            </section>
+
+            <section class="meta">
+            <span>
+            {{- IF post.categories AND CATEGORIES_ARCHIVE -}}
+              دسته بندی:
+              {{- FOREACH cat IN post.categories -}}
+                <a href="{{ cat.url }}">{{ cat.name }}</a>
+                {{- IF (loop.index != loop.max) -}}،&nbsp;{{- END -}}
+              {{- END -}}
+            {{- END -}}
+            {{- IF post.tags -}}
+              برچسب‌ها:
+              {{- FOREACH tag IN post.tags -}}
+                <a href="{{ tag.url }}">{{ tag.name }}</a>
+                {{- IF (loop.index != loop.max) -}}،&nbsp;{{- END -}}
+              {{- END -}}
+            {{- END -}}
+            </span>
+            </section>
+          </article>
+          {{ END }}
+<!-- Paging -->
+          <section id="pager">
+            <nav class="container">
+            {{ IF PAGE.next }}
+			        <a class="extend next" rel="next" href="{{ PAGE.next.url }}"><i>→</i><span>{{ PAGE.next.title }}</span></a>
+			      {{- END }}
+
+			      {{ IF PAGE.prev }}
+			        <a class="extend prev" rel="prev" href="{{ PAGE.prev.url }}"><span>{{ PAGE.prev.title }}</span><i>←</i></a>
+			      {{- END }}
+            </nav>
+          </section>
+<!-- /Paging -->
+          <section class="comments">
+            <script>
+              var idcomments_acct = 'b0a26c97865ca5233efed27ec742b491';
+              var idcomments_post_id;
+              var idcomments_post_url;
+            </script>
+            <span id="IDCommentsPostTitle" style="display:none"></span>
+            <script type='text/javascript' src='https://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
+          </section>
+				</div>
+			</div>
+			{{ INCLUDE sidebar }}
+
+		</div>
+	</section>
+  {{ INCLUDE footer }}

@@ -5,7 +5,7 @@ title: سلام دنیا از دریچه‌ی میرا
 _index: hello world from mira
 categories:
   - میرا
-tag:
+tags:
   - میرا
   - سلام دنیا
 ---

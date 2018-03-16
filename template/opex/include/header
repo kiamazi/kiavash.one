@@ -1,0 +1,15 @@
+<body>
+  <header>
+    <div id="header-inner">
+      <div id="header-content">
+        <h1>تجربه باز</h1>
+        <h2>در ستایش تجربه کردن و یادگرفتن همیشگی / open experience</h2>
+        <ul>
+          <li class="nav"><strong><a href="/">صفحه اول</a></strong></li>
+          <li class="nav"><a href="#">درباره</a></li>
+          <li class="nav"><a href="#">تماس</a></li>
+          <li class="nav"><a href="atom.xml">خوراک</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
