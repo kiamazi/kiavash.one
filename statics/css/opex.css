@@ -252,7 +252,6 @@ article h6 {
 article ul, article ol {
   padding: 10px 50px;
 }
-article img {max-width: 100%;}
 article {border-bottom: 4px double #EFEFEF; margin-bottom: 50px;}
 article .meta {
   background: #f5f5f5;
@@ -267,6 +266,24 @@ article .meta hr {
   margin-bottom: 10px;
 }
 
+#content article .entry-body blockquote {
+  margin: 0 2.5em 0 0;
+  position: relative;
+  color: #555;
+  padding: 5px;
+}
+#content article .entry-body p img,
+#content article .entry-body>img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+/**********************************/
+/************ pager ***************/
+/**********************************/
 #pager {
   padding: .809rem 0;
   border-top: 1px solid #dedede;
