@@ -98,9 +98,18 @@ header, #content, #alpha, #beta, #gamma, footer {
 }
 @media screen and (max-width: 1024px) {
   #alpha, #beta, #gamma {
+    position: initial;
     float: none;
     padding: 5px;
     width: 100%;
+  }
+  #header-inner, #content-inner, #footer-inner {
+    margin:0 auto;
+    padding:0;
+    position:relative;
+    width: auto;
+    padding: 10px;
+    background: #FFF;
   }
 }
 #header-inner, #content-inner, #footer-inner {
