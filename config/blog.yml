@@ -35,4 +35,15 @@ namespace:
 plugins:
  - Jdate
 
+links:
+ -  name: امیر مهرانی
+    url: http://thecoach.ir/
 
+ -  name: طه
+    url: https://blog.dutymess.ir/
+
+ -  name: سالار کابلی
+    url: https://sallar.me/farsi/
+
+ -  name: مهدی صادقی
+    url: https://mehdix.ir/

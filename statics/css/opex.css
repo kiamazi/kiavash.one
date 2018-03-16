@@ -272,6 +272,18 @@ article .meta hr {
   color: #555;
   padding: 5px;
 }
+#content article .content blockquote:before {
+  content: "”";
+  display: block;
+  position: absolute;
+  right: -55px;
+  top: 5px;
+  font-family: serif;
+  font-weight: bold;
+  font-size: 4.235801032rem;
+  line-height: 1;
+  color: #d1d1d1;
+}
 #content article .entry-body p img,
 #content article .entry-body>img {
   display: block;
@@ -371,7 +383,7 @@ ul.tags {
   font-weight: 400;
   font-style: normal;
   line-height: 1.4;
-  color: #555;
+  color: #15677e;
   direction: rtl;
   text-align: justify;
   padding: 0 10px 5px 5px;
@@ -379,6 +391,7 @@ ul.tags {
 }
 .side-links:hover {
   background: #EEE;
+  color: #333;
 }
 .side-links a {
   color: #15677e;

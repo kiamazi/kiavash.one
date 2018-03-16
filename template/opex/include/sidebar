@@ -32,12 +32,12 @@
           <div class="side-box">
             <h2>لینک‌ها</h2>
             <ul>
-            <li class="side-links">
-              <a href="#">لینک</a>
-            </li>
-            <li class="side-links">
-              <a href="#">لینک</a>
-            </li>
+              {{ FOREACH link IN SITE.links }}
+              <a href="{{ link.url }}"><li class="side-links">
+                {{ link.name }}
+              </li></a>
+              {{ END }}
+            </ul>
           </div>
 
         </div>
