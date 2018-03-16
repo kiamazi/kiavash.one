@@ -382,9 +382,9 @@ ul.tags {
 }
 
 
+/*@media (max-width: 575.98px) {}*/
 
-
-@media screen and (max-width: 1024px) {
+@media (max-width: 767.98px) {
   #alpha, #beta, #gamma {
     position: initial;
     float: none;
@@ -400,5 +400,17 @@ ul.tags {
     width: auto;
     padding: 10px;
     background: #FFF;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  #header-inner, #content-inner, #footer-inner {
+    width: 760px;
+  }
+  #alpha {
+    padding-left: 220px;
+  }
+  #beta {
+    width: 200px;
   }
 }
