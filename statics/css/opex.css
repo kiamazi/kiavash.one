@@ -96,22 +96,7 @@ header, #content, #alpha, #beta, #gamma, footer {
 #beta, #gamma {
   float: right;
 }
-@media screen and (max-width: 1024px) {
-  #alpha, #beta, #gamma {
-    position: initial;
-    float: none;
-    padding: 5px;
-    width: 100%;
-  }
-  #header-inner, #content-inner, #footer-inner {
-    margin:0 auto;
-    padding:0;
-    position:relative;
-    width: auto;
-    padding: 10px;
-    background: #FFF;
-  }
-}
+
 #header-inner, #content-inner, #footer-inner {
   margin:0 auto;
   padding:0;
@@ -394,4 +379,26 @@ ul.tags {
   color: #555;
   direction: rtl;
   padding: 40px 10px;
+}
+
+
+
+
+@media screen and (max-width: 1024px) {
+  #alpha, #beta, #gamma {
+    position: initial;
+    float: none;
+    width: 100%;
+  }
+  #alpha {
+    padding-left: 0;
+  }
+  #header-inner, #content-inner, #footer-inner {
+    margin:0 auto;
+    padding:0;
+    position:relative;
+    width: auto;
+    padding: 10px;
+    background: #FFF;
+  }
 }
