@@ -293,6 +293,17 @@ article .meta hr {
   height: auto;
 }
 
+#content article .entry-body table {
+  width: 100%;
+  border: 1px solid #f0f0f0;
+  display: table;
+}
+#content article .entry-body th,
+#content article .entry-body td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #f0f0f0;
+}
 /**********************************/
 /************ pager ***************/
 /**********************************/
@@ -383,7 +394,7 @@ ul.tags {
   font-weight: 400;
   font-style: normal;
   line-height: 1.4;
-  color: #15677e;
+  color: #555;
   direction: rtl;
   text-align: justify;
   padding: 0 10px 5px 5px;
@@ -391,7 +402,6 @@ ul.tags {
 }
 .side-links:hover {
   background: #EEE;
-  color: #333;
 }
 .side-links a {
   color: #15677e;
