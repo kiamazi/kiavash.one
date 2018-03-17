@@ -304,6 +304,12 @@ article .meta hr {
     text-align: center;
     border: 1px solid #f0f0f0;
 }
+
+code table, code th, code td {
+  padding: 0 !important;
+  text-align: left !important;
+  border: 0 !important;
+}
 /**********************************/
 /************ pager ***************/
 /**********************************/
