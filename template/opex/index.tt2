@@ -1,6 +1,6 @@
 {{ INCLUDE head
-    TitleContent =  TITLE
-    HeadDesc     =  DESCRIPTION
+  TitleContent =  TITLE
+  HeadDesc     =  DESCRIPTION
 }}
 
 {{ INCLUDE header }}
