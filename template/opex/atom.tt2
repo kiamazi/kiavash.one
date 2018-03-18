@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>{{ TITLE }}</title>
 
-  <link href="{{ URL }}/feed.xml" rel="self"/>
+  <link href="{{ URL }}/atom.xml" rel="self"/>
   <link href="{{ URL }}"/>
 
   <updated>{{ BUILD.date | replace(' ', 'T')  }}{{ MAIN.timezone | remove(':') }}</updated>
@@ -28,6 +28,13 @@
     <summary>
     {{ post.body.less | html | replace('<img src="/', "<img src=\"$URL//") }}
     </summary>
+    {{- FOREACH list IN SITE.lists -}}
+    {{ IF post.$list }}
+    {{ FOREACH arch IN post.$list }}
+      <{{ list }} term="{{ arch.name }}" scheme="{{ URL }}{{ arch.url }}" />
+    {{ END }}
+    {{ END }}
+    {{- END -}}
   </entry>
   {{ END }}
 </feed>
