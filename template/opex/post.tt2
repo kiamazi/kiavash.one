@@ -69,6 +69,15 @@
               <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
             </div>
           </section>
+          {{#
+            <script>
+              var idcomments_acct = 'b0a26c97865ca5233efed27ec742b491';
+              var idcomments_post_id;
+              var idcomments_post_url;
+            </script>
+            <span id="IDCommentsPostTitle" style="display:none"></span>
+            <script type='text/javascript' src='https://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
+          }}
 
 				</div>
 			</div>
