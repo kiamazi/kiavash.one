@@ -23,10 +23,10 @@
     <published>{{ post.date | replace(' ', 'T') }}{{ MAIN.timezone | remove(':') }}</published>
     <updated>{{ post.date | replace(' ', 'T')  }}{{ MAIN.timezone | remove(':') }}</updated>
 
-    <content type="html"><![CDATA[{{ post.body.more }}]]></content>
+    <content type="html"><![CDATA[{{ post.body.more | replace('<img src="/', "<img src=\"$URL//") }}]]></content>
 
     <summary>
-    {{ post.body.less | html }}
+    {{ post.body.less | html | replace('<img src="/', "<img src=\"$URL//") }}
     </summary>
   </entry>
   {{ END }}
