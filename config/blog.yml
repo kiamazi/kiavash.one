@@ -24,6 +24,8 @@ archive_post_num: 5
 feed_output: atom.xml
 
 template: opex
+
+disqus_shortname: kiavash
 google_analytics: UA-114921404-1
 
 lists:
