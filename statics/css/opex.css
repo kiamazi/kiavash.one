@@ -295,7 +295,7 @@ article .meta hr {
   max-width: 100%;
   height: auto;
 }
-
+/*
 #content article .entry-body table {
   width: 100%;
   border: 1px solid #f0f0f0;
@@ -313,6 +313,7 @@ code table, code th, code td {
   text-align: left !important;
   border: 0 !important;
 }
+*/
 /**********************************/
 /************ pager ***************/
 /**********************************/
