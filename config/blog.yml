@@ -19,7 +19,7 @@ permalink: :year/:mounth/:day/:title/
 
 default_markup: mmd
 
-post_num: 1
+post_num: 5
 archive_post_num: 5
 feed_output: atom.xml
 
