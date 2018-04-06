@@ -15,7 +15,7 @@ imageurl: /img/
 
 default_extension: md
 
-permalink: :year/:mounth/:day/:title/
+permalink: :year/:month/:day/:title/
 
 default_markup: mmd
 
