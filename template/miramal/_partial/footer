@@ -14,6 +14,7 @@
         {{ IF SITE.language == 'Farsi' }}
           تمام حقوق محفوظ است<br>
           مطالب تحت لیسانس <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" rel="license" target="_blank">کریتیو کامنز</a> منتشر می‌شوند.
+          <p>قدرت گرفته توسط <a href="https://miraxy.github.io/fa/">میرا</a></p>
         {{ ELSIF SITE.language == 'English' }}
           2005 - {{ BUILD.year }}<br>
           Content is licensed under <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" rel="license" target="_blank">Creative Commons</a>.

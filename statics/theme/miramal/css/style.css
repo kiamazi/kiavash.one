@@ -328,7 +328,8 @@ header nav a {
 
 footer { 
     margin-top:5rem;
-    padding:0 0 3rem;
+    padding:3rem 0 3rem;
+    border-top: 1px solid #DDD;
 }
 footer p { 
     margin:0;
