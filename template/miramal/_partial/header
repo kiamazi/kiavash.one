@@ -5,13 +5,13 @@
       <h1 class="name-title">{{ UNLESS IS_INDEX }}<a href="{{ ROOT }}">{{ TITLE }}</a>{{ END }}</h1>
       <ul>
         {{ IF SITE.language == 'Farsi' }}
-          <li><a href="{{ ROOT }}/atom.xml">atom</a></li>
-          <li><a href="{{ ROOT }}">فهرست</a></li>
-          <li><a href="{{ ROOT }}/about/">درباره</a></li>
+          <li><a href="/atom.xml">atom</a></li>
+          <li><a href="/">فهرست</a></li>
+          <li><a href="/about/">درباره</a></li>
           <li><a href="{{ SITE.github }}" target="_blank">گیت‌هاب</a></li>
           <li><a href="{{ SITE.twitter }}" target="_blank">توییتر</a></li>
         {{ ELSE }}
-          <li><a href="{{ ROOT }}">Index</a></li>
+          <li><a href="/">Index</a></li>
           <li><a href="/about/">About</a></li>
           <li><a href="{{ SITE.github }}" target="_blank">github</a></li>
           <li><a href="{{ MainROOT }}/">وبلاگ</a></li>
