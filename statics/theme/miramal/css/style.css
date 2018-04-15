@@ -135,24 +135,28 @@ hr {
 .article-list a { 
     color:#56445d;
 }
-.article-list article { 
-    margin-bottom:.4rem;
+.article-list article {
+    margin-bottom: 3rem;
 }
 .article-list time { 
-    color:#aaabd3;
+    color:#999;
     display:block;
     margin-right:1rem;
     white-space:nowrap;
 }
 .article-list h3 {
     font-weight: 400;
+    font-size: 1.3rem;
     margin:0;
 }
-.article-list h4 {
-    margin-top: 0; 
-    margin-bottom: 2rem;
-    color: #6e7783;
+.article-list h3 a {
+    color: #404040;
 }
+.article-list h4 {
+    margin: 0; 
+    color: #99a4b1;
+}
+
 /*.article-list h3 { 
     margin-top:2rem;
 }
