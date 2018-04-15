@@ -1,0 +1,19 @@
+<section class="container article-list">
+  {{ FOREACH post IN POSTS }}
+    <article id="{{ post.slug }}" itemscope itemprop="blogPost">
+      <time>
+        {{ IF SITE.language == 'Farsi' }}
+          {{ post.CALENDAR.jyear | $FarsiNum }}/{{ post.CALENDAR.jmonth | $FarsiNum }}/{{ post.CALENDAR.jday | $FarsiNum }}
+        {{ ELSE }}
+          {{ post.CALENDAR.month_abbr }} {{ post.CALENDAR.day }}.
+        {{ END }}
+      </time>
+      <h3 itemprop="name">
+        <a href="{{ post.url }}" itemprop="url">{{ post.title }}</a>
+      </h3>
+      {{ IF post.description }}
+      <h4>توضیحات پست</h4>
+      {{ END }}
+    </article>
+  {{ END }}
+</section>

@@ -1,0 +1,25 @@
+{{ IF IS_POST }}
+  {{ LAYOUT = 'post' }}
+{{ ELSIF IS_PAGE }}
+  {{ LAYOUT = 'papge' }}
+{{ ELSE }}
+  {{ LAYOUT = 'index' }}
+{{ END }}
+
+<section id="content" class="container">
+{{ FOREACH post IN POSTS }}
+  <article id="{{ post.slug }}" class="article article-type-{{ LAYOUT }}" itemscope itemprop="blogPost">
+    <!--<h2 class="title" itemprop="name">{{ post.title }}</h2>-->
+
+    {{ UNLESS IS_PAGE }}
+      {{ INCLUDE _partial/_post/date }}
+    {{ END }}
+
+    {{ INCLUDE _partial/_post/body }}
+
+    {{ IF IS_POST }}
+      {{ INCLUDE _partial/_post/comment }}
+    {{ END }}
+  </article>
+{{ END }}
+</section>

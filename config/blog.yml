@@ -8,7 +8,7 @@ url: http://kiavash.one/
 root: /
 
 icon: /static/img/logo.png
-css: kiavone.css
+css: miramal.css
 
 static: /static/
 imageurl: /img/
@@ -17,16 +17,15 @@ default_extension: md
 
 permalink: :year/:month/:day/:title/
 
-default_markup: mmd
+default_markup: markmod
 
-post_num: 5
-archive_post_num: 5
+post_num: all
+archive_post_num: all
 feed_output: atom.xml
 
-template: opex
+template: miramal
 
 disqus_shortname: kiavash
-google_analytics: UA-114921404-1
 
 lists:
  - tags

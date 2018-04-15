@@ -1,0 +1,40 @@
+<!-- Header -->
+<header>
+  <section class="container">
+    <nav>
+      {{ UNLESS IS_INDEX }}
+      <h1 class="name-title"><a href="{{ ROOT }}">{{ TITLE }}</a></h1>
+      {{ END }}
+      <ul>
+        {{ IF SITE.language == 'Farsi' }}
+          <li><a href="{{ ROOT }}">فهرست</a></li>
+          <li><a href="{{ ROOT }}/about/">درباره</a></li>
+          <li><a href="{{ SITE.github }}" target="_blank">گیت‌هاب</a></li>
+          <li><a href="{{ SITE.twitter }}" target="_blank">توییتر</a></li>
+        {{ ELSE }}
+          <li><a href="{{ ROOT }}">Index</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="{{ SITE.github }}" target="_blank">github</a></li>
+          <li><a href="{{ MainROOT }}/">وبلاگ</a></li>
+        {{ END }}
+      </ul>
+    </nav>
+    <div class="logo">
+      {{ IF IS_POST }}
+      <h1>
+        {{ post.title }}
+      </h1>
+      <h4>{{ post.description }}</h4>
+      {{ ELSIF IS_ARCHIVE }}
+      <h1>
+        {{ ArchiveTITLE }}
+      </h1>
+      {{ ELSE }}
+      <h1>
+        {{ SITE.title }}
+      </h1>
+      {{ END }}
+    </div>
+  </section>
+</header>
+<!-- /Header -->

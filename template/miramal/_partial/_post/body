@@ -1,0 +1,34 @@
+{{ IF is_less }}
+  <section class="content">
+      {{ post.body.less }}
+  </section>
+
+  <p class="article-more-link">
+    {{ SWITCH SITE.language }}
+      {{ CASE 'Farsi' }} <a href="{{ post.url }}#more">بیشتر بخوانید</a>
+      {{ CASE 'English' }} <a href="{{ post.url }}#more">Read More</a>
+    {{ END }}
+  </p>
+{{ ELSIF is_more }}
+  <section class="content">
+    {{ post.body.more }}
+  </section>
+  <section class="meta">
+    <span>
+      {{- IF post.categories AND CATEGORIES_ARCHIVE -}}
+        دسته بندی:
+        {{- FOREACH cat IN post.categories -}}
+          <a href="{{ cat.url }}">{{ cat.name }}</a>
+          {{- IF (loop.index != loop.max) -}}،&nbsp;{{- END -}}
+        {{- END -}}
+      {{- END -}}
+      {{- IF post.tags -}}
+        برچسب‌ها:
+        {{- FOREACH tag IN post.tags -}}
+          <a href="{{ tag.url }}">{{ tag.name }}</a>
+          {{- IF (loop.index != loop.max) -}}،&nbsp;{{- END -}}
+        {{- END -}}
+      {{- END -}}
+    </span>
+  </section>
+{{ END }}

@@ -1,0 +1,732 @@
+---
+utid: 20180414112805
+date: 2018-04-14 11:28:05
+title: MarkMoreDown
+_index: markmoredown
+description: پارسر مارک‌داون با امکانات و علایم نوشتاری بیشتر و قابلیت استایل پذیری
+categories:
+  - آموزش
+  - ابزار
+  - پروژه
+tags:
+  - mrakdown
+  - markmoredown
+  - مارک داون
+  - مارک مور داون
+  - آموزش
+  - ابزار
+---
+برای کامل کردن [میرا](http://miraxy.github.io) نیاز به یک پارسر کامل برای مارک‌داون داشتم که ازونجایی که چیزی که مورد نیازم بود با پرل نوشته نشده بود هنوز، ناچارا خودم دست به کار شدم.
+
+## معرفی
+
+مارک‌مورداون یک کتابخانه‌ی آزاد با لایسنس MIT است برای تبدیل متن‌های شبه مارک‌داون به html که از مارک‌داون استاندارد به همراه تعدادی اصلاحات و امکانات اضافه که اکثرا از پارسرهای دیگر مارک‌داون مانند PHP Markdown Extra, MultiMarkdown, kramdown و... الهام گرفته شده‌اند پشتیبانی می‌کند. 
+
+## دستور زبان
+
+### سربرگ‌ها
+
+سربرگ‌ها از h1 تا h6 fh با کمک # ها ساخته می‌شوند.
+
+    # h1 Heading
+    ## h2 Heading
+    ### h3 Heading
+    #### h4 Heading
+    ##### h5 Heading
+    ###### h6 Heading
+
+    <h1>h1 Heading</h1>
+    <h2>h2 Heading</h2>
+    <h3>h3 Heading</h3>
+    <h4>h4 Heading</h4>
+    <h5>h5 Heading</h5>
+    <h6>h6 Heading</h6>
+
+برای سربرگ‌های ۱ و ۲ دستور زبان متفاوتی هم وجود دارد:
+
+    Alt-H1
+    ======
+
+    Alt-H2
+    ------
+
+    <h1>Alt-H1</h1>
+    <h2>Alt-H2</h2>
+
+**برچسب‌های دلخواه**
+
+    ## h2 #:head-label
+    #### h4 ######## :my-label
+
+    <h2 id="head-label">h2</h2>
+    <h4 id="my-label">h4</h4>
+
+    Alt-h1
+    ====== :my-label
+
+    <h1 id="my-label">Alt-H1</h1>
+
+### جداکننده‌های افقی
+
+جداکننده‌های افقی با استفاده از تکرار بیشتر از ۳تای - یا ـ یا * شناخته می‌شوند که میتوانند بینشان از یک فاصله‌ی دلخواه هم استفاده کرد
+
+    ***
+    ---
+    ___
+    * * * * * * * * *
+    --------
+    ______________
+
+
+    <hr>
+
+_ _ _
+
+### پاراگراف‌ها و خطوط جدید
+
+پاراگراف‌ها `<p>` با استفاده از یک خط خالی بین دو بلوک متن مشخص می‌شوند و خطوط جدید`<hr>` با دو فاصله(space) در آخر خط شناخته می‌شوند.
+
+لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
+<br><br>
+کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.⋅⋅
+در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+{= style="font-family:mono;font-szie:12px;background-color:#EEE;padding:10px;" }
+
+در پاراگراف دوم ⋅⋅ به معنی ۲ فاصله(space) متوالی است. نتیجه دو پاراگراف فوق این است:
+
+لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
+{= style="background-color:#EEE;padding:10px;" }
+
+کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.  
+در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+{= style="background-color:#EEE;padding:10px;" }
+
+
+**استایل دادن به پاراگراف**
+
+برای استایل دادن به یک پاراگراف در آخر هر پاراگراف در یک خط جدید بین یک آکولاد و یک مساوی بلافاصله بعد از آن و آکولاد بسته میتوان کلاس‌ها، id و هر چیز موردد نیا دیگری را نوشت. هر کلاس با یک . و هر id با یک # در ابتدا مشخص میشوند و با یک فاصله از هم جدا میشوند. به جز جدا کردن این مشخصه ها از هم در هیچ جای دیگری از فاصله نباید استفاده شود.
+
+    {= .class #id style="..." dir="..." align="..." style="background:#DDD;font-size:12px;" more... }
+
+    Lorem ipsum dolor sit amet, graecis denique ei vel, at duo primis mandamus.
+    Et legere ocurreret pri, animal tacimates complectitur ad cum. Cu eum
+    inermis inimicus efficiendi.⋅⋅
+    Labore officiis his ex, soluta officiis
+    concludaturque ei qui, vide sensibus vim ad.
+    {= .class #entry .more align="center" #body width="200px" }
+
+    <p class="class more" id="entry body" align="left" width="200px">
+    Lorem ipsum dolor sit amet, graecis denique ei vel, at duo primis mandamus. Et legere ocurreret pri, animal tacimates complectitur ad cum. Cu eum inermis inimicus efficiendi.
+    <br>
+    Labore officiis his ex, soluta officiisconcludaturque ei qui, vide sensibus vim ad.
+    </p>
+
+### تایپوگرافی
+
+#### متن پررنگ یا قوی
+
+متن های پررنگ با تکرار دو ستاره قبل و بعد از کلمات مشخص میشوند
+
+این قسمت از متن \*\*پر رنگ\*\* یا \*\*قوی\*\* است.
+
+این قسمت از متن **پر رنگ** یا **قوی** است.
+
+**متن کج یا مورد تاکید**
+
+برای کج نوشتن یا موردتاکید قرار دادن یک کلمه از یک زیرخط _ قبل و بعد از کلمات استفاده می‌کنیم.
+
+	این کلمه _مورد تاکید_ است
+	
+	این کلمه <em>مورد تاکید</em> است
+
+این کلمه <em>مورد تاکید</em> است
+
+**مارک کردن**
+
+کلمات با دو مساوی = قبل و بعدشان مارک می‌شوند
+
+	می‌توان قسمتی از متن را ==مارک== کرد
+	
+	می‌توان قسمتی از متن را <mark>مارک</mark> کرد
+
+می‌توان قسمتی از متن را <mark>مارک</mark> کرد
+
+**متن اضافه شده**
+
+با استفاده از دو بعلاوه + متن اضافه شده مشخص میشود
+
+	این یک متن است که این ++کلمه++ به آن اضافه شده است.
+	
+	این یک متن است که این <ins>کلمه</ins> به آن اضافه شده است.
+
+این یک متن است که این <ins>کلمه</ins> به آن اضافه شده است.
+
+**متن کوچک**
+
+با استفاده از دو منفی - قبل و بعد از هر کلمه آن را کوچک می‌کنیم
+
+	این کلمه --کوچک‌تر-- است
+	
+	این کلمه <small>کوچکتر</small> است
+
+این کلمه <small>کوچکتر</small> است
+
+**متن حذف شده**
+
+با استفاده از دو آکولاد ~ قبل و بعد از کلمات آن‌ها را حذف شده معرفی می‌کنیم
+
+	قسمتی از متن ~~ابتشاه~~ نوشته شده
+	
+	قسمتی از متن <del>ابتشاه</del> نوشته شده
+
+قسمتی از متن <del>ابتشاه</del> نوشته شده
+
+**متن حذف/اضافه شده**
+
+	این قسمت از متن ~~ابتشاه~>اشتباه~~ نوشته شده بود
+	
+	این قسمت از متن <del>ابتشاه</del> <ins>اشتباه</ins> نوشته شده بود
+
+این قسمت از متن <del>ابتشاه</del> <ins>اشتباه</ins> نوشته شده بود.
+
+قبل و بعد از ~> یک فاصله اختیاری است.
+
+**متن بالانویس**
+
+    x^y + z^
+
+    x<sup>y + z</sup>
+
+x<sup>y + z</sup>
+
+**متن زیرنویس**
+
+متن \~زیرنویس\~
+
+    متن<sub>زیرنویس</sub>
+
+متن<sub>زیرنویس</sub>
+
+    C~6~H~12~O~6~
+
+    C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>
+
+C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>
+
+### لیست‌ها
+
+**لیست‌های ساده**
+
+لیست های ساده با خط تیره (-) علامت جمع (+) یا ستاره (*) در ابتدای خط مشخص میشوند
+
+    + Lorem ipsum dolor sit amet
+    + Consectetur adipiscing elit
+    + Integer molestie lorem at massa
+    + Facilisis in pretium nisl aliquet
+    + Nulla volutpat aliquam velit
+      - Phasellus iaculis neque
+        * Purus sodales ultricies
+        * Vestibulum laoreet porttitor sem
+      - Ac tristique libero volutpat at
+    + Faucibus porta lacus fringilla vel
+    + Aenean sit amet erat nunc
+    + Eget porttitor lorem
+
+    <ul>
+    <li>Lorem ipsum dolor sit amet</li>
+    <li>Consectetur adipiscing elit</li>
+    <li>Integer molestie lorem at massa</li>
+    <li>Facilisis in pretium nisl aliquet</li>
+    <li>Nulla volutpat aliquam velit
+      <ul>
+        <li>Phasellus iaculis neque</li>
+          <ul>
+            <li>Purus sodales ultricies</li>
+            <li>Vestibulum laoreet porttitor sem</li>
+          </ul>
+        <li>Ac tristique libero volutpat at</li>
+      </ul>
+    </li>
+    <li>Faucibus porta lacus fringilla vel</li>
+    <li>Aenean sit amet erat nunc</li>
+    <li>Eget porttitor lorem</li>
+    </ul>
+
+    + item
+    - item
+    * item
+
+**لیست‌های شماره‌دار**
+
+این لیست‌ها با یک عدد در ابتدا به همراه یک نقطه بلافاصله بعد از آن شناخته می‌شوند.
+
+    1. Lorem ipsum dolor sit amet
+    2. Consectetur adipiscing elit
+        1. item
+            - unordered item
+            - unordered item
+        2. item
+        3. item
+    3. Integer molestie lorem at massa
+    4. Facilisis in pretium nisl aliquet
+    5. Nulla volutpat aliquam velit
+    6. Faucibus porta lacus fringilla vel
+    7. Aenean sit amet erat nunc
+    8. Eget porttitor lorem
+
+**لیست‌های تعریفی**
+
+    Apple
+    :   Pomaceous fruit of plants of the genus Malus in
+        the family Rosaceae.
+    :   An american computer company.
+
+    Orange
+    :   The fruit of an evergreen tree of the genus Citrus.
+
+becomes:
+
+    <dl>
+    <dt>Apple</dt>
+    <dd>Pomaceous fruit of plants of the genus Malus in
+    the family Rosaceae.</dd>
+
+    <dt>Orange</dt>
+    <dd>The fruit of an evergreen tree of the genus Citrus.</dd>
+    </dl>
+
+**جدا ساز‌ها**
+
+اگر می‌خواهید یک لیست بلافاصله بعد از لیست قبلی داشته باشید برای جدا کردن این لیست‌ها از یک خط که تنها یک ^ دارد بین دو لیست استفاده کنید.
+
+    * List one
+
+    ^
+
+    * List two
+
+### نقل قول‌ها
+
+خطوطی که با یک > در ابتدا شروع میشوند یک نقل قول هستند. نقل قول‌ها میتوانند تو در تو باشند و از یک نقل قول درون یک نقل قول دیگر استفاده کرد. همچنین سایر علایم مارک‌داون شامل لیست‌ها، سربرگ‌ها و کدها هم در بین نقل قول‌ها معتبر هستند.
+
+	> این یک نقل قول در ۲پاراگراف است. نقل قول‌ها برای نمایش 
+	> متنی سخن دیگران یا ارجاع دادن به مطالبی از منابع متفاوت و 
+	> خارج از متن اصلی است
+	>
+	> ادامه نقل قول در پاراگراف دوم 
+	
+	<blockquote>
+	<p>
+	این یک نقل قول در ۲پاراگراف است. نقل قول‌ها برای نمایش متنی سخن دیگران یا ارجاع دادن به مطالبی از منابع متفاوت و خارج از متن اصلی است
+	</p>
+	<p>
+	ادامه نقل قول در پاراگراف دوم 
+	</p>
+	</blockquote>
+
+مارک‌داون به شدت ساده‌گیر است و میتوان پاراگراف را مانند مثال بالا در چندین خط جدا از هم یا به شکل مثال پایین به صورت متوالی نوشت
+
+	> این یک نقل قول در ۲پاراگراف است. نقل قول‌ها برای نمایش متنی سخن دیگران یا ارجاع دادن به مطالبی از منابع متفاوت و خارج از متن اصلی است
+	
+	> ادامه نقل قول در پاراگراف دوم 
+	
+همچنین در هر نقل قول میتوان از سایر اجزای مارک‌داون شامل نقل قول، سربرگ‌ها لیست ها و بلوک‌های کد استفاده کرد
+
+	> این یک نقل قول است
+	>
+	> > این یک نقل قول درون یک نقل قول دیگر است
+	>
+	> ## سربرگ سطح دو
+	>
+	>1. آیتم یک
+	>2. آیتم دوم
+	>
+	>	return shell_exec("echo $input | $markdown_script"); [بلوک کد]
+
+**جدا ساز‌ها**
+
+اگر می‌خواهید یک لیست بلافاصله بعد از یک نقل قول، یک نقل قول جدا و جدید دیگری داشته باشید برای جدا کردنشان از یک خط که تنها یک ^ دارد بین دو بلوک استفاده کنید.
+
+    > block1
+
+    ^
+
+    > block2
+
+### لینک‌ها
+
+
+مارک‌داون از ۲ نوع لینک پشتیبانی میکند، لینک‌های درون خطی و لینک‌های ارجاعی.
+
+لینک‌های درون‌خطی را به این شکل میتوان ایجاد کرد
+
+	This is [an example](http://example.com/ "Title") inline link.
+	
+	[This link](http://example.net/) has no title attribute.
+	
+	---
+
+	<p>This is <a href="http://example.com/" title="Title">
+	an example</a> inline link.</p>
+
+	<p><a href="http://example.net/">This link</a> has no
+	title attribute.</p>
+
+و لینک های ارجاعی نیز ساختاری به این صورت دارند
+
+	This is [an example][id] reference-style link.
+	یا
+	This is [an example] [id] reference-style link.
+	ادامه متن و متن و متن و متن.
+	
+	[id]: http://example.com/  "Optional Title Here"
+	
+	---
+	
+	<p>This is <a href="http://example.com/" title="Optional Title Here">an example</a> reference-style link.</p>
+
+	<p>This is <a href="http://example.com/" title="Optional Title Here">an example</a> reference-style link.</p>
+
+	<p>ادامه متن و متن و متن و متن.</p>
+
+همچنین لینک‌های ارجاعی رو به این صورت هم میتوان نوشت
+
+	my name is [kiavash][]
+
+	[kiavash]: https://kiavash.one/
+
+=head3 Link Attributes
+
+you can set the attributes on certain elements using an attribute block. put
+the special attribute block {} immediately after the parenthesis or brackets
+containing the address.
+
+    This is [an example][id]{.class1 .class2 #id1 style="..." #id3 other-attributes}
+
+    [This link](http://kiavash.one/){.class1 .class2 #id1 style="..." #id3 other-attributes}
+
+B<dont use spaces in attributes.>
+
+wrong
+
+    style="border: 1px; width: 150px"
+
+correct
+
+    style="border:1px;width:150px"
+
+=head2 Images
+
+Admittedly, it’s fairly difficult to devise a “natural” syntax for placing
+images into a plain text document format.
+
+Markdown uses an image syntax that is intended to resemble the syntax for links,
+allowing for two styles: inline and reference.
+
+=head3 Inline Images
+
+Inline image syntax looks like this:
+
+    ![Alt text](/path/to/img.jpg)
+
+    ![Alt text](/path/to/img.jpg "Optional title")
+
+=head3 Reference-style Image
+
+Reference-style image syntax looks like this:
+
+    ![Alt text][id]
+
+Where “id” is the name of a defined image reference. Image references are
+defined using syntax identical to link references:
+
+    [id]: url/to/image  "Optional title attribute"
+
+=head3 Image Attributes
+
+you can set the attributes on certain elements using an attribute block. put
+the special attribute block {} immediately after the parenthesis or brackets
+containing the address.
+
+    ![Alt text](/path/to/img.jpg){.class1 .class2 #id1 style="..." #id3 width="100px" height="100px"}
+
+    ![Alt text][id]{.class1 .class2 #id1 style="border:2px;max-width:100%" #id3 other-attributes}
+
+B<dont use spaces in attributes.>
+
+wrong
+
+    style="border: 1px; width: 150px"
+
+correct
+
+    style="border:1px;width:150px"
+
+=head2 Codes
+
+=head3 Inline code
+
+To indicate a span of code, wrap it with backtick quotes (`). Unlike a
+pre-formatted code block, a code span indicates code within a normal paragraph.
+For example:
+
+    Use the `printf()` function.
+
+will produce:
+
+    Use the <code>printf()</code> function.
+
+
+=head3 Code Blocks
+
+Pre-formatted code blocks are used for writing about programming or markup
+source code. Rather than forming normal paragraphs, the lines of a code block
+are interpreted literally. Markdown wraps a code block in both <pre> and <code>
+tags.
+
+To produce a code block in Markdown, simply indent every line of the block by
+at least 4 spaces or 1 tab. For example, given this input:
+
+    This is a normal paragraph:
+
+        This is a code block.
+
+Markdown will generate:
+
+    <p>This is a normal paragraph:</p>
+
+    <pre><code>This is a code block.
+    </code></pre>
+
+One level of indentation — 4 spaces or 1 tab — is removed from each line of the
+code block. For example, this:
+
+    Here is an example of AppleScript:
+
+        tell application "Foo"
+            beep
+        end tell
+
+will turn into:
+
+    <p>Here is an example of AppleScript:</p>
+
+    <pre><code>tell application "Foo"
+        beep
+        end tell
+    </code></pre>
+
+=head3 separator
+
+you can separate code blocks with ^
+
+        code block1
+        code block1
+
+    ^
+
+        code block2
+        code block2
+
+=head3 Block code "fences"
+
+Use "fences" ``` to block in multiple lines of code.
+
+    ```
+    codes...
+    ```
+
+or
+
+    ``` perl
+    code...
+    code...
+    code...
+    ```
+
+    <pre><code class="language-perl">
+        code...
+        code...
+        code...
+    </code></pre>
+
+and
+
+    ``` :class-name
+    some codes...
+    ```
+
+    <pre><code class="class-name">
+    some codes...
+    </code></pre>
+
+=head2 Tables
+
+    |              | Grouping                    ||
+    | First Header | Second Header | Third Header |
+    | ------------ | :-----------: | -----------: |
+    | Content      | *Long Cell*                 ||
+    | Content      | **Cell**      | Cell         |
+    | New section  | More          | Data         |
+
+    =head2 Maths
+
+    =head3 Math block
+
+        $$
+        MathML
+        $$
+
+    or
+
+        \\[
+        MathML
+        \\]
+
+    =head3 inline Maths
+
+        $ Math formula $
+
+    or
+
+        \\(
+        formula
+        \\)
+
+=head1 OPTIONS
+
+MarkMoreDown supports a number of options to it's processor which control the behaviour of the output document.
+
+These options can be supplied to the constructor, on in a hash with the individual calls to the markdown method.
+See the synopsis for examples of both of the above styles.
+
+The options for the processor are:
+
+=over
+
+=item empty element suffix
+
+This option can be used to generate normal HTML output. By default, it is '>',
+which is HTML, change to ' />' for xHTML.
+
+=item img_ids
+
+Controls if <img> tags generated have an id attribute. Defaults to true.
+Turn off for compatibility with the original markdown.
+
+=item heading_ids
+
+Controls if <hX> tags generated have an id attribute. Defaults to true.
+Turn off for compatibility with the original markdown.
+
+=item tab_width
+
+Controls indent width in the generated markup, defaults to 4
+
+=item disable_tables
+
+If true, this disables the MarkMoreDown table handling.
+
+=item disable_footnotes
+
+If true, this disables the MarkMoreDown footnotes handling.
+
+=item disable_bibliography
+
+If true, this disables the MarkMoreDown bibliography/citation handling.
+
+=item disable_definition_lists
+
+If true, this disables the MarkMoreDown definition list handling.
+
+=back
+
+=head1 METHODS
+
+=head2 new
+
+A simple constructor, see the SYNTAX and OPTIONS sections for more information.
+
+=head2 markmod
+
+The main function as far as the outside world is concerned. See the SYNOPSIS
+for details on use.
+
+=head1 AUTHOR
+
+    John Gruber
+    http://daringfireball.net/
+
+    PHP port and other contributions by Michel Fortin
+    http://michelf.com/
+
+    MultiMarkdown by Fletcher Penney
+    http://fletcher.freeshell.org/
+
+    kramdown by Thomas Leitner
+    http://kramdown.gettalong.org/
+
+    CPAN Module Text::MultiMarkdown by Tomas Doran
+    http://www.bobtfish.net/
+
+    MarkMoreDown by Kiavash Mazi
+    http://kiavash.one
+
+=head1 THIS DISTRIBUTION
+
+Please note that this distribution is a fork of Fletcher Penny's MarkMoreDown project,
+and it *is not* in any way blessed by him.
+
+Whilst this code aims to be compatible with the original MarkMoreDown (and incorporates
+and passes the MarkMoreDown test suite) whilst fixing a number of bugs in the original -
+there may be differences between the behaviour of this module and MarkMoreDown. If you find
+any differences where you believe Text::MarkMoreDown behaves contrary to the MarkMoreDown spec,
+please report them as bugs.
+
+=head1 SOURCE CODE
+
+You can find the source code repository for L<Text::Markmdown> and L<Text::Markdoredown>
+on GitHub at <http://github.com/bobtfish/text-markdown>.
+
+=head1 COPYRIGHT AND LICENSE
+
+Original Code Copyright (c) 2003-2004 John Gruber
+<http://daringfireball.net/>
+All rights reserved.
+
+MultiMarkdown changes Copyright (c) 2005-2006 Fletcher T. Penney
+<http://fletcher.freeshell.org/>
+All rights reserved.
+
+Text::MarkMoreDown changes Copyright (c) 2018 Kiavash Mazi
+<http://kiavash.one>
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are
+met:
+
+* Redistributions of source code must retain the above copyright notice,
+  this list of conditions and the following disclaimer.
+
+* Redistributions in binary form must reproduce the above copyright
+  notice, this list of conditions and the following disclaimer in the
+  documentation and/or other materials provided with the distribution.
+
+* Neither the name "Markdown" nor the names of its contributors may
+  be used to endorse or promote products derived from this software
+  without specific prior written permission.
+
+This software is provided by the copyright holders and contributors "as
+is" and any express or implied warranties, including, but not limited
+to, the implied warranties of merchantability and fitness for a
+particular purpose are disclaimed. In no event shall the copyright owner
+or contributors be liable for any direct, indirect, incidental, special,
+exemplary, or consequential damages (including, but not limited to,
+procurement of substitute goods or services; loss of use, data, or
+profits; or business interruption) however caused and on any theory of
+liability, whether in contract, strict liability, or tort (including
+negligence or otherwise) arising in any way out of the use of this
+software, even if advised of the possibility of such damage.
+
+=cut
+
