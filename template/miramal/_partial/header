@@ -2,9 +2,7 @@
 <header>
   <section class="container">
     <nav>
-      {{ UNLESS IS_INDEX }}
-      <h1 class="name-title"><a href="{{ ROOT }}">{{ TITLE }}</a></h1>
-      {{ END }}
+      <h1 class="name-title">{{ UNLESS IS_INDEX }}<a href="{{ ROOT }}">{{ TITLE }}</a>{{ END }}</h1>
       <ul>
         {{ IF SITE.language == 'Farsi' }}
           <li><a href="{{ ROOT }}">فهرست</a></li>
@@ -32,6 +30,7 @@
       {{ ELSE }}
       <h1>
         {{ SITE.title }}
+        <h4>{{ SITE.description }}</h4>
       </h1>
       {{ END }}
     </div>
