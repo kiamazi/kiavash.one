@@ -115,6 +115,10 @@ ul ul ul {
     }
 }
 
+dd::before {
+    content: "›";
+}
+
 code,
 pre { 
     font-family:Anonymous Pro;
