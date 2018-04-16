@@ -5,16 +5,7 @@ title: مارک مور داون (مارک‌مود) / MarkMoreDown (markmod)
 _index: markmoredown
 description: پارسر مارک‌داون با امکانات و علایم نوشتاری بیشتر و قابلیت استایل پذیری
 categories:
-  - آموزش
-  - ابزار
-  - پروژه
-tags:
-  - mrakdown
-  - markmoredown
-  - مارک داون
-  - مارک مور داون
-  - آموزش
-  - ابزار
+  - معرفی
 ---
 برای کامل کردن [میرا](http://miraxy.github.io) نیاز به یک تحلیل‌کننده‌ی متن به روز‌تر از تحلیل‌گر استاندارد مارک‌داون داشتم که علائم بیشتر و نگارش کامل‌تری داشته باشه، ازونجایی که میرا با پرل نوشته شده و چیزی که مورد نیازم بود با پرل نوشته نشده بود هنوز، ناچارا خودم دست به کار شدم.
 
@@ -97,7 +88,7 @@ tags:
     #### h4 Heading
     ##### h5 Heading
     ###### h6 Heading
-
+    
     <h1>h1 Heading</h1>
     <h2>h2 Heading</h2>
     <h3>h3 Heading</h3>
@@ -109,10 +100,10 @@ tags:
 
     Alt-H1
     ======
-
+    
     Alt-H2
     ------
-
+    
     <h1>Alt-H1</h1>
     <h2>Alt-H2</h2>
 
@@ -120,13 +111,13 @@ tags:
 
     ## h2 #:head-label
     #### h4 ######## :my-label
-
+    
     <h2 id="head-label">h2</h2>
     <h4 id="my-label">h4</h4>
-
+    
     Alt-h1
     ====== :my-label
-
+    
     <h1 id="my-label">Alt-H1</h1>
 
 ### جداکننده‌های افقی
@@ -139,7 +130,6 @@ tags:
     * * * * * * * * *
     --------
     ______________
-
 
     <hr>
 
@@ -200,7 +190,7 @@ Labore officiis his ex, soluta officiisconcludaturque ei qui, vide sensibus vim 
 برای کج نوشتن یا موردتاکید قرار دادن یک کلمه از یک زیرخط _ قبل و بعد از کلمات استفاده می‌کنیم.
 
 	این کلمه _مورد تاکید_ است
-
+	
 	این کلمه <em>مورد تاکید</em> است
 
 این کلمه _مورد تاکید_ است
@@ -210,7 +200,7 @@ Labore officiis his ex, soluta officiisconcludaturque ei qui, vide sensibus vim 
 کلمات با دو مساوی = قبل و بعدشان مارک می‌شوند
 
 	می‌توان قسمتی از متن را ==مارک== کرد
-
+	
 	می‌توان قسمتی از متن را <mark>مارک</mark> کرد
 
 می‌توان قسمتی از متن را ==مارک== کرد
@@ -220,7 +210,7 @@ Labore officiis his ex, soluta officiisconcludaturque ei qui, vide sensibus vim 
 با استفاده از دو بعلاوه + متن اضافه شده مشخص میشود
 
 	این یک متن است که این ++کلمه++ به آن اضافه شده است.
-
+	
 	این یک متن است که این <ins>کلمه</ins> به آن اضافه شده است.
 
 این یک متن است که این ++کلمه++ به آن اضافه شده است.
@@ -230,7 +220,7 @@ Labore officiis his ex, soluta officiisconcludaturque ei qui, vide sensibus vim 
 با استفاده از دو منفی - قبل و بعد از هر کلمه آن را کوچک می‌کنیم
 
 	این کلمه --کوچک‌تر-- است
-
+	
 	این کلمه <small>کوچکتر</small> است
 
 این کلمه --کوچکتر-- است
@@ -240,7 +230,7 @@ Labore officiis his ex, soluta officiisconcludaturque ei qui, vide sensibus vim 
 با استفاده از دو آکولاد ~ قبل و بعد از کلمات آن‌ها را حذف شده معرفی می‌کنیم
 
 	قسمتی از متن ~~ابتشاه~~ نوشته شده
-
+	
 	قسمتی از متن <del>ابتشاه</del> نوشته شده
 
 قسمتی از متن ~~ابتشاه~~ نوشته شده
@@ -248,7 +238,7 @@ Labore officiis his ex, soluta officiisconcludaturque ei qui, vide sensibus vim 
 #### متن حذف/اضافه شده
 
 	این قسمت از متن ~~ابتشاه~>اشتباه~~ نوشته شده بود
-
+	
 	این قسمت از متن <del>ابتشاه</del> <ins>اشتباه</ins> نوشته شده بود
 
 این قسمت از متن ~~ابتشاه~>اشتباه~~ نوشته شده بود
@@ -258,7 +248,7 @@ Labore officiis his ex, soluta officiisconcludaturque ei qui, vide sensibus vim 
 #### متن بالانویس
 
     x ^y + z^
-
+    
     x <sup>y + z</sup>
 
 اکس به توان وای بعلاوه زد یا اکس ^وای + زد^ در نظر گرفته شود.  
@@ -271,7 +261,7 @@ x ^y + z^
 متن ~زیرنویس~
 
     C~6~H~12~O~6~
-
+    
     C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>
 
 C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>
@@ -300,7 +290,7 @@ C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>
     + کاربردهای متنوع
     + با هدف بهبود
     + ابزارهای کاربردی می باشد.
-
+    
     <ul>
       <li>لورم ایپسوم</li>
       ...
@@ -387,7 +377,7 @@ C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>
     :   درخت سیب (نام علمی: M. pumila) درختی برگریز از خانواده گلسرخیان است
         که به خاطر میوه شیرین و گوشتی‌اش شناخته شده‌است.
     :   در برخی از منابع مذهبی به عنوان گیاه ممنوعه‌ای که باعث اخراج آدم از بهشت شد معرفی شده‌است.
-
+    
     پرتقال
     :    میوه‌ای از خانواده مرکبات می‌باشد. درخت آن همیشه سبز و پر برگ است و ارتفاع آن تا ۱۰ متر هم می‌رسد.
 
@@ -397,7 +387,7 @@ C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>
     <dt>سیب</dt>
     <dd>درخت سیب (نام علمی: M. pumila) درختی برگریز از خانواده گلسرخیان است که به خاطر میوه شیرین و گوشتی‌اش شناخته شده‌است.</dd>
     <dd>در برخی از منابع مذهبی به عنوان گیاه ممنوعه‌ای که باعث اخراج آدم از بهشت شد معرفی شده‌است.</dd>
-
+    
     <dt>پرتقال</dt>
     <dd>میوه‌ای از خانواده مرکبات می‌باشد. درخت آن همیشه سبز و پر برگ است و ارتفاع آن تا ۱۰ متر هم می‌رسد.</dd>
     </dl>
@@ -415,9 +405,9 @@ C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>
 اگر می‌خواهید یک لیست بلافاصله بعد از لیست قبلی داشته باشید برای جدا کردن این لیست‌ها از یک خط که تنها یک ^ دارد بین دو لیست استفاده کنید.
 
     * List one
-
+    
     ^
-
+    
     * List two
 
 ### نقل قول‌ها
@@ -429,7 +419,7 @@ C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>
 	> خارج از متن اصلی است
 	>
 	> ادامه نقل قول در پاراگراف دوم
-
+	
 	<blockquote>
 	<p>
 	این یک نقل قول در ۲پاراگراف است. نقل قول‌ها برای نمایش متنی سخن دیگران یا ارجاع دادن به مطالبی از منابع متفاوت و خارج از متن اصلی است
@@ -442,7 +432,7 @@ C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>
 مارک‌داون به شدت ساده‌گیر است و میتوان پاراگراف را مانند مثال بالا در چندین خط جدا از هم یا به شکل مثال پایین به صورت متوالی نوشت
 
 	> این یک نقل قول در ۲پاراگراف است. نقل قول‌ها برای نمایش متنی سخن دیگران یا ارجاع دادن به مطالبی از منابع متفاوت و خارج از متن اصلی است
-
+	
 	> ادامه نقل قول در پاراگراف دوم
 
 همچنین در هر نقل قول میتوان از سایر اجزای مارک‌داون شامل نقل قول، سربرگ‌ها لیست ها و بلوک‌های کد استفاده کرد
@@ -474,9 +464,9 @@ C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>
 اگر می‌خواهید یک نقل قول بلافاصله بعد از یک نقل قول دیگر داشته باشید برای جدا کردنشان از یک خط که تنها یک ^ دارد بین دو بلوک استفاده کنید.
 
     > block1
-
+    
     ^
-
+    
     > block2
 
 ### لینک‌ها
@@ -489,14 +479,14 @@ C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>
 لینک‌های درون‌خطی را به این شکل میتوان ایجاد کرد
 
 	This is [an example](http://example.com/ "Title") inline link.
-
+	
 	[This link](http://example.net/) has no title attribute.
-
+	
 	---
-
+	
 	<p>This is <a href="http://example.com/" title="Title">
 	an example</a> inline link.</p>
-
+	
 	<p><a href="http://example.net/">This link</a> has no
 	title attribute.</p>
 
@@ -508,23 +498,23 @@ C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>
 	یا
 	This is [an example] [id] reference-style link.
 	ادامه متن و متن و متن و متن.
-
+	
 	[id]: http://example.com/  "Optional Title Here"
-
+	
 	---
-
+	
 	<p>This is <a href="http://example.com/" title="Optional Title Here">an example</a> reference-style link.</p>
-
+	
 	<p>This is <a href="http://example.com/" title="Optional Title Here">an example</a> reference-style link.</p>
-
+	
 	<p>ادامه متن و متن و متن و متن.</p>
 
 همچنین لینک‌های ارجاعی رو به این صورت هم میتوان نوشت
 
 	my name is [kiavash][]
-
+	
 	سایر پاراگراف‌ها و....
-
+	
 	[kiavash]: https://kiavash.one/
 
 #### تعیین خواص لینک‌ها
@@ -533,18 +523,18 @@ C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>
 در مارک‌مود برای لینک‌ها میتوان خاصیت‌های شخصی هم تعریف کرد. برای اینکار باید بلافاصله بعد از پرانتز یا براکت پایانی یک آکولاد باز و بسته کرد و نشخصات را در آن تعریف کرد.
 
     This is [an example][id]{.class1 .class2 #id1 style="..." #id3 other-attributes}
-	یا
+    یا
     [This link](http://kiavash.one/){.class1 .class2 #id1 style="..." #id3 name="link-name" other-attributes=""}
-
+    
     <a class="class1 class2" id="id1 id3" style="..." name="link-name" other-attributes="">This link</a>
 
 **از کاراکتر فاصله در مشخصات استفاده نکنید**
 
 	اشتباه
-    style="border: 1px; width: 150px"
-
+	style="border: 1px; width: 150px"
+	
 	صحیح
-    style="border:1px;width:150px"
+	style="border:1px;width:150px"
 
 ### تصاویر
 
@@ -553,15 +543,15 @@ C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>
 #### تصاویر درخط
 
     ![Alt text](/path/to/img.jpg)
-
+    
     ![Alt text](/path/to/img.jpg "Optional title")
 
 #### تصاویر ارجاعی
 
     ![Alt text][id]
-
+    
     سایر پاراگراف‌ها و....
-
+    
     [id]: url/to/image  "Optional title attribute"
 
 #### تعیین خواص تصاویر
@@ -569,16 +559,16 @@ C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>
 در مارک‌مود برای تصاویر میتوان خاصیت‌های شخصی هم تعریف کرد. برای اینکار باید بلافاصله بعد از پرانتز یا براکت پایانی یک آکولاد باز و بسته کرد و نشخصات را در آن تعریف کرد.
 
     ![Alt text](/path/to/img.jpg){.class1 .class2 #id1 style="..." #id3 width="100px" height="100px"}
-
+    
     ![Alt text][id]{.class1 .class2 #id1 style="border:2px;max-width:100%" #id3 other-attributes}
 
 **از کاراکتر فاصله در مشخصات استفاده نکنید**
 
 	اشتباه
-    style="border: 1px; width: 150px"
-
+	style="border: 1px; width: 150px"
+	
 	صحیح
-    style="border:1px;width:150px"
+	style="border:1px;width:150px"
 
 ### کد (code) #:کد
 
@@ -595,20 +585,20 @@ C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>
 برای نوشتن یک بلوک کد تنها کافی است به اندازه‌ی یک tab یا ۴کاراکتر فاصله(space) در ابتدای هر خط خالی جلو برویم.
 
     This is a normal paragraph:
-
+    
         This is a code block.
 
 برابر است با
 
     <p>This is a normal paragraph:</p>
-
+    
     <pre><code>This is a code block.
     </code></pre>
 
 همچنین فرورفتگی‌ها در کدهای بلوکی حفظ می‌شوند.
 
     Here is an example of AppleScript:
-
+    
         tell application "Foo"
             beep
         end tell
@@ -616,7 +606,7 @@ C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>
 برابر است با:
 
     <p>Here is an example of AppleScript:</p>
-
+    
     <pre><code>tell application "Foo"
         beep
     end tell
@@ -628,9 +618,9 @@ C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>
 
         code block1
         code block1
-
+    
     ^
-
+    
         code block2
         code block2
 
@@ -649,7 +639,7 @@ C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>
     code...
     code...
     ```
-
+    
     <pre><code class="language-perl">
         code...
         code...
@@ -661,7 +651,7 @@ C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>
     ``` :class-name
     some codes...
     ```
-
+    
     <pre><code class="class-name">
     some codes...
     </code></pre>
@@ -717,9 +707,9 @@ $$
 #### نمایش درخط فرمول‌های ریاضی
 
         $Math formula$
-
+    
     یا
-
+    
         \\(
         formula
         \\)
