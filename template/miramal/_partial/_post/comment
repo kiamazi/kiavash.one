@@ -1,13 +1,18 @@
 {{ IF SITE.disqus_shortname }}
+این وبلاگ از disqus برای سیستم نظردهی استفاده می‌کند، اگر فرم نظردادن را نمی‌بینید احتمالا کسی به جای شما تشخیص داده که این سرویس مناسبتان نیست و آن را از دسترس شما خارج کرده، برای نظردادن در این شرایط از ابزار رفع فیلتر استفاده کنید
 <section class="comments">
   <div id="disqus_thread">
-      <script>
-          var idcomments_acct = 'b0a26c97865ca5233efed27ec742b491';
-          var idcomments_post_id;
-          var idcomments_post_url;
-        </script>
-        <span id="IDCommentsPostTitle" style="display:none"></span>
-        <script type='text/javascript' src='https://www.intensedebate.com/js/genericCommentWrapperV2.js'></script>
+    <script>
+      var disqus_shortname = '{{ SITE.disqus_shortname }}';
+      (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/{{ IF (post.comment != 'false') }}embed.js{{ ELSE }}count.js{{ END }}';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   </div>
 </section>
 {{ END }}
