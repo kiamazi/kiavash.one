@@ -1,0 +1,36 @@
+
+title: markmoredown
+description: markmod - markdown parser
+author: کیاوش
+language: Farsi
+
+url: http://kiavash.one/projects/markmoredown
+root: /projects/markmoredown
+
+icon: /static/img/logo.png
+css: /static/theme/kiavone/css/kiavone.css
+
+static: /static/
+imageurl: /img/
+
+default_extension: md
+
+permalink: :year/:month/:day/:title/
+
+default_markup: markmod
+
+post_num: all
+archive_post_num: all
+feed_output: atom.xml
+
+template: kiavone
+
+disqus_shortname: kiavash
+
+lists:
+
+namespace:
+
+plugins:
+ - Jdate
+
