@@ -1,7 +1,7 @@
 
 title: markmoredown
 description: markmod - markdown parser
-author: کیاوش
+author: Kiavash
 language: Farsi
 
 url: http://kiavash.one/projects/markmoredown
@@ -15,7 +15,7 @@ imageurl: /img/
 
 default_extension: md
 
-permalink: :year/:month/:day/:title/
+permalink: :title/
 
 default_markup: markmod
 
