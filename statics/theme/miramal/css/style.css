@@ -102,10 +102,10 @@ a:hover {
 ul { 
     list-style-type:square;
 }
-ul ul { 
+ul ul {
     list-style-type:disc;
 }
-ul ul ul { 
+ul ul ul {
     list-style-type:circle;
 }
 @media (max-width:44rem) { 
@@ -217,11 +217,12 @@ hr {
     width: auto;
 }
 article .meta {
-    background: #f5f5f5;
-    margin-top: 40px;
+    background: #eeeeee;
+    margin-top: 60px;
     text-align: center;
     font-size: 0.8rem;
     padding: 1rem 0;
+    border-top: 3px solid #dedede;
   }
   article .meta hr {
     
