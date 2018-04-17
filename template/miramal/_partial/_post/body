@@ -13,6 +13,7 @@
   <section class="content">
     {{ post.body.more }}
   </section>
+  {{ IF IS_POST }}
   <section class="meta">
     <span>
       {{- IF post.categories AND CATEGORIES_ARCHIVE -}}
@@ -31,4 +32,5 @@
       {{- END -}}
     </span>
   </section>
+  {{ END }}
 {{ END }}

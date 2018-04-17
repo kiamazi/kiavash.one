@@ -19,7 +19,7 @@
       </ul>
     </nav>
     <div class="logo">
-      {{ IF IS_POST }}
+      {{ IF IS_POST or IS_PAGE }}
       <h1>
         {{ post.title }}
       </h1>

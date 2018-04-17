@@ -382,7 +382,7 @@ direction:rtl;
 
 html[lang=Farsi] .article-list time { 
     margin:0 0 0 1rem;
-    width:2.5rem;
+/*    width:2.5rem;  */
 }
 html[lang=Farsi] .article-list h4 { 
     font-weight:400;

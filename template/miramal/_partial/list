@@ -5,14 +5,14 @@
       <h3 itemprop="name">
         <a href="{{ post.url }}" itemprop="url">{{ post.title }}</a>
       </h3>
-      <h4>{{ IF post.description }}
+      {{ IF post.description }}<h4>
         {{ post.description }}
-      {{ END }}</h4>
+      </h4>{{ END }}
       <time>
         {{ IF SITE.language == 'Farsi' }}
           {{ post.CALENDAR.jyear | $FarsiNum }}/{{ post.CALENDAR.jmonth | $FarsiNum }}/{{ post.CALENDAR.jday | $FarsiNum }}
         {{ ELSE }}
-          {{ post.CALENDAR.month_abbr }} {{ post.CALENDAR.day }}.
+          {{ post.CALENDAR.month_abbr }} {{ post.CALENDAR.day }}, {{ post.CALENDAR.year }}.
         {{ END }}
       </time>
     </article>
