@@ -126,10 +126,15 @@ pre {
 code { 
     background-color:#f4f6f9!important;
     padding:2px 5px;
+    direction: ltr;
 }
 pre { 
     direction:ltr!important;
     line-height:1.618!important;
+}
+
+p code, ul code {
+    display: inline-block;
 }
 
 blockquote { 
