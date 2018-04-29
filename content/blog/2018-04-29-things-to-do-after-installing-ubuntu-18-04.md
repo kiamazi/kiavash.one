@@ -192,20 +192,20 @@ sudo apt-get install paper-icon-theme
 
 پخش کننده‌ی چندرسانه‌ای با قابلیت پشتیبانی و پخش اکثر فرمت‌های موجود
 
-	sudo apt-get install vlc browser-plugin-vlc
+	sudo apt install vlc browser-plugin-vlc
 
 ### Gimp
 
 ادیتور تصاویر، جایگزین خیلی خوب برای فوتوشاپ در کارهای روزانه و شخصی
 
-	sudo apt-get install gimp gimp-data gimp-plugin-registry gimp-data-extras
+	sudo apt install gimp gimp-data gimp-plugin-registry gimp-data-extras
 
 ### atom
 
 یک IDE خوب برای کدنویسی و هر کار مشابه دیگر
 
 	sudo add-apt-repository ppa:webupd8team/atom
-	sudo apt-get install atom
+	sudo apt install atom
 
 ### Shutter
 
