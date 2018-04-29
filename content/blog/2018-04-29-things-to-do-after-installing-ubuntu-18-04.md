@@ -209,7 +209,7 @@ sudo apt-get install paper-icon-theme
 
 یا با استفاده از snap آن‌را نصب می‌کنیم
 
-	snap install atom
+	sudo snap install atom
 
 ### Shutter
 
