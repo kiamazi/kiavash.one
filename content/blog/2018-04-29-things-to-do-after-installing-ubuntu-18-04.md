@@ -207,6 +207,10 @@ sudo apt-get install paper-icon-theme
 	sudo add-apt-repository ppa:webupd8team/atom
 	sudo apt install atom
 
+یا با استفاده از snap آن‌را نصب می‌کنیم
+
+	snap install atom
+
 ### Shutter
 
 گرفتن اسکرین شات از صفحه
