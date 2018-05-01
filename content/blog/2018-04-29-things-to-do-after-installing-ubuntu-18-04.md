@@ -240,7 +240,7 @@ sudo apt-get install paper-icon-theme
 
     sudo apt install torsocks
         less /etc/tor/torsocks.conf
-            # چک کنید که این ۲خط کامنت نباشند(در ابذای خط # نباشد)
+            # چک کنید که این ۲خط کامنت نباشند(در ابتدای خط # نباشد)
                 TorAddress 127.0.0.1
                 TorPort 9050
 
