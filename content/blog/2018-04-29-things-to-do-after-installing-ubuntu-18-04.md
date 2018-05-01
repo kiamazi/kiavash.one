@@ -175,7 +175,7 @@ sudo apt-get install paper-icon-theme
 	sudo apt remove gnome-shell-extension-ubuntu-dock
 	rm -rf ~/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com
 
-سپس با مراجعه به صفحه‌ی افزونه [dash to dock](https://extensions.gnome.org/extension/307/dash-to-dock/ آن‌را نصب می‌کنیم.
+سپس با مراجعه به صفحه‌ی افزونه [dash to dock](https://extensions.gnome.org/extension/307/dash-to-dock/) آن‌را نصب می‌کنیم.
 
 ## نصب برنامه‌های بیشتر
 
