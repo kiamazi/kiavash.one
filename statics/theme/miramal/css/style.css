@@ -64,6 +64,11 @@ color:#4c81c9;
     font-weight:700;
     src:url(../font/sahel-bold.woff);
 }
+@font-face { 
+    font-family:Sahel;
+    font-weight:900;
+    src:url(../font/sahel-black.woff);
+}
 
 body,
 html { 
@@ -178,6 +183,11 @@ hr {
 .article-list h3:after { 
     content:" ¬";
 }*/
+/*
+.article {
+  font-size: 1.1rem;
+}
+*/
 .article .time,
 .article .title { 
     margin:0;
@@ -193,6 +203,10 @@ hr {
     max-width:100%;
     margin:0 auto 1rem;
     display:block;
+}
+
+.article h1, .article h2, .article h3, .article h4, .article h5, .article h6 {
+  font-weight: 900;
 }
 
 article .left-para {
@@ -318,7 +332,7 @@ header h1.name-title {
     -ms-flex:1;
     flex:1;
     font-size:1rem;
-    font-weight:400;
+    font-weight:900;
     margin:0
     }
     header h1.name-title h1 a {
@@ -326,7 +340,7 @@ header h1.name-title {
     }
 header h1 { 
     font-size:2.5rem;
-    font-weight:400;
+    font-weight:900;
     margin:0;
 }
 header h1 a { 
@@ -334,7 +348,7 @@ header h1 a {
 }
 header h4 {
     color: #738191;
-    font-weight: 200;
+    font-weight: 700;
 }
 
 header nav { 
