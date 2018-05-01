@@ -166,7 +166,7 @@ sudo apt-get install paper-icon-theme
 
 پس از انجام این کار می توان با مراجعه به  [وب‌سایت گستردنی‌های گنوم](https://extensions.gnome.org) در فایرفاکس یا گوگل کروم، یک گسترش‌دهنده را انتخاب کنید و با استفاده از دکمه‌ی on/off آن‌را نصب-فعال/غیرفعال کنید.
 
-![extensions gnome](/images/2018-04-29-gnome-extensions-install-button.jpg)
+![extensions gnome](/images/2018-04-29-gnome-extensions-install-button.png)
 
 ### تغییر داک
 
@@ -261,7 +261,7 @@ sudo apt-get install paper-icon-theme
 
 _ _ _
 #### پانویس
-بیشتر اسکرین‌شات‌هایی که در این یادداشت می‌بینید را خودم نگرفتم، به عنوان یک آدم تنبل آن‌ها را از این دو منبع برداشت کردم:
+به عنوان یک آدم تنبل، ۳ اسکرین شات ابتدایی را از صفحه نمایش خودم نگرفتم، منبع آن‌ها این دو سایت هستند:
 
 https://www.omgubuntu.co.uk/  
 https://itsfoss.com/
