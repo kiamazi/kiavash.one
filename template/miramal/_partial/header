@@ -19,20 +19,14 @@
       </ul>
     </nav>
     <div class="logo">
-      {{ IF IS_POST or IS_PAGE }}
-      <h1>
-        {{ post.title }}
-      </h1>
-      <h4>{{ post.description }}</h4>
-      {{ ELSIF IS_ARCHIVE }}
-      <h1>
-        {{ ArchiveTITLE }}
-      </h1>
-      {{ ELSE }}
-      <h1>
-        {{ SITE.title }}
-        <h4>{{ SITE.description }}</h4>
-      </h1>
+       {{ IF IS_POST or IS_PAGE }}
+         <h1>{{ post.title }}</h1>
+         <h4>{{ post.description }}</h4>
+        {{ ELSIF IS_ARCHIVE }}
+          <h1>{{ ArchiveTITLE }}</h1>
+        {{ ELSE }}
+          <h1>{{ SITE.title }}</h1>
+          <h4>{{ SITE.description }}</h4>
       {{ END }}
     </div>
   </section>

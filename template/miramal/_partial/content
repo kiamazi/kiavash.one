@@ -10,10 +10,16 @@
 {{ FOREACH post IN POSTS }}
   <article id="{{ post.slug }}" class="article article-type-{{ LAYOUT }}" itemscope itemprop="blogPost">
     <!--<h2 class="title" itemprop="name">{{ post.title }}</h2>-->
-
+ 
     {{ UNLESS IS_PAGE }}
       {{ INCLUDE _partial/_post/date }}
     {{ END }}
+
+    <div class="contribute">
+در صورتیکه بخواهید به هر شکلی در نوشتن این یادداشت مشارکت کنید، مثلا آن را اصلاح کنید یا مطلبی به آن اضافه کنید، منبع این یادداشت روی گیت‌هاب در این آدرس در دسترس است: <br>
+<a href="{{  MAIN.github_repo }}{{ post.SPEC.file_address }}">{{  MAIN.github_repo }}{{ post.SPEC.file_address }}</a><br>
+ میتوانید آن‌را ویرایش کنید. البته باید یادآوری کنم که هر ویرایشی قبل از اتشار نیاز به تایید دارد.
+    </div>
 
     {{ INCLUDE _partial/_post/body }}
 

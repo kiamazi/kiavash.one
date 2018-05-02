@@ -280,6 +280,13 @@ article .meta {
     margin-top:5rem;
 }
 
+.contribute {
+    background: #eeeeee;
+    font-size: 0.8rem;
+    padding: 1rem;
+    border: 2px solid #dedede;
+  }
+
 .pagination { 
     margin:5rem 0 -3rem;
 }
