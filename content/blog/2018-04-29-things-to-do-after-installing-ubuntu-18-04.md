@@ -4,6 +4,7 @@ date: 2018-04-29 16:36:28
 title: بعد از نصب اوبونتو ۱۸.۰۴
 _index: after-installing-ubuntu-18-04
 description: کارهایی که بعد از نصب اوبونتو ۱۸.۰۴ انجام دادم
+contribute_offer: yes
 categories:
   - ubuntu
 tags:
