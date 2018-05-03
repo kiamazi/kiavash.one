@@ -43,8 +43,7 @@ tags:
 
 سایت [omgubuntu](https://www.omgubuntu.co.uk/) ویدیویی کوتاه را برای نگاه انداختن سریع به این تغییرات در یوتیوب خود منتشر کرده که می‌توانید برای آشنایی با این تغییرات آن را ببینید.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ONXfL6evR0Q" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-
+<iframe src="https://www.youtube.com/embed/ONXfL6evR0Q" style="width: 100%; height: 100%;" scrolling="no"></iframe>
 
 ## فعال کردن مخازن اضافه برای نرم‌افزارهای بیشتر
 
@@ -171,7 +170,7 @@ sudo apt-get install paper-icon-theme
 
 ### تغییر داک
 
-همراه با نصب اوبونتو، یک نسخه از افزونه‌ی *[dash to dock](https://extensions.gnome.org/extension/307/dash-to-dock/)* هم نصب می‌شود که به نظر من نه تنها تغییر یا بهبود خاصی در افزونه داده نشده، که تمام خاصیت‌های تنظیم آن هم غیرفعال شده. به همین دلیل ترجیح می‌دهم که آن را حذف می‌کنم و نسخه‌ی اصلی افزونه را نصب کنم.
+همراه با نصب اوبونتو، یک نسخه از افزونه‌ی *[dash to dock](https://extensions.gnome.org/extension/307/dash-to-dock/)* هم نصب می‌شود که به نظر من نه تنها تغییر یا بهبود خاصی در افزونه داده نشده، که تمام خاصیت‌های تنظیم آن هم غیرفعال شده. به همین دلیل ترجیح می‌دهم که آن را حذف کنم و از نسخه‌ی اصلی افزونه استفاده کنم.
 
 	sudo apt remove gnome-shell-extension-ubuntu-dock
 	rm -rf ~/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com
