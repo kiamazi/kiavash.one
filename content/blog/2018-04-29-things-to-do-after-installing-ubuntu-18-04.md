@@ -43,7 +43,7 @@ tags:
 
 سایت [omgubuntu](https://www.omgubuntu.co.uk/) ویدیویی کوتاه را برای نگاه انداختن سریع به این تغییرات در یوتیوب خود منتشر کرده که می‌توانید برای آشنایی با این تغییرات آن را ببینید.
 
-<iframe src="https://www.youtube.com/embed/ONXfL6evR0Q" style="width: 100%; height: 100%;" scrolling="no"></iframe>
+<iframe src="https://www.youtube.com/embed/ONXfL6evR0Q" style="border: 0; width: 100%; height: 100%;" scrolling="no"></iframe>
 
 ## فعال کردن مخازن اضافه برای نرم‌افزارهای بیشتر
 
