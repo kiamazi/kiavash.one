@@ -89,8 +89,10 @@ if ($opts{push})
     chdir $worktree;
     say qx{git add --all};
     say qx{git commit -m 'publish'};
+    say "push gh-pages to Remote(origin)...";
+    say qx{git push origin gh-pages};
     chdir $source;
 
-    say "push master and gh-pages to Remote(origin)...";
-    say qx{git push origin master gh-pages};
+    say "push master to Remote(origin)...";
+    say qx{git push origin master};
 }
