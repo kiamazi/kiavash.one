@@ -1,6 +1,9 @@
 # kiavash.one
 
-This repo uses [Mira](https://miraxy.github.io/)
+This repo uses Mira
+
+* documents: [Mira](https://miraxy.github.io/)
+* github: [Mira](https://github.com/kiamazi/mira)
 
 ## install mira
 
