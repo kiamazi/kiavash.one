@@ -1,9 +1,9 @@
 ---
 utid: 20180523002955
 date: 2018-05-23 00:29:55
-title:  امضای کامیت‌ها با gpg
+title:  امضای کامیت‌ها با GPG
 _index:  use-gpg-for-sign-commits
-description:  امضای کامیت‌های گیت با استفاده از کلید gpg
+description:  امضای کامیت‌های گیت با استفاده از کلید GPG
 contribute_offer: yes
 categories:
   - git
