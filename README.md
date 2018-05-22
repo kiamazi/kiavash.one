@@ -9,7 +9,7 @@ This repo uses Mira
 
 ``` bash
 sudo apt install git make build-essential
-sudo cpan -i Mira
+sudo cpan -i -T Mira
 ```
 
 ## Building
