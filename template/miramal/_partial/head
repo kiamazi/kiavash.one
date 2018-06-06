@@ -13,20 +13,20 @@
   <title>{{ this_page_title }}</title>
 
   <meta charset="utf-8">
-  <meta name="description" content="{{ DESCRIPTION }}">
+  <meta name="description" content="{{ SITE.description }}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:type" content="website">
   <meta property="og:title" content="{{ TitleContent }}">
-  <meta property="og:url" content="{{ URL }}">
-  <meta property="og:site_name" content="{{ TITLE }}">
+  <meta property="og:url" content="{{ SITE.url }}">
+  <meta property="og:site_name" content="{{ SITE.title }}">
   <meta property="og:description" content="{{ HeadDesc | html }}">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="{{ TitleContent }}">
   <meta name="twitter:description" content="{{ HeadDesc | html | truncate(50) }}">
 
-  <link rel="alternative" href="{{ SITE.root }}atom.xml" title="{{ TITLE }}" type="application/atom+xml">
+  <link rel="alternative" href="{{ SITE.root }}atom.xml" title="{{ SITE.title }}" type="application/atom+xml">
   <link rel="short icon" href="{{ SITE.icon }}">
-  <link rel="stylesheet" href="{{ MainSTATIC }}/theme/miramal/css/style.css" type="text/css">
+  <link rel="stylesheet" href="{{ MAIN.static }}/theme/miramal/css/style.css" type="text/css">
 
 </head>
 <body>

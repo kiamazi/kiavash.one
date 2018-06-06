@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>{{ TITLE }}</title>
+  <title>{{ SITE.title }}</title>
 
-  <link href="{{ URL }}/feed.xml" rel="self"/>
-  <link href="{{ URL }}"/>
+  <link href="{{ SITE.url }}/feed.xml" rel="self"/>
+  <link href="{{ SITE.url }}"/>
 
   <updated>{{ BUILD.date | replace(' ', 'T')  }}{{ MAIN.timezone | remove(':') }}</updated>
-  <id>{{ URL }}</id>
+  <id>{{ SITE.url }}</id>
   
   <author>
-    <name>{{ AUTHOR }}</name>
+    <name>{{ SITE.author }}</name>
   </author>
     
   <generator>Mira</generator>

@@ -1,6 +1,6 @@
 {{ INCLUDE _partial/head 
-  TitleContent =  TITLE 
-  HeadDesc     =  DESCRIPTION
+  TitleContent =  SITE.title 
+  HeadDesc     =  SITE.description
 }}
 
 {{ INCLUDE _partial/header }}

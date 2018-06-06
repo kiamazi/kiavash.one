@@ -2,7 +2,7 @@
 <header>
   <section class="container">
     <nav>
-      <h1 class="name-title">{{ UNLESS IS_INDEX }}<a href="{{ ROOT }}">{{ TITLE }}</a>{{ END }}</h1>
+      <h1 class="name-title">{{ UNLESS IS_INDEX }}<a href="{{ SITE.root }}">{{ SITE.title }}</a>{{ END }}</h1>
       <ul>
         {{ IF SITE.language == 'Farsi' }}
           <li><a href="/atom.xml">atom</a></li>
@@ -14,7 +14,7 @@
           <li><a href="/">Index</a></li>
           <li><a href="/about/">About</a></li>
           <li><a href="{{ SITE.github }}" target="_blank">github</a></li>
-          <li><a href="{{ MainROOT }}/">وبلاگ</a></li>
+          <li><a href="{{ MAIN.root }}/">وبلاگ</a></li>
         {{ END }}
       </ul>
     </nav>

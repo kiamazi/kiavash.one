@@ -6,8 +6,8 @@
     </section>
     <section class="container">
       <div class="delimiter">
-        <a href="{{ MainROOT }}" class="logo">
-          <img src="{{ MainSTATIC }}/img/logo.png">
+        <a href="{{ MAIN.root }}" class="logo">
+          <img src="{{ MAIN.static }}/img/logo.png">
         </a>
       </div>-->
       <p>
@@ -25,7 +25,7 @@
 <!-- /Footer -->
 
 <!-- Scripts -->
-<script src="{{ MainSTATIC }}/theme/miramal/js/highlight.pack.js"></script>
+<script src="{{ MAIN.static }}/theme/miramal/js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 </body>
 </html>
