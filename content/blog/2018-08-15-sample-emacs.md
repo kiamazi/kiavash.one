@@ -2,7 +2,7 @@
 utid: 20180815222545
 date: 2018-08-15 22:25:45
 title: ایمکس، خیلی ساده
-_index: sample emacs 
+_index: emacs 
 description: یک راهنمای ساده برای استفاده از ایمکس در ترمینال، با تمام امکانات IDEهای گرافیکی مرسوم
 contribute_offer: no
 categories:
