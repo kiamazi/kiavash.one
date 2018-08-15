@@ -18,7 +18,7 @@ tags:
 
 توی این ویدیو سعی داریم emacs رو برای استفاده توی ترمینال آماده کنیم با این هدف که ظاهر، میانبرها، کلیدها و ابزاری که ازشون استفاده میکنیم، خیلی شبیه بشه به عادت‌های روزانه‌ای که ابزارهای گرافیکی برامون درست کردن. برای مثال کلید کپی همون کنترل+سی معروف باشه و...
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/kweT_lKHFYA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<div id="15343631753963214"><script type="text/JavaScript" src="https://www.aparat.com/embed/jdLt7?data[rnddiv]=15343631753963214&data[responsive]=yes"></script></div>
 
 [آدرس ویدیو در یوتیوب](https://youtu.be/kweT_lKHFYA)
 
