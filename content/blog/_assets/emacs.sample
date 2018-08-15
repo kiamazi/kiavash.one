@@ -1,0 +1,185 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                kiavash.one                           ;;
+;;        https://kiavash.one/assets/emacs.sample       ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                  melpa     packages                    ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'package)
+(let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
+                    (not (gnutls-available-p))))
+       (proto (if no-ssl "http" "https")))
+  ;; Comment/uncomment these two lines to enable/disable MELPA and MELPA Stable as desired
+  (add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t)
+  ;;(add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packages/")) t)
+  (when (< emacs-major-version 24)
+    ;; For important compatibility libraries like cl-lib
+    (add-to-list 'package-archives '("gnu" . (concat proto "://elpa.gnu.org/packages/")))))
+(package-initialize)
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                    lisp  packages                      ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(add-to-list 'load-path "~/.emacs.d/lisp/")
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                       cua mode                         ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(setq cua-auto-tabify-rectangles nil) ;; Don't tabify after rectangle commands
+(transient-mark-mode 1) ;; No region when it is not highlighted
+(setq cua-keep-region-after-copy t) ;; Standard Windows behaviour
+
+(cua-mode t)
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                      line number                       ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(global-linum-mode t)
+(setq linum-format "%4d \u2502 ")
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                      tabbar                            ;;
+;;         alt-x: package-install <ret> tabbar <ret>      ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defun my-tabbar-buffer-groups () ;; customize to show all normal files in one group
+  (list (cond ((string-equal "*" (substring (buffer-name) 0 1)) "emacs")
+              ((eq major-mode 'dired-mode) "emacs")
+              (t "user"))))
+(setq tabbar-buffer-groups-function 'my-tabbar-buffer-groups)
+
+(tabbar-mode 1)
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                      neotree                           ;;
+;;        alt-x: package-install <ret> neotree <ret>      ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'neotree)
+(global-set-key [f5] 'neotree-toggle)
+
+
+
+;;need tabbar for active forward / backward
+(global-set-key [f6] 'tabbar-backward-tab)
+(global-set-key [f7] 'tabbar-forward-tab)
+
+(global-set-key [f8] 'kill-buffer)
+(global-set-key [f9] 'kill-buffer-and-window)
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                      customize                         ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(load-theme 'hickey t) ;; from sublime-theme package
+
+; don't make pesky backup files
+(setq make-backup-files nil)
+
+; don't use version numbers for backup files
+(setq version-control 'never)
+
+;; Make searches case insensitive
+(setq case-fold-search t)
+
+;; Make all "yes or no" prompts show "y or n" instead
+(fset 'yes-or-no-p 'y-or-n-p)
+
+;; Show matching parenthesis. How can you live without it.
+(show-paren-mode t)
+
+;; Open unidentified files in text mode
+(setq default-major-mode 'text-mode)
+
+;; enable auto complete mode (installed package)
+(global-auto-complete-mode t)
+
+;; turn autoindenting on
+(global-set-key "\r" 'newline-and-indent)
+
+;; auto close bracket insertion. New in emacs 24
+(electric-pair-mode 1)
+
+(add-to-list 'default-frame-alist '(font . "Vazir Code-12" ))
+(set-face-attribute 'default t :font "Vazir Code-12" )
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                      web-mode                                         ;;
+;; download  "https://raw.github.com/fxbois/web-mode/master/web-mode.el" ;;
+;; and copy to this path: ~/emacs.d/lis/web-mode.el                      ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tt.?\\'" . web-mode))
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;              cperl                 ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defalias 'perl-mode 'cperl-mode)
+
+;; Use 4 space indents via cperl mode
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(cperl-close-paren-offset -4)
+ '(cperl-continued-statement-offset 4)
+ '(cperl-indent-level 4)
+ '(cperl-indent-parens-as-block t)
+ '(cperl-tab-always-indent t)
+ '(package-selected-packages (quote (web-mode tabbar projectile neotree auto-complete))))
+
+;; Insert spaces instead of tabs
+(setq-default indent-tabs-mode nil)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; download ""https://raw.githubusercontent.com/imakado/perl-completion/master/perl-completion.el" ;;
+;; and copy to this path: ~/emacs.d/lis/perl-completion.el                                         ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(add-hook 'cperl-mode-hook (lambda() (require ‘perl-completion) (perl-completion-mode t)))
+
+;; from my .emacs
+(add-hook 'cperl-mode-hook
+  (lambda ()
+    (setq cperl-hairy nil
+      abbrev-mode t     ;; automatic keyword expansion
+      cperl-highlight-variables-indiscriminately t
+      cperl-auto-newline t
+      cperl-auto-newline-after-colon t
+      cperl-regexp-scan nil
+      cperl-electric-keywords t 
+      cperl-electric-linefeed t  
+      cperl-electric-parens nil) ;; <------ electric parens!
+    )
+  )
+
+
+
+
+
+
+
+
+
+
