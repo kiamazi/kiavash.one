@@ -72,7 +72,7 @@ package-install  (enter)
 sublime-theme (enter)
 ```
 
-و این چند خط رو به فایل `.emacs' اضافه میکنیم
+و این چند خط رو به فایل `.emacs` اضافه میکنیم
 
 ```
 (defun my-tabbar-buffer-groups () ;; customize to show all normal files in one group
