@@ -119,15 +119,6 @@ scroll-down-aggressively 0.01)
  '(minimap-active-region-background ((((background dark)) (:background "#2A2A2A222222"))
                                      (t (:background "#D3D3D3222222"))) nil (quote minimap)))
 
-;; Multi-term setup
-(require 'multi-term)
-(if (executable-find "zsh")
-    (setq multi-term-program "zsh")
-  (setq multi-term-program "bash"))
-(global-set-key [f7] 'multi-term-dedicated-toggle)
-(setq multi-term-default-dir "$pwd")
-(setq-default multi-term-dedicated-buffer t)
-
 ;; Truncate mode
 (setq-default truncate-lines t)
 
@@ -267,6 +258,19 @@ That is, a string used to represent it on the tab bar."
 (require 'diff-hl)
 (global-diff-hl-mode)
 
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;             Multi-term setup
+;;        alt-x: package-install <ret> multi-term <ret>
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'multi-term)
+(if (executable-find "zsh")
+    (setq multi-term-program "zsh")
+  (setq multi-term-program "bash"))
+(global-set-key [f4] 'multi-term-dedicated-toggle)
+(setq multi-term-default-dir "$pwd")
+(setq-default multi-term-dedicated-buffer t)
 
 
 
