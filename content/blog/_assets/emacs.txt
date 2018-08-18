@@ -1,58 +1,94 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                kiavash.one
+;;        https://kiavash.one/assets/emacs.txt
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                  melpa     packages
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'package)
 (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos))
                     (not (gnutls-available-p))))
        (proto (if no-ssl "http" "https")))
+  ;; Comment/uncomment these two lines to enable/disable MELPA and MELPA Stable as desired
   (add-to-list 'package-archives (cons "melpa" (concat proto "://melpa.org/packages/")) t)
+  ;;(add-to-list 'package-archives (cons "melpa-stable" (concat proto "://stable.melpa.org/packages/")) t)
   (when (< emacs-major-version 24)
+    ;; For important compatibility libraries like cl-lib
     (add-to-list 'package-archives '("gnu" . (concat proto "://elpa.gnu.org/packages/")))))
-
-(add-to-list 'load-path "~/.emacs.d/elpa/")
-
 (package-initialize)
 
 
-;; cua mode
+;;;;;;;;;;;;;;;;;;
+;; or use Package Repos
+;; (setq-default package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
+;;                                ("melpa" . "https://melpa.org/packages/")))
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                    custom lisp  packages
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(add-to-list 'load-path "~/.emacs.d/lisp/")
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                       cua mode
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (setq cua-auto-tabify-rectangles nil) ;; Don't tabify after rectangle commands
 (transient-mark-mode 1) ;; No region when it is not highlighted
 (setq cua-keep-region-after-copy t) ;; Standard Windows behaviour
+
 (cua-mode t)
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                      customize
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;(load-theme 'hickey t) ;; from sublime-theme package
+(load-theme 'tango-dark t)
 
 ;; Background mode
 (setq-default frame-background-mode 'dark)
 
-;;line number
-(global-linum-mode t)
-(setq linum-format "%4d \u2502 ")
+; don't make pesky backup files
+(setq make-backup-files nil)
 
-;; theme
-(load-theme 'atom-one-dark t)
+; don't use version numbers for backup files
+(setq version-control 'never)
 
-;; keybinds
-(define-key global-map (kbd "RET") 'newline-and-indent)
+;; Make searches case insensitive
+(setq case-fold-search t)
+
+;; Make all "yes or no" prompts show "y or n" instead
+(fset 'yes-or-no-p 'y-or-n-p)
+
+;; Show matching parenthesis. How can you live without it.
+(show-paren-mode t)
+(setq-default show-paren-delay 0)
+;; auto close bracket insertion
+(electric-pair-mode 1)
+
+;; Open unidentified files in text mode
+(setq default-major-mode 'text-mode)
+
+;; turn autoindenting on
+(global-set-key "\r" 'newline-and-indent)
+
+;; turn on tab key
 (global-set-key (kbd "TAB") 'self-insert-command)
+
+;;;;; un-comment if u need change fonts
+;;(add-to-list 'default-frame-alist '(font . "Vazir Code-12" ))
+;;(set-face-attribute 'default t :font "Vazir Code-12" )
 
 ;; Set tab/space size
 (setq-default indent-tabs-mode 'nil)
 (defvaralias 'c-basic-offset 'tab-width)
 (setq-default tab-width 4)
 (setq-default indent-line-function 'insert-tab)
-
-;; Autocomplete mode
-(global-auto-complete-mode t)
-
-
-;; Brackets Matching
-(show-paren-mode 1)
-(setq-default show-paren-delay 0)
-;; auto close bracket insertion. New in emacs 24
-(electric-pair-mode 1)
-
-
-;; Powerline support
-(require 'powerline)
-;;(powerline-default-theme)
-(powerline-center-theme)
-
 
 ;; Smooth scrolling
 (setq mouse-wheel-scroll-amount '(2 ((shift) . 2))) ;;
@@ -67,49 +103,84 @@
 (setq-default scroll-up-aggressively 0.01
 scroll-down-aggressively 0.01)
 
-
 ;; Make unix unicode default
 (setq-default default-buffer-file-coding-system 'utf-8-unix)
 
-;; Minimap
-(minimap-mode t)
-(setq-default minimap-window-location 'right)
-(setq-default minimap-minimum-width 14)
-(setq-default minimap-recreate-window t)
-(setq-default minimap-width-fraction 0.10)
-(unless (display-graphic-p)                                                               
-  (minimap-mode -1))
-(add-hook 'minimap-sb-mode-hook (lambda () (setq mode-line-format nil)))
+;; Backup in one place. flat, no tree structure
+(setq backup-directory-alist '(("" . "~/.emacs.d/emacs-backup")))
+
+;; CJK utf-8 support for non-Asian users
+'(diff-switches "-u")
+
+;; Terminal color fix
+(custom-set-faces
+ '(font-lock-comment-face ((t (:foreground "#586e75" :slant italic))))
+ '(font-lock-preprocessor-face ((t (:slant italic))))
+ '(minimap-active-region-background ((((background dark)) (:background "#2A2A2A222222"))
+                                     (t (:background "#D3D3D3222222"))) nil (quote minimap)))
+
+;; Multi-term setup
+(require 'multi-term)
+(if (executable-find "zsh")
+    (setq multi-term-program "zsh")
+  (setq multi-term-program "bash"))
+(global-set-key [f7] 'multi-term-dedicated-toggle)
+(setq multi-term-default-dir "$pwd")
+(setq-default multi-term-dedicated-buffer t)
+
+;; Truncate mode
+(setq-default truncate-lines t)
 
 
-;; VC control mode
-(require 'diff-hl)
-(global-diff-hl-mode)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                      line number
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(global-linum-mode t)
+(setq linum-format "%4d \u2502 ")
 
 
 
-;; Neotree setup
-(require 'neotree)
-(require 'all-the-icons)
-(setq neo-window-fixed-size nil)
-;;'(neo-window-width 20)
-(setq neo-theme (if (display-graphic-p) 'icons 'fileicons))
-;;(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                    auto complete mode
+;;        alt-x: package-install <ret> auto-complete <ret>
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(global-auto-complete-mode t)
 
-(global-set-key [f5] 'neotree-toggle)
 
-(global-set-key [f6] 'tabbar-backward-tab)
-(global-set-key [f7] 'tabbar-forward-tab)
 
-(global-set-key [f8] 'kill-buffer)
-(global-set-key [f9] 'kill-buffer-and-window)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;             Powerline
+;;        alt-x: package-install <ret> powerline <ret>
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'powerline)
+;; theme:
+;;(powerline-default-theme)
+(powerline-center-theme)
 
-;; tabbar
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                      tabbar                            ;;
+;;         alt-x: package-install <ret> tabbar <ret>      ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (defun my-tabbar-buffer-groups () ;; customize to show all normal files in one group
   (list (cond ((string-equal "*" (substring (buffer-name) 0 1)) "emacs")
               ((eq major-mode 'dired-mode) "emacs")
               (t "user"))))
 (setq tabbar-buffer-groups-function 'my-tabbar-buffer-groups)
+
+;;;;;;;;;;;;;;;
+;; customize tabbar theme
+;;;;;;;;;;;;;;;
+(setq tabbar-background-color "#959A79") ;; the color of the tabbar background
+(custom-set-faces
+ '(tabbar-default ((t (:inherit variable-pitch :background "#959A79" :foreground "black" :weight bold))))
+ '(tabbar-button ((t (:inherit tabbar-default :foreground "dark red"))))
+ '(tabbar-button-highlight ((t (:inherit tabbar-default))))
+ '(tabbar-highlight ((t (:underline t))))
+ '(tabbar-selected ((t (:inherit tabbar-default :background "#95CA59"))))
+ '(tabbar-separator ((t (:inherit tabbar-default :background "#95CA59"))))
+ '(tabbar-unselected ((t (:inherit tabbar-default)))))
 
 (require 'tabbar)
 ;; Tabbar settings
@@ -167,17 +238,44 @@ That is, a string used to represent it on the tab bar."
 
 
 
-
-;; Backup in one place. flat, no tree structure
-(setq backup-directory-alist '(("" . "~/.emacs.d/emacs-backup")))
-
-
-
-
-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                      neotree
+;;        alt-x: package-install <ret> neotree <ret>
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'neotree)
+(global-set-key [f5] 'neotree-toggle)
 
 
 
+;;need tabbar for active forward / backward
+(global-set-key [f6] 'tabbar-backward-tab)
+(global-set-key [f7] 'tabbar-forward-tab)
+
+(global-set-key [f8] 'kill-buffer)
+(global-set-key [f9] 'kill-buffer-and-window)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                    Minimap
+;;        alt-x: package-install <ret> minimap <ret>
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(minimap-mode t)
+(setq-default minimap-window-location 'right)
+(setq-default minimap-minimum-width 14)
+(setq-default minimap-recreate-window t)
+(setq-default minimap-width-fraction 0.10)
+(unless (display-graphic-p)                                                               
+  (minimap-mode -1))
+(add-hook 'minimap-sb-mode-hook (lambda () (setq mode-line-format nil)))
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;            VC control mode
+;;        alt-x: package-install <ret> diff-hl <ret>
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'diff-hl)
+(global-diff-hl-mode)
 
 
 
@@ -191,20 +289,94 @@ That is, a string used to represent it on the tab bar."
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                      web-mode                                         ;;
+;; download  "https://raw.github.com/fxbois/web-mode/master/web-mode.el" ;;
+;; and copy to this path: ~/emacs.d/lis/web-mode.el                      ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.[agj]sp\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tt.?\\'" . web-mode))
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;              cperl                 ;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(defalias 'perl-mode 'cperl-mode)
+
+;; Use 4 space indents via cperl mode
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(cperl-close-paren-offset -4)
+ '(cperl-continued-statement-offset 4)
+ '(cperl-indent-level 4)
+ '(cperl-indent-parens-as-block t)
+ '(cperl-tab-always-indent t)
  '(custom-safe-themes
    (quote
-    ("57f95012730e3a03ebddb7f2925861ade87f53d5bbb255398357731a7b1ac0e0" default)))
- '(package-selected-packages
-   (quote
-    (tabbar all-the-icons neotree diff-hl minimap powerline atom-one-dark-theme auto-complete))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+    ("ae9ee77351ab2aef03a3994937eef5631a7c07a345392a14f8c42a6d043576a1" "4442aadbfeac50c9aa12c868a58db4753128e67234d330195fa17641ec88e19b" "2e4c456b1719e23b32aff39a1c8e32ee68148a4662a772b1459e3a2139db6d87" "e9776d12e4ccb722a2a732c6e80423331bcb93f02e089ba2a4b02e85de1cf00e" "3cc2385c39257fed66238921602d8104d8fd6266ad88a006d0a4325336f5ee02" default)))
+ '(package-selected-packages (quote (web-mode tabbar projectile neotree auto-complete))))
+
+;; Insert spaces instead of tabs
+(setq-default indent-tabs-mode nil)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; download ""https://raw.githubusercontent.com/imakado/perl-completion/master/perl-completion.el" ;;
+;; and copy to this path: ~/emacs.d/lis/perl-completion.el                                         ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(add-hook 'cperl-mode-hook (lambda() (require ‘perl-completion) (perl-completion-mode t)))
+
+;; from my .emacs
+(add-hook 'cperl-mode-hook
+  (lambda ()
+    (setq cperl-hairy nil
+      abbrev-mode t     ;; automatic keyword expansion
+      cperl-highlight-variables-indiscriminately t
+      cperl-auto-newline t
+      cperl-auto-newline-after-colon t
+      cperl-regexp-scan nil
+      cperl-electric-keywords t 
+      cperl-electric-linefeed t  
+      cperl-electric-parens nil) ;; <------ electric parens!
+    )
+  )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
