@@ -114,6 +114,10 @@ scroll-down-aggressively 0.01)
 
 ;; Terminal color fix
 (custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
  '(font-lock-comment-face ((t (:foreground "#586e75" :slant italic))))
  '(font-lock-preprocessor-face ((t (:slant italic))))
  '(minimap-active-region-background ((((background dark)) (:background "#2A2A2A222222"))
@@ -122,12 +126,29 @@ scroll-down-aggressively 0.01)
 ;; Truncate mode
 (setq-default truncate-lines t)
 
+;; Disable menubar,toolbar,scrollbar
+(if (fboundp 'scroll-bar-mode)
+(scroll-bar-mode -1))
+(tool-bar-mode -1)
+(if (display-graphic-p)
+    (add-hook 'after-change-major-mode-hook
+            '(lambda ()
+               (linum-mode (if (or (equal major-mode 'term-mode)
+                                   (equal major-mode 'help-mode)
+(equal major-mode 'eww-mode)) 0 1)))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;                      line number
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (global-linum-mode t)
-(setq linum-format "%4d \u2502 ")
+;;(setq linum-format "%4d \u2502 ")
+(if (display-graphic-p)
+    (setq-default linum-format "%5d "))
+(unless (display-graphic-p)
+  (setq-default linum-format "%5d \u2502"))
+
+(setq-default column-number-mode t)
+(setq line-move-visual nil)
 
 
 
@@ -224,9 +245,9 @@ That is, a string used to represent it on the tab bar."
 ;;        alt-x: package-install <ret> neotree <ret>
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (require 'neotree)
+(setq neo-theme (if (display-graphic-p) 'icons 'fileicons))
+
 (global-set-key [f5] 'neotree-toggle)
-
-
 
 ;;need tabbar for active forward / backward
 (global-set-key [f6] 'tabbar-backward-tab)
