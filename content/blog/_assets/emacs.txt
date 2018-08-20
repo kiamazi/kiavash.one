@@ -83,13 +83,13 @@
 ;;;;; un-comment if u need change fonts
 ;(add-to-list 'default-frame-alist '(font . "Vazir Code-12" ))
 ;(set-face-attribute 'default t :font "Vazir Code-12" )
-
+;;;;;;; or
 ;; Set default font
-(set-face-attribute 'default nil
-                    :family "Vazir Code"
-                    :height 140
-                    :weight 'normal
-                    :width 'normal)
+;(set-face-attribute 'default nil
+;                    :family "Vazir Code"
+;                    :height 140
+;                    :weight 'normal
+;                    :width 'normal)
 
 ;; Set tab/space size
 (setq-default indent-tabs-mode 'nil)
