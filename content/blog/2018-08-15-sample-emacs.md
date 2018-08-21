@@ -26,9 +26,6 @@ tags:
 <div id="15347908798519453"><script type="text/JavaScript" src="https://www.aparat.com/embed/nSMkF?data[rnddiv]=15347908798519453&data[responsive]=yes"></script></div>
 <div id="15347910051409197"><script type="text/JavaScript" src="https://www.aparat.com/embed/BMY2W?data[rnddiv]=15347910051409197&data[responsive]=yes"></script></div>
 
-[آدرس ویدیو در یوتیوب](https://youtu.be/kweT_lKHFYA)
-
-[آدرس ویدیو در آپارات](https://www.aparat.com/v/jdLt7)
 
 برای شروع یک فایل با نام `.emacs` رو توی دایرکتوری home خودمون درست میکنیم . و این چند خط رو بهش اضافه می‌کنیم
 
