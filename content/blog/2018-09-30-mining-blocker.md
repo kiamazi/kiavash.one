@@ -29,17 +29,11 @@ tags:
 
 حالا راه حل چیه؟ پیشنهاد من نصب کردن یه افزونه برای جلوگیری از این نوع سو استفاده‌هاست، افزونه‌ی [The Mining Blocker](http://mining-blocker.com)، که کارش دقیقا پیدا کردن این اسکریپت‌ها توی هر سایتی و جلوگیری از اجرا شدنشون رو کامپیوتر شماست
 
-اگه از فایرفاکس استفاده میکنید:
+[فایرفاکس - نسخه دسکتاپ](https://addons.mozilla.org/en-US/firefox/addon/miningblocker/)  
+[فایرفاکس - نسخه موبایل](https://addons.mozilla.org/en-US/firefox/addon/miningblocker/)
 
-[نسخه دسکتاپ](https://addons.mozilla.org/en-US/firefox/addon/miningblocker/)  
-[نسخه موبایل](https://addons.mozilla.org/en-US/firefox/addon/miningblocker/)
+[اپرا](https://addons.opera.com/en/extensions/details/mining-blocker/)
 
-اگه از اپرا استفاده می‌کنید:
-
-[نسخه دسکتاپ](https://addons.opera.com/en/extensions/details/mining-blocker/)
-
-و برای کروم:
-
-[نسخه دسکتاپ](https://chrome.google.com/webstore/detail/mining-blocker/pdfmjofghakibffjolhholonbdoajbna)
+[کرومیوم - کروم](https://chrome.google.com/webstore/detail/mining-blocker/pdfmjofghakibffjolhholonbdoajbna)
 
 
