@@ -127,4 +127,4 @@ tag:
 
 برای دیدن جزییات بیشتر برای انتخاب محل انتشار می‌تونید این قسمت از مستندات میرا رو مطالعه کنید: [انتخاب محل انتشار](https://miraxy.github.io/start-fa/#%D8%A7%D9%86%D8%AA%D8%AE%D8%A7%D8%A8%20%D9%85%D8%AD%D9%84%20%D8%A7%D9%86%D8%AA%D8%B4%D8%A7%D8%B1)
 
-[mira]: https://miraxy.githu.io/fa
+[mira]: https://miraxy.github.io/fa
