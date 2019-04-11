@@ -27,13 +27,12 @@ tags:
 
 ![shiraz iau](/images/2018-09-30-mining-blocker-01.jpeg)
 
-حالا راه حل چیه؟ پیشنهاد من نصب کردن یه افزونه برای جلوگیری از این نوع سو استفاده‌هاست، افزونه‌ی [The Mining Blocker](http://mining-blocker.com)، که کارش دقیقا پیدا کردن این اسکریپت‌ها توی هر سایتی و جلوگیری از اجرا شدنشون رو کامپیوتر شماست
+حالا راه حل چیه؟ پیشنهاد من نصب کردن یه افزونه برای جلوگیری از این نوع سو استفاده‌هاست، افزونه‌های بلاک کننده‌ی ماینینگ هست، که کارشون دقیقا پیدا کردن این اسکریپت‌ها توی هر سایتی و جلوگیری از اجرا شدنشون رو کامپیوتر شماست
 
-[فایرفاکس - نسخه دسکتاپ](https://addons.mozilla.org/en-US/firefox/addon/miningblocker/)  
-[فایرفاکس - نسخه موبایل](https://addons.mozilla.org/en-US/firefox/addon/miningblocker/)
+[فایرفاکس - نسخه دسکتاپ](https://addons.mozilla.org/en-US/firefox/addon/coin-mining-blocker/)  
 
-[اپرا](https://addons.opera.com/en/extensions/details/mining-blocker/)
+[اپرا](https://addons.opera.com/en/extensions/details/no-coin/)
 
-[کرومیوم - کروم](https://chrome.google.com/webstore/detail/mining-blocker/pdfmjofghakibffjolhholonbdoajbna)
+[کرومیوم - کروم](https://chrome.google.com/webstore/detail/no-coin-block-miners-on-t/gojamcfopckidlocpkbelmpjcgmbgjcl)
 
 
