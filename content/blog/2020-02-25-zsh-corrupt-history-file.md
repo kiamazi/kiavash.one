@@ -64,7 +64,7 @@ rm ~/.zsh_history_bad
 و در نهایت فایل ساخته شده را قابل اجرا کنید
 
 	chmod +x zsh_history_fix
-	
+
 
 * * *
 
