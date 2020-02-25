@@ -4,7 +4,7 @@ date: 2020-02-25 21:03:17
 title: zsh: فایل خراب شده‌ تاریخچه
 _index:  zsh corrupt history file
 description: چگونه فایل آسیب دیده‌ی تاریخچه‌ی zsh را درست کنیم
-contribute_offer: no
+contribute_offer: yes
 categories:
   - linux
 tags:
