@@ -77,7 +77,7 @@ tags:
 
 	sudo apt install curl make git build-essential zsh vim gdebi terminator synaptic
 
-برنامه‌های**curl**, **make**, **git**, **build-essential**, **zsh**, **vim**, **gdebi** و **synaptic** را نصب کردیم. همینطور که میبینید zsh را هم نصب کرده‌ام. به نظر من که از bash بهتر و کاربردی‌تر است، اما اگر به آن نیاز ندارید از لیست نصب آن‌را حذف کنید، ولی اگر میخواهید از آن استفاده کنید توصیه میکنم oh-my-zsh را هم نصب کنید:
+برنامه‌های **curl**, **make**, **git**, **build-essential**, **zsh**, **vim**, **gdebi** و **synaptic** را نصب کردیم. همینطور که میبینید zsh را هم نصب کرده‌ام. به نظر من که از bash بهتر و کاربردی‌تر است، اما اگر به آن نیاز ندارید از لیست نصب آن‌را حذف کنید، ولی اگر میخواهید از آن استفاده کنید توصیه میکنم oh-my-zsh را هم نصب کنید:
 
 	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
@@ -210,7 +210,7 @@ System Settings -> Power
 
 پخش کننده‌ی چندرسانه‌ای با قابلیت پشتیبانی و پخش اکثر فرمت‌های موجود
 
-	sudo apt install vlc browser-plugin-vlc
+	sudo apt install vlc
 	or
 	sudo snap install vlc
 
@@ -243,14 +243,14 @@ System Settings -> Power
 با سر زدن به **Ubuntu Software** تعداد بیشماری برنامه‌های کاربردی دیگری را پیدا خواهید کرد، از جمله می‌توان به این‌ها اشاره کرد:
 
 
-* Spotify          - سرویس پخش آنلاین موسیقی
-* Telegram     - پیام رسانی متنی و صوتی
-* Skype            - تماس صوتی و تصویری
-* Mailspring   - مدیریت ای‌میل
-* Simplenote  - یادداشت برداری با پشتیبانی ابری
-* Blender     - نرم‌افزار ۳بعدی سازی
+* Spotify - سرویس پخش آنلاین موسیقی
+* Telegram - پیام رسانی متنی و صوتی
+* Skype - تماس صوتی و تصویری
+* Mailspring - مدیریت ای‌میل
+* Simplenote - یادداشت برداری با پشتیبانی ابری
+* Blender - نرم‌افزار ۳بعدی سازی
 * Discord
 * Slack
 * VirtualBox
-* Kdenlive    - ویرایش کننده‌ی ویدیو
+* Kdenlive - ویرایش کننده‌ی ویدیو
 
