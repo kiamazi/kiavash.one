@@ -224,7 +224,7 @@ System Settings -> Power
 
 ادیتور تصاویر، کشیدن نقاشی و تصویرسازی دیجیتال، جایگزین خیلی خوب برای گیمپ:) و فوتوشاپ
 
-	sudo snap install Krita
+	sudo snap install krita
 
 ### atom
 
