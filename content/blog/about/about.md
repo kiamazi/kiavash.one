@@ -4,6 +4,7 @@ date: 2018-04-17 17:24:58
 title: درباره من
 _index: about
 _type: page
+contribute_offer: no
 _layout: page.tt2
 _permalink: /:title
 ---
