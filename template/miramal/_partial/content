@@ -15,6 +15,8 @@
       {{ INCLUDE _partial/_post/date }}
     {{ END }}
 
+    {{ INCLUDE _partial/_post/body }}
+
 {{ UNLESS post.contribute_offer == 'no' }}
     <div class="contribute">
 در صورتیکه بعد از خواندن این یادداشت بخواهید به هر شکلی در تکمیلش مشارکت کنید، مثلا آن را اصلاح کنید یا مطلبی به آن اضافه کنید، منبع این یادداشت روی گیت‌هاب در این آدرس در دسترس است: <br>
@@ -22,8 +24,6 @@
  میتوانید آن‌را ویرایش کنید. البته باید یادآوری کنم که هر ویرایشی قبل از اتشار نیاز به تایید دارد.
     </div>
 {{ END }}
-
-    {{ INCLUDE _partial/_post/body }}
 
     {{ IF IS_POST }}
       {{ INCLUDE _partial/_post/comment }}
