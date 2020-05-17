@@ -67,9 +67,6 @@ tags:
 
 	snap list --all | perl -lanE 'say qx{snap remove "$F[0]" --revision="$f[2]} if $F[5] eq "disabled" && $.>1'
 
-برای استفاده بدون دردسر روی سیستم‌هایی که زبان محلی سیستم‌عامل چیزی به جز انگلیسی هست میتونیم یه تغییر خیلی کوچیک دیگه هم اضافه کنیم
-
-	LANG=en_US.UTF-8 snap list --all | perl -lanE 'say qx{snap remove "$F[0]" --revision="$f[2]} if $F[5] eq "disabled" && $.>1'
 
 تمام. نزدیک به ۴۰ گیگ فضای دیسک آزاد شد :)
 
@@ -97,6 +94,10 @@ tags:
 ***
 
 پی‌نوشت:
+
+برای استفاده بدون دردسر روی سیستم‌هایی که زبان محلی سیستم‌عامل چیزی به جز انگلیسی هست میتونیم یه تغییر خیلی کوچیک دیگه هم اضافه کنیم
+
+	LANG=en_US.UTF-8 snap list --all | perl -lanE 'say qx{snap remove "$F[0]" --revision="$f[2]} if $F[5] eq "disabled" && $.>1'
 
 قبل از انتشار برای اطمینان از درست بودن تمام چیزهایی که نوشتم یه جست و جوی نهایی کردم و به این مطلب رسیدم، [How To Remove Old Snap Versions To Free Up Disk Space](https://www.linuxuprising.com/2019/04/how-to-remove-old-snap-versions-to-free.html) که یه قسمتایی از متن رو با کمک همین مقاله اصلاح کردم و البته برای حذف کردن ورژن‌های قدیمی اسنپ یک اسکریپت نوشته که به شکل خلاصه توضیحش میدم:
 
