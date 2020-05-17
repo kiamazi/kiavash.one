@@ -4,7 +4,7 @@ date: 2020-05-16 12:17:01
 title: حذف نسخه‌های قدیمی برنامه‌های snap
 _index: remove old snap versions to free up disk space
 description: آزاد کردن فضای ذخیره سازی، یا همان خالی کردن هارد دیسک، با حذف نسخه‌های قدیمی برنامه‌های snap
-contribute_offer: no
+contribute_offer: yes
 categories:
   -
 tags:
