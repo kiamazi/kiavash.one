@@ -7,6 +7,7 @@ _index: hello world from mira
 categories:
   - میرا
 tags:
+  - mira
   - میرا
   - سلام دنیا
 ---

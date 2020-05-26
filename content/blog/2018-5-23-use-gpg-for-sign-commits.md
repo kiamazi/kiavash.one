@@ -6,7 +6,7 @@ _index:  use-gpg-for-sign-commits
 description:  امضای کامیت‌های گیت با استفاده از کلید GPG
 contribute_offer: yes
 categories:
-  - git
+  - آموزش
 tags:
   - گیت
   - gpg

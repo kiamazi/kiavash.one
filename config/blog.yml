@@ -31,23 +31,15 @@ lists:
  - tags
  - categories
 
-namespace:
+namespace: 
+  آموزش: education
+  سرور: server
+  درباره: about
+  شخصی: personal
+  میرا: mira
+  اوبونتو: ubuntu
+  امنیت: security
+  
 
 plugins:
  - Jdate
-
-links:
- -  name: امیر مهرانی
-    url: http://thecoach.ir/
-
- -  name: طه
-    url: https://blog.dutymess.ir/
-
- -  name: سالار کابلی
-    url: https://sallar.me/farsi/
-
- -  name: مهدی صادقی
-    url: https://mehdix.ir/
-
- -  name: سروش صفری
-    url: http://thecoci.me/farsi/

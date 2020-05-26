@@ -6,9 +6,8 @@ _index: how-to-use-nmap-to-scan-for-open-ports
 description: توضیحی کوتاه در مورد پورت‌ها و پیدا کردن پورت‌های باز بر روی یک سرور
 contribute_offer: yes
 categories:
-  - server
+  - سرور
 tags:
-  - server
   - port
   - nmap
   - سرور

@@ -6,7 +6,7 @@ _index: mining blocker
 description: بلاک کردن اسکریپت‌های ماینینگ یا استخراج بدون اجازه رمز ارز با در اختیار گرفتن توان پردازشی کامپیوتر بازدید کننده
 contribute_offer: yes
 categories:
-  - security
+  - امنیت
 tags:
   - mining
   - mining blocker

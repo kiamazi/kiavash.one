@@ -6,8 +6,6 @@ _index: markmoredown
 description: یک پارسر مارک‌داون با الهام از پارسرهای موجود و چند ویژگی دیگر
 categories:
   - آموزش
-  - ابزار
-  - پروژه
 tags:
   - mrakdown
   - markmoredown

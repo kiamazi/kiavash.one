@@ -8,11 +8,12 @@ contribute_offer: yes
 media: video
 collection: emacs
 categories:
-  - video
-  - emacs
+  - آموزش
 tags:
   - emacs
   - manual
+  - ابزار
+  - آموزش
   - ایمکس
   - راهنما
 ---
