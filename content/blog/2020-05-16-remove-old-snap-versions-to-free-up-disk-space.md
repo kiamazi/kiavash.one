@@ -67,7 +67,7 @@ tags:
 ``` bash
 snap list --all | perl -lanE 'say qx{snap remove "$F[0]" --revision="$f[2]} if $F[5] eq "disabled"'
 
-# ---
+# --- توضیحات ---
 # شمارش ستون‌ها رو از صفر شروع میکنیم، پس
 # ستون اول: F[0]
 # ستون سوم: F[2]
