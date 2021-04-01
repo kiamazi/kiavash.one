@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="Farsi">
+<head>
+  <title> | امضای کامیت‌ها با GPG</title>
+
+  <meta charset="utf-8">
+  <meta name="description" content="در ستایش تجربه کردن و یادگرفتن همیشگی / open experience">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="امضای کامیت‌ها با GPG">
+  <meta property="og:url" content="http://kiavash.one/">
+  <meta property="og:site_name" content="تجربه باز">
+  <meta property="og:description" content="&lt;p&gt;این یادداشت یک راهنما برای استفاده از GPG برای امضا کردن کامیت‌های گیت است، اگر دنبال یک راهنمای نسبتا مفصل برای GPG هستید، خواندن این مطلب را توصیه می‌کنم:
+GPG یک راهنمای نسبتا مفصل
+
+GPG یا PGP چی هست اصلا؟
+ساختن کلید شخصی
+دادن کلید به گیت
+امضای کامیت‌ها
+معرفی کلید به سرویس‌هایی مثل گیت‌هاب یا گیت‌لب
+کامیت‌های تایید شده
+
+برای شروع اجازه بدید پاراگراف اول از منبعی که در شروع یادداشت معرفی کردم رو کپی کنم:
+
+GPG یا PGP چی هست اصلا؟
+
+این یک الگوریتم رمز گذاری شخصی حساب میشه. در حقیقت PGP اون الگوریتمه، و من از برنامه آزاد GPG برای مدیریتش استفاده میکنم. درسته که بگم این این کلید PGP منه، ولی حقیق&lt;/p&gt;">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="امضای کامیت‌ها با GPG">
+  <meta name="twitter:description" content="&lt;p&gt;این یادداشت یک راهنما برای استفاده از ...">
+
+  <link rel="alternative" href="/atom.xml" title="تجربه باز" type="application/atom+xml">
+  <link rel="short icon" href="/static/img/logo.png">
+  <link rel="stylesheet" href="/static/theme/miramal/css/style.css" type="text/css">
+
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <section class="container">
+    <nav>
+      <h1 class="name-title"><a href="/">تجربه باز</a></h1>
+      <ul>
+        
+          <li><a href="/atom.xml">atom</a></li>
+          <li><a href="/">فهرست</a></li>
+          <li><a href="/about/">درباره</a></li>
+          <li><a href="http://github.com/kiamazi" target="_blank">گیت‌هاب</a></li>
+          <li><a href="http://twitter.com/kiavash" target="_blank">توییتر</a></li>
+        
+      </ul>
+    </nav>
+    <div class="logo">
+       
+         <h1>امضای کامیت‌ها با GPG</h1>
+         <h4>امضای کامیت‌های گیت با استفاده از کلید GPG</h4>
+        
+    </div>
+  </section>
+</header>
+<!-- /Header -->
+
+<section id="content" class="container">
+
+  <article id="use-gpg-for-sign-commits" class="article article-type-post" itemscope itemprop="blogPost">
+    <!--<h2 class="title" itemprop="name">امضای کامیت‌ها با GPG</h2>-->
+ 
+    
+      <h4 class="time">
+    <time datetime="2018-05-23 00:29:55" itemprop="datePublished">چهارشنبه، ۰۲ خرداد ۱۳۹۷</time>
+  </h4>
+    
+
+    <section class="content">
+    <a name="more"></a>
+<p>این یادداشت یک راهنما برای استفاده از GPG برای امضا کردن کامیت‌های گیت است، اگر دنبال یک راهنمای نسبتا مفصل برای GPG هستید، خواندن این مطلب را توصیه می‌کنم:
+<strong><a href="http://fzero.rubi.gd/post/general/gpg-step-by-step/">GPG یک راهنمای نسبتا مفصل</a></strong></p>
+
+<ul>
+<li><a href="#gpg_یا_pgp_چی_هست_اصلا_">GPG یا PGP چی هست اصلا؟</a></li>
+<li><a href="#ساختن_کلید_شخصی">ساختن کلید شخصی</a></li>
+<li><a href="#دادن_کلید_به_گیت">دادن کلید به گیت</a></li>
+<li><a href="#امضای_کامیت‌ها">امضای کامیت‌ها</a></li>
+<li><a href="#معرفی_کلید_به_سرویس‌هایی_مثل_گیت‌هاب_یا_گیت‌لب">معرفی کلید به سرویس‌هایی مثل گیت‌هاب یا گیت‌لب</a></li>
+<li><a href="#کامیت‌های_تایید_شده">کامیت‌های تایید شده</a></li>
+</ul>
+
+<p>برای شروع اجازه بدید پاراگراف اول از منبعی که در شروع یادداشت معرفی کردم رو کپی کنم:</p>
+
+<h2 id="gpg_یا_pgp_چی_هست_اصلا_">GPG یا PGP چی هست اصلا؟</h2>
+
+<p>این یک الگوریتم رمز گذاری شخصی حساب میشه. در حقیقت PGP اون الگوریتمه، و من از برنامه آزاد GPG برای مدیریتش استفاده میکنم. درسته که بگم این این کلید PGP منه، ولی حقیقت اینه که ناخواسته خیلی وقتا متوجه میشم که گفتم این کلید GPG منه، عمدی نیست ولی از لحاظ تکنیکی اگه اهل خورده گرفتن باشی غلط میتونه باشه.</p>
+
+<h2 id="ساختن_کلید_شخصی">ساختن کلید شخصی</h2>
+
+<p><strong>۱.</strong> اگر gpg روی سیستمتون نصب نیست، باید دریافت و نصبش کنیم. برای تست دستور زیر رو اجرا میکنیم</p>
+
+<pre><code>gpg --version
+</code></pre>
+
+<p>اگر خروجی معتبری داشت که خیلی هم خوب، یعنی نیازی به نصب نداریم، اگر هم نه که از <a href="https://www.gnupg.org/download/index.html">این آدرس</a> دریافت و نصبش می‌کنیم.</p>
+
+<p><strong>۲.</strong> با استفاده از دستور زیر یک کلید خصوصی/عمومی می‌سازیم</p>
+
+<pre><code>gpg --full-gen-key
+</code></pre>
+
+<p>اجرای این دستور مجموعه‌ای از سوالات رو به مانشون میده که با جواب دادن بهشون کلیدمون رو می‌سازیم. اگر سوال‌ها رو بدون جواب دادن و تنها با زدن کلید اینتر رد کنیم جواب پیش‌فرض برای هر سوال انتخاب میشه.</p>
+
+<p><strong>۳.</strong> اولین سوال این است که از کدام الگوریتم می‌خواهید استفاده کنید. شماره ۱ رو انتخاب می‌کنیم.</p>
+
+<pre><code>Please select what kind of key you want:
+   (1) RSA and RSA (default)
+   (2) DSA and Elgamal
+   (3) DSA (sign only)
+   (4) RSA (sign only)
+Your selection? 1
+</code></pre>
+
+<p><strong>۴.</strong> سوال بعد در مورد طول  رشته‌ی کلید است، هرچه کلید طولانی‌تر، امن‌تر :) مقدار ۴۰۹۶ رو به عنوان طول رشته انتخاب می‌کنیم.</p>
+
+<pre><code>RSA keys may be between 1024 and 4096 bits long.
+What keysize do you want? (2048) 4096
+Requested keysize is 4096 bits
+</code></pre>
+
+<p><strong>۵.</strong> سوال بعدی که پرسیده می‌شود، مدت زمان اعتبار کلید است، که ما گزینه‌ی اعتبار همیشگی یا «بدون تاریخ انقضا» رو انتخاب می‌کنیم. جواب گزینه‌ی ۰ است.</p>
+
+<pre><code>Please specify how long the key should be valid.
+         0 = key does not expire
+      &lt;n&gt;  = key expires in n days
+      &lt;n&gt;w = key expires in n weeks
+      &lt;n&gt;m = key expires in n months
+      &lt;n&gt;y = key expires in n years
+Key is valid for? (0) 0
+Key does not expire at all
+</code></pre>
+
+<p><strong>۶.</strong> جواب‌ها رو تایید می‌کنیم.</p>
+
+<pre><code>Is this correct? (y/N) y
+</code></pre>
+
+<p><strong>۷.</strong> نامی که برای امضای کلیدها قرار است استفاده شود و آدرس ایمیل‌ را وارد می‌کنیم. از آنجا که می‌خواهیم با کمک این کلید کامیت‌های گیت را امضا کنیم، بهتر است با نام و آدرس ایمیلی که به تنظیمات گیت داده‌ شده یکی باشد. سوال آخر را هم با وارد کردن گزینه‌ی O و تایید مشخصات جواب می‌دهیم.</p>
+
+<pre><code>GnuPG needs to construct a user ID to identify your key.
+
+Real name: kiavash
+Email address: me@kiavash.one
+Comment:
+You selected this USER-ID:
+    "kiavash &lt;me@kiavash.one&gt;"
+
+Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? O
+</code></pre>
+
+<p><strong>۸.</strong> یک پسورد خوب و قوی به کلید می‌دهیم.</p>
+
+<p><strong>۹.</strong> با کمک دستور زیر کلید‌هایی که ساخته شده را می‌توان دید.</p>
+
+<pre><code>gpg --list-secret-keys
+</code></pre>
+
+<h2 id="دادن_کلید_به_گیت">دادن کلید به گیت</h2>
+
+<p><strong>۱.</strong> با استفاده از دستور زیر مشخصات کاملی از کلید‌هایی که ساخته‌ایم را می‌توانیم ببینیم:</p>
+
+<pre><code>gpg --list-secret-keys --keyid-format LONG me@kiavash.one
+</code></pre>
+
+<p>نیاز به توضیح نیست که باید از آدرس ایمیلی که برای ساختن کلید خودتان استفاده کرده‌اید استفاده کنید.</p>
+
+<p><strong>۲.</strong> کلیدی که با <code>sec</code> شروع شده است را پیدا کنید و <code>GPG key ID</code> آن‌را کپی کنید. در این مثال مقدار آن برابر با <code>30F2B65B9246B6CA</code> است:</p>
+
+<pre><code>sec   rsa4096/30F2B65B9246B6CA 2017-08-18 [SC]
+      D5E4F29F3275DC0CDA8FFC8730F2B65B9246B6CA
+uid                   [ultimate] kiavash &lt;me@kiavash.one&gt;
+ssb   rsa4096/B7ABC0813E4028C0 2017-08-18 [E]
+</code></pre>
+
+<p><strong>۳.</strong> برای گیت مشخص کنید که کامیت‌ها را با کمک این کلید امضا کند</p>
+
+<pre><code>git config --global user.signingkey 30F2B65B9246B6CA
+</code></pre>
+
+<p>(مقدار ID که از مرحله قبل به دست آوردید را جایگزین مقدار پیش‌فرض در این مثال <code>30F2B65B9246B6CA</code> باید بکنید)</p>
+
+<h2 id="امضای_کامیت‌ها">امضای کامیت‌ها</h2>
+
+<p>بعد از ساختن کلید GPG و دادن مقدار آن به گیت می‌توانید شروع به امضا کردن کامیت‌هایتان بکنید. چند راه برای این‌کار داریم</p>
+
+<p><strong>۱.</strong> راه ول استفاده از سوییچ <code>-S</code> برای امضا کردن هر کامیت است</p>
+
+<pre><code>git commit -S -m "My commit msg"
+</code></pre>
+
+<p><strong>۲.</strong> اگر نمی‌خواهیم بعد از هر بار کامیت کردن از سوییچ S استفاده کنیم، می‌توان برای گیت مشخص کرد که بعد از هر بار کامیت کردن آن‌ها را اتوماتیک امضا کند</p>
+
+<pre><code>git config --global commit.gpgsign true
+</code></pre>
+
+<p><strong>۳.</strong> در هر دو حالت بعد از هر بار کامیت کردن باید پسورد کلید را وارد کنیم، البته امروزه اکثر سیستم‌عامل‌ها برنامه‌های پیش‌فرضی به همراه دارند که میتوانند این پسورد را در خود ذخیره کنند و نیاز به تایپ پسورد در هر سری را از بین ببرند. اگر مطمین هستید که کسی جز شما از کامپیوترتان استفاده نمی‌کند می‌توانید پسورد را ذخیره کنید. <em>من این کار را نمی‌کنم</em></p>
+
+<h2 id="معرفی_کلید_به_سرویس‌هایی_مثل_گیت‌هاب_یا_گیت‌لب">معرفی کلید به سرویس‌هایی مثل گیت‌هاب یا گیت‌لب</h2>
+
+<p><strong>۱.</strong> از کلید عمومی با کمک دستور زیر می‌توان خروجی گرفت(ID خودتان را جایگزین مقدار پیش‌فرض این مثال باید بکنید)</p>
+
+<pre><code>gpg --armor --export 30F2B65B9246B6CA
+</code></pre>
+
+<p><strong>۲.</strong> مقدار خروجی را کپی کنید. خروجی شبیه به این خواهد بود:</p>
+
+<pre><code>-----BEGIN PGP PUBLIC KEY BLOCK-----
+blahblahblah
+blahblahblah
+...
+...
+...
+-----END PGP PUBLIC KEY BLOCK-----
+</code></pre>
+
+<p><strong>۳.</strong> به قسمت تنظیمات اکانت در سرویس مورد نظر می‌رویم، در گیت‌هاب به قسمت <code>SSH and GPG keys</code> یا در گیت‌لب <code>GPG keys</code> می‌رویم و مقدار کلید عمومی را در آن کپی می‌کنیم.</p>
+
+<h2 id="کامیت‌های_تایید_شده">کامیت‌های تایید شده</h2>
+
+<p><strong>۱.</strong> به زبانه‌ی commits هر مخزن در سرویس مورد نظر که برویم، به راحتی می‌توان کامیت‌های امضا شده‌ی معتبر، نامعتبر و کلا امضا نشده‌ها را از هم تشخیص داد.</p>
+
+<p><img src="/images/2018-5-23-use-gpg-for-sign-commits-github.png" alt="github" id="github">
+<img src="/images/2018-5-23-use-gpg-for-sign-commits-gitlab-01.png" alt="gitlab" id="gitlab"></p>
+
+<p><strong>۲.</strong> با کلیک بر روی نشان امضای هر کلید می‌توان مشخصات آن‌را دید
+<img src="/images/2018-5-23-use-gpg-for-sign-commits-gitlab-02.png" alt="gitlab" id="gitlab">
+<img src="/images/2018-5-23-use-gpg-for-sign-commits-gitlab-03.png" alt="gitlab" id="gitlab"></p>
+
+<p>منبع ۳عکس آخر و مقادیر پیش‌فرض مثال‌ها:</p>
+
+<p class="left-para">https://gitlab.com/help/user/project/repository/gpg_signed_commits/index.md</p>
+  </section>
+  
+  <section class="meta">
+    <span>        دسته بندی:          <a href="/categories/education/">آموزش</a>        برچسب‌ها:          <a href="/tags/گیت/">گیت</a>،&nbsp;          <a href="/tags/gpg/">gpg</a>،&nbsp;          <a href="/tags/git/">git</a>    </span>
+  </section>
+
+
+    <div class="contribute">
+در صورتیکه بعد از خواندن این یادداشت بخواهید به هر شکلی در تکمیلش مشارکت کنید، مثلا آن را اصلاح کنید یا مطلبی به آن اضافه کنید، منبع این یادداشت روی گیت‌هاب در این آدرس در دسترس است: <br>
+<a href="https://github.com/kiamazi/kiavash.one/blob/master/content/blog/2018-5-23-use-gpg-for-sign-commits.md">https://github.com/kiamazi/kiavash.one/blob/master/content/blog/2018-5-23-use-gpg-for-sign-commits.md</a><br>
+ میتوانید آن‌را ویرایش کنید. البته باید یادآوری کنم که هر ویرایشی قبل از اتشار نیاز به تایید دارد.
+    </div>
+
+<hr>
+<script async src="https://comments.app/js/widget.js?3" data-comments-app-website="X6-bEnpe" data-limit="5" data-dislikes="1" data-outlined="1" data-colorful="1"></script>
+<hr>
+    
+      این وبلاگ از disqus برای سیستم نظردهی استفاده می‌کند، اگر فرم نظردادن را نمی‌بینید احتمالا کسی به جای شما تشخیص داده که این سرویس مناسبتان نیست و آن را از دسترس شما خارج کرده، برای نظردادن در این شرایط از ابزار رفع فیلتر استفاده کنید
+<section class="comments">
+  <div id="disqus_thread">
+    <script>
+      var disqus_shortname = 'kiavash';
+      (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+    
+  </article>
+
+</section>
+
+<!-- Paging -->
+<section class="pagination">
+  <nav class="container">
+    
+      <a class="extend prev" rel="prev" href="/2018/08/15/emacs/">
+        <i><-</i>
+        <span>ایمکس، خیلی ساده</span>
+      </a>
+    
+    
+      <a class="extend next" rel="next" href="/2018/04/29/after-installing-ubuntu-18-04/">
+        <i>-></i>
+        <span>بعد از نصب اوبونتو ۱۸.۰۴</span>
+      </a>
+  </nav>
+</section>
+<!-- /Paging -->
+
+<!-- /Content -->
+<!-- Footer -->
+<footer>
+    <!--<section class="copyright">
+
+    </section>
+    <section class="container">
+      <div class="delimiter">
+        <a href="/" class="logo">
+          <img src="/static/img/logo.png">
+        </a>
+      </div>-->
+      <p>
+        
+          تمام حقوق محفوظ است<br>
+          مطالب تحت لیسانس <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" rel="license" target="_blank">کریتیو کامنز</a> منتشر می‌شوند
+          <p>قدرت گرفته توسط <a href="https://miraxy.github.io/fa/">میرا</a></p>
+        
+      </p>
+    </section>
+</footer>
+<!-- /Footer -->
+
+<!-- Scripts -->
+<script src="/static/theme/miramal/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

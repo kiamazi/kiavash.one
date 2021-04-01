@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="Farsi">
+<head>
+  <title> | zsh: فایل خراب شده‌ تاریخچه</title>
+
+  <meta charset="utf-8">
+  <meta name="description" content="در ستایش تجربه کردن و یادگرفتن همیشگی / open experience">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="zsh: فایل خراب شده‌ تاریخچه">
+  <meta property="og:url" content="http://kiavash.one/">
+  <meta property="og:site_name" content="تجربه باز">
+  <meta property="og:description" content="&lt;p&gt;اگر از zsh استفاده می‌کنید یکی از مشکلاتی که ممکن است هراز گاهی با آن روبرو شوید یک فایل تاریخچه‌ی خراب شده است که مانع دسترسی شما به تاریخچه دستورات تایپ شده و اجرای صحیح عملکردها و دستورهایی مانند history، fc یا Crtl+R می‌شود.
+
+خطایی که با آن مواجه می‌شوید چیزی شبیه به خط زیر است:
+
+zsh: corrupt history file /home/kiavash/.zsh_history
+
+چه کار کنیم؟
+
+حل این مشکل یک راه  حل ساده در ۴قدم دارد،
+
+به دایرکتوری خانه برگردید،
+فایل تاریخچه را تغییر نام دهید.
+تاریخچه را بازسازی کنید.
+
+cd ~
+mv .zsh_history .zsh_history_bad
+strings .zsh_history_bad &amp;gt; .zsh_history
+fc -R .zsh_history
+
+بعد از چک کردن درس&lt;/p&gt;">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="zsh: فایل خراب شده‌ تاریخچه">
+  <meta name="twitter:description" content="&lt;p&gt;اگر از zsh استفاده می‌کنید یکی از مشکل...">
+
+  <link rel="alternative" href="/atom.xml" title="تجربه باز" type="application/atom+xml">
+  <link rel="short icon" href="/static/img/logo.png">
+  <link rel="stylesheet" href="/static/theme/miramal/css/style.css" type="text/css">
+
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <section class="container">
+    <nav>
+      <h1 class="name-title"><a href="/">تجربه باز</a></h1>
+      <ul>
+        
+          <li><a href="/atom.xml">atom</a></li>
+          <li><a href="/">فهرست</a></li>
+          <li><a href="/about/">درباره</a></li>
+          <li><a href="http://github.com/kiamazi" target="_blank">گیت‌هاب</a></li>
+          <li><a href="http://twitter.com/kiavash" target="_blank">توییتر</a></li>
+        
+      </ul>
+    </nav>
+    <div class="logo">
+       
+         <h1>zsh: فایل خراب شده‌ تاریخچه</h1>
+         <h4>چگونه فایل آسیب دیده‌ی تاریخچه‌ی zsh را درست کنیم</h4>
+        
+    </div>
+  </section>
+</header>
+<!-- /Header -->
+
+<section id="content" class="container">
+
+  <article id="zsh-corrupt-history-file" class="article article-type-post" itemscope itemprop="blogPost">
+    <!--<h2 class="title" itemprop="name">zsh: فایل خراب شده‌ تاریخچه</h2>-->
+ 
+    
+      <h4 class="time">
+    <time datetime="2020-02-25 21:03:17" itemprop="datePublished">سه‌شنبه‌، ۰۶ اسفند ۱۳۹۸</time>
+  </h4>
+    
+
+    <section class="content">
+    <a name="more"></a>
+<p>اگر از zsh استفاده می‌کنید یکی از مشکلاتی که ممکن است هراز گاهی با آن روبرو شوید یک فایل تاریخچه‌ی خراب شده است که مانع دسترسی شما به تاریخچه دستورات تایپ شده و اجرای صحیح عملکردها و دستورهایی مانند <code>history</code>، <code>fc</code> یا <code>Crtl+R</code> می‌شود.</p>
+
+<p>خطایی که با آن مواجه می‌شوید چیزی شبیه به خط زیر است:</p>
+
+<pre><code>zsh: corrupt history file /home/kiavash/.zsh_history
+</code></pre>
+
+<h3 id="چه_کار_کنیم_">چه کار کنیم؟</h3>
+
+<p>حل این مشکل یک راه  حل ساده در ۴قدم دارد،</p>
+
+<ul>
+<li>به دایرکتوری خانه برگردید،</li>
+<li>فایل تاریخچه را تغییر نام دهید.</li>
+<li>تاریخچه را بازسازی کنید.</li>
+</ul>
+
+<pre><code>cd ~
+mv .zsh_history .zsh_history_bad
+strings .zsh_history_bad &gt; .zsh_history
+fc -R .zsh_history
+</code></pre>
+
+<ul>
+<li>بعد از چک کردن درستی مراحل، فایل تغییر نام داده شده را هم پاک می‌کنیم.</li>
+</ul>
+
+<pre><code>rm ~/.zsh_history_bad
+</code></pre>
+
+<h3 id="ساختن_یک_اسکریپت">ساختن یک اسکریپت</h3>
+
+<p>اگر برای شما هم مثل من بیشتر از چندبار این اتفاق افتاده و حوصله تکرار این مراحل را هم ندارید، می‌توانید تمام مراحل بالا را در قالب یک اسکریپت ذخیره کنید و یک بار برای همیشه خودتان را راحت کنید.</p>
+
+<p>برای این‌کار در دایرکتوری <code>~/bin</code> یا هرجای دیگری که برای اجرای اسکریپت‌های دستوری در <code>$PATH</code> خود مشخص کرده‌اید، یک فایل جدید، با اسمی شبیه به <code>zsh_history_fix</code> یا هر اسم دیگری که دوست دارید، بسازید و تمام مراحل بالا را در آن ذخیره کنید.</p>
+
+<pre><code>cd ~/bin
+touch zsh_history_fix
+</code></pre>
+
+<p>فایل <code>zsh_history_fix</code> را با هر ادیتوری که می‌خواهید باز کنید و چند خط‌ زیر را در آن کپی کنید</p>
+
+<pre><code class="language-zsh">#!/usr/bin/env zsh
+
+mv ~/.zsh_history ~/.zsh_history_bad
+strings ~/.zsh_history_bad &gt; ~/.zsh_history
+fc -R ~/.zsh_history
+rm ~/.zsh_history_bad
+</code></pre>
+
+<p>و در نهایت فایل ساخته شده را قابل اجرا کنید</p>
+
+<pre><code>chmod +x zsh_history_fix
+</code></pre>
+
+<p>از این به بعد هروقت که لازم داشتید از هر مسیری که هستید، دستور زیر را در خط فرمان تایپ کنید</p>
+
+<pre><code>zsh_history_fix
+</code></pre>
+
+<hr>
+
+<h4 id="منبع_انگلیسی">منبع انگلیسی</h4>
+
+<p class="left-para"><a href="https://shapeshed.com/zsh-corrupt-history-file/">How to fix a corrupt zsh history file</a></p>
+  </section>
+  
+  <section class="meta">
+    <span>        دسته بندی:          <a href="/categories/گنو-لینوکس/">گنو/لینوکس</a>        برچسب‌ها:          <a href="/tags/zsh/">zsh</a>،&nbsp;          <a href="/tags/shell/">shell</a>،&nbsp;          <a href="/tags/گنو-لینوکس/">گنو/لینوکس</a>    </span>
+  </section>
+
+
+    <div class="contribute">
+در صورتیکه بعد از خواندن این یادداشت بخواهید به هر شکلی در تکمیلش مشارکت کنید، مثلا آن را اصلاح کنید یا مطلبی به آن اضافه کنید، منبع این یادداشت روی گیت‌هاب در این آدرس در دسترس است: <br>
+<a href="https://github.com/kiamazi/kiavash.one/blob/master/content/blog/2020-02-25-zsh-corrupt-history-file.md">https://github.com/kiamazi/kiavash.one/blob/master/content/blog/2020-02-25-zsh-corrupt-history-file.md</a><br>
+ میتوانید آن‌را ویرایش کنید. البته باید یادآوری کنم که هر ویرایشی قبل از اتشار نیاز به تایید دارد.
+    </div>
+
+<hr>
+<script async src="https://comments.app/js/widget.js?3" data-comments-app-website="X6-bEnpe" data-limit="5" data-dislikes="1" data-outlined="1" data-colorful="1"></script>
+<hr>
+    
+      این وبلاگ از disqus برای سیستم نظردهی استفاده می‌کند، اگر فرم نظردادن را نمی‌بینید احتمالا کسی به جای شما تشخیص داده که این سرویس مناسبتان نیست و آن را از دسترس شما خارج کرده، برای نظردادن در این شرایط از ابزار رفع فیلتر استفاده کنید
+<section class="comments">
+  <div id="disqus_thread">
+    <script>
+      var disqus_shortname = 'kiavash';
+      (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+    
+  </article>
+
+</section>
+
+<!-- Paging -->
+<section class="pagination">
+  <nav class="container">
+    
+      <a class="extend prev" rel="prev" href="/2020/04/28/after-installing-ubuntu-20-04/">
+        <i><-</i>
+        <span>بعد از نصب اوبونتو ۲۰.۰۴</span>
+      </a>
+    
+    
+      <a class="extend next" rel="next" href="/2018/09/30/mining-blocker/">
+        <i>-></i>
+        <span>بلاک کردن ماینرها یا استخراج‌کننده‌های بی‌اجازه</span>
+      </a>
+  </nav>
+</section>
+<!-- /Paging -->
+
+<!-- /Content -->
+<!-- Footer -->
+<footer>
+    <!--<section class="copyright">
+
+    </section>
+    <section class="container">
+      <div class="delimiter">
+        <a href="/" class="logo">
+          <img src="/static/img/logo.png">
+        </a>
+      </div>-->
+      <p>
+        
+          تمام حقوق محفوظ است<br>
+          مطالب تحت لیسانس <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" rel="license" target="_blank">کریتیو کامنز</a> منتشر می‌شوند
+          <p>قدرت گرفته توسط <a href="https://miraxy.github.io/fa/">میرا</a></p>
+        
+      </p>
+    </section>
+</footer>
+<!-- /Footer -->
+
+<!-- Scripts -->
+<script src="/static/theme/miramal/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

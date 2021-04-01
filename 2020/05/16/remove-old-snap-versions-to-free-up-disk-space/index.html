@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="Farsi">
+<head>
+  <title> | حذف نسخه‌های قدیمی برنامه‌های snap</title>
+
+  <meta charset="utf-8">
+  <meta name="description" content="در ستایش تجربه کردن و یادگرفتن همیشگی / open experience">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="حذف نسخه‌های قدیمی برنامه‌های snap">
+  <meta property="og:url" content="http://kiavash.one/">
+  <meta property="og:site_name" content="تجربه باز">
+  <meta property="og:description" content="&lt;p&gt;موقع کار با کامپیوتر یک دسته از پیغام‌هایی که بارها و بارها با اونها مواجه شدیم، انواع اخطارهای فضای ذخیره سازی هستن که یادآوری میکنن فضای دیسک در حال پر شدنه و دیگه جایی برای ذخیره کرن اطلاعات یا نصب برنامه‌های جدید وجود نداره. 
+خوب یک روز که اصلا انتظار و توقعش رو هم نداشتم، من با یکی از همین اخطارها روبرو شدم که بهم میگفت روی درایوی که دایرکتوری root یا همون / رو پیکربندی کرده بودم جای خالی دیگه وجود نداره، و این در حالی بود که مدت‌ها بود برنامه یا کتابخونه‌ی جدیدی رو نصب نکرده بودم و log ها هم مرتب تمیزکاری شده بودند و آخرین باری هم که چک کرده بودم نزدیک به ۶۰درصد فضای درایو خالی بود، پس م&lt;/p&gt;">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="حذف نسخه‌های قدیمی برنامه‌های snap">
+  <meta name="twitter:description" content="&lt;p&gt;موقع کار با کامپیوتر یک دسته از پیغام‌...">
+
+  <link rel="alternative" href="/atom.xml" title="تجربه باز" type="application/atom+xml">
+  <link rel="short icon" href="/static/img/logo.png">
+  <link rel="stylesheet" href="/static/theme/miramal/css/style.css" type="text/css">
+
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <section class="container">
+    <nav>
+      <h1 class="name-title"><a href="/">تجربه باز</a></h1>
+      <ul>
+        
+          <li><a href="/atom.xml">atom</a></li>
+          <li><a href="/">فهرست</a></li>
+          <li><a href="/about/">درباره</a></li>
+          <li><a href="http://github.com/kiamazi" target="_blank">گیت‌هاب</a></li>
+          <li><a href="http://twitter.com/kiavash" target="_blank">توییتر</a></li>
+        
+      </ul>
+    </nav>
+    <div class="logo">
+       
+         <h1>حذف نسخه‌های قدیمی برنامه‌های snap</h1>
+         <h4>آزاد کردن فضای ذخیره سازی، یا همان خالی کردن هارد دیسک، با حذف نسخه‌های قدیمی برنامه‌های نصب شده توسطsnap</h4>
+        
+    </div>
+  </section>
+</header>
+<!-- /Header -->
+
+<section id="content" class="container">
+
+  <article id="remove-old-snap-versions-to-free-up-disk-space" class="article article-type-post" itemscope itemprop="blogPost">
+    <!--<h2 class="title" itemprop="name">حذف نسخه‌های قدیمی برنامه‌های snap</h2>-->
+ 
+    
+      <h4 class="time">
+    <time datetime="2020-05-16 12:17:01" itemprop="datePublished">شنبه، ۲۷ اردیبهشت ۱۳۹۹</time>
+  </h4>
+    
+
+    <section class="content">
+    <a name="more"></a>
+<p>موقع کار با کامپیوتر یک دسته از پیغام‌هایی که بارها و بارها با اونها مواجه شدیم، انواع اخطارهای فضای ذخیره سازی هستن که یادآوری میکنن فضای دیسک در حال پر شدنه و دیگه جایی برای ذخیره کرن اطلاعات یا نصب برنامه‌های جدید وجود نداره. <br>
+خوب یک روز که اصلا انتظار و توقعش رو هم نداشتم، من با یکی از همین اخطارها روبرو شدم که بهم میگفت روی درایوی که دایرکتوری <code>root</code> یا همون <code>/</code> رو پیکربندی کرده بودم جای خالی دیگه وجود نداره، و این در حالی بود که مدت‌ها بود برنامه یا کتابخونه‌ی جدیدی رو نصب نکرده بودم و <code>log</code> ها هم مرتب تمیزکاری شده بودند و آخرین باری هم که چک کرده بودم نزدیک به ۶۰درصد فضای درایو خالی بود، پس منطقا نباید همچین پیغامی از ناکجا ظاهر میشد.</p>
+
+<p>خوب اولین کاری که کردم چک کردن فضای هارد با کمک نرم‌افزار <a href="https://wiki.gnome.org/action/show/Apps/DiskUsageAnalyzer">Baobab</a> یا همون 'disk usage analyzer' معروف که به شکل پیش‌فرض همراه میز کار گنوم نصب میشه، بود و با یک موضوع خیلی جالب روبرو شدم، حجم بالای دایرکتوری اسنپ(snap) <br>
+<code>/var/lib/snapd/snaps/</code></p>
+
+<p>با یک جستجوی سریع متوجه شدم که اسنپ ۳ نسخه‌ی آخر هر برنامه‌ای که نصب کرده رو نگه میداره و حذفشون نمیکنه. یعنی تا ۲ بار بعد از آپدیت، ورژن قبلی برنامه رو همچنان به شکل کامل نگهداری میکنه و میتونید به جز آخرین ورژن به ۲نسخه‌ی قبلش هم دسترسی داشته باشید.</p>
+
+<p>دونکته در مورد نگهداری ورژن‌های قبلی:</p>
+
+<ul>
+<li>نگهداری نسخه‌های قدیمی شامل نصب برنامه‌های جدید نمیشه، یعنی موقع نصب کردن فقط همون آخرین نسخه رو نصب میکنه، اما وقتی به آپدیت کردن میرسه، به شکل پیش‌فرض از این قانون پیروی میکنه و تا سقف ۳نسخه رو نگهداری میکنه</li>
+<li>دوم هم اینکه از نسخه‌ی <code>2.34</code> به بعد خیلی راحت میشه این پیش‌فرض رو تغییر داد.</li>
+</ul>
+
+<p>پس اولین کاری که کردم اصلاح این موضوع بود، از نسخه ۲/۳۴ به بعد، خیلی راحت با تغییر مقدار <code>refresh.retain</code> میشه تعداد نسخه‌هایی که قراره نگهداری بشه رو کم یا زیاد کرد.</p>
+
+<pre><code>sudo snap set system refresh.retain=2
+</code></pre>
+
+<p>من این گزینه رو از ۳ به ۲ تغییر دادم، یعنی آخرین نسخه و یک نسخه قبل از اون رو داشته باشم، به هرحال پیش اومده بعد از آپدیت کردن بعضی از برنامه‌ها مشکلاتی پیش بیاد، مثلا برنامه درست کار نکنه، یا از تغییرات ورژن جدید خوشتون نیومده باشه یا به هر دلیل دیگه‌ای بخواید به نسخه‌ی قبلی سوییچ کنید.</p>
+
+<hr>
+
+<p>خوب تا الان مشکلات پیش نیومده و احتمال پر شدن هارد دیسکم در آینده رو حل کردم، اما خوب هنوز ورژن‌های قبلی هم روی هارد هستند و من همچنان با اخطار کم بودن فضای دیسک درگیرم، با گرفتن لیست کامل از اسنپ میتونیم تمام نسخه‌های نصب شده‌ی فعال و غیر فعال رو ببینیم:</p>
+
+<pre><code>snap list --all
+</code></pre>
+
+<p>خروجی چیزی شبیه به این باید باشه:</p>
+
+<pre><code>Name  Version  Rev  Tracking  Publisher     Notes
+atom  1.46.0   250  stable    snapcrafters  classic
+vlc   3.0.9    768  stable    videolan✓     disabled
+vlc   3.0.9-1  768  stable    videolan✓     disabled
+vlc   3.0.9-2  770  stable    videolan✓     -
+...
+...
+</code></pre>
+
+<p>همونطوری که مشخصه، نسخه‌های قدیمی‌تر که در اصل نسخه‌ی غیر فعال شده هستن، با متن 'disabled' در ستون آخر مشخص شدن، برای دیدن فقط این نسخه‌ها میتونیم یه فیلتر کوچیک روی خروجی اعمال کنیم که اگر متن ستون آخر با disabled برابر بود، اون خط رو نمایش بده:</p>
+
+<pre><code>snap list --all | perl -lanE 'say if $F[5] eq "disabled"'
+</code></pre>
+
+<p>الان باید خروجی شبیه به این شده باشه:</p>
+
+<pre><code>vlc   3.0.9    768  stable    videolan✓    disabled
+vlc   3.0.9-1  768  stable    videolan✓    disabled
+</code></pre>
+
+<p>حالا فقط کافیه که این نسخه‌ها رو حذف کنم، برای حذف کردن یک نسخه خاص از بین تمام نسخه‌های نصب شده در اسنپ میتونیم از دستوری با الگوی زیر استفاده کنیم:</p>
+
+<pre><code>snap remove "Name" --revision="Rev"
+</code></pre>
+
+<p>که جای <code>Name</code> و <code>Rev</code> باید اسم برنامه و ریویژنی که میخوایم حذف بشه رو بنویسیم، از اونجایی که توی لیست نمایش داده شده، ستون اول اسم برنامه و ستون سوم ریویژن اون برنامه هست، پس فیلتری که نوشته بودم رو با این دستور ترکیب کردم و به این دستور رسیدم:</p>
+
+<pre><code class="language-bash">snap list --all | perl -lanE 'say qx{snap remove "$F[0]" --revision="$f[2]} if $F[5] eq "disabled"'
+
+# --- توضیحات ---
+# شمارش ستون‌ها رو از صفر شروع میکنیم، پس
+# ستون اول: F[0]
+# ستون سوم: F[2]
+</code></pre>
+
+<p><strong>توصیه:</strong> بهتره قبل از حذف ورژن‌های قدیمی، مطمین باشیم تمام اسنپ‌های در حال اجرا رو متوقف کردیم</p>
+
+<p>تمام. نزدیک به ۴۰ گیگ فضای دیسک آزاد شد :)</p>
+
+<pre><code>atom (revision 223) removed
+atom (revision 222) removed
+bitwarden (revision 15) removed
+bitwarden (revision 16) removed
+canonical-livepatch (revision 50) removed
+canonical-livepatch (revision 54) removed
+chromium (revision 607) removed
+chromium (revision 660) removed
+core (revision 6531) removed
+core (revision 6405) removed
+core18 (revision 719) removed
+core18 (revision 731) removed
+gallery-dl (revision 36) removed
+gallery-dl (revision 167) removed
+gimp (revision 110) removed
+gimp (revision 113) removed
+...
+...
+</code></pre>
+
+<hr>
+
+<p>پی‌نوشت:</p>
+
+<p>قبل از انتشار برای اطمینان از درست بودن تمام چیزهایی که نوشتم یه جست و جوی نهایی کردم و به این مطلب رسیدم، <a href="https://www.linuxuprising.com/2019/04/how-to-remove-old-snap-versions-to-free.html">How To Remove Old Snap Versions To Free Up Disk Space</a> که با توجه به چیزی که توی اون مقاله نوشته شده، برای استفاده بدون دردسر روی سیستم‌هایی که زبان محلی سیستم‌عامل چیزی به جز انگلیسی هست میتونیم یه تغییر خیلی کوچیک دیگه هم اضافه کنیم و اسنپ رو به حالت انگلیسی اجرا کنیم:</p>
+
+<pre><code>LANG=en_US.UTF-8 snap list --all | perl -lanE 'say qx{snap remove "$F[0]" --revision="$f[2]} if $F[5] eq "disabled"'
+</code></pre>
+
+<p>توی اون مقاله برای حذف کردن ورژن‌های قدیمی اسنپ، از یک اسکریپت <code>bash</code> به عنوان راه حل استفاده کرده، که به شکل خلاصه توضیحش میدم:</p>
+
+<p><strong>‍۱-</strong> یه فایل به اسم <code>remove-old-snaps</code> بسازید</p>
+
+<pre><code>touch remove-old-snaps
+</code></pre>
+
+<p><strong>۲-</strong> فایل رو باز کنید و متن زیر رو کپی-پیست کنید توی فایل جدید</p>
+
+<pre><code>#!/bin/bash
+# Removes old revisions of snaps
+# CLOSE ALL SNAPS BEFORE RUNNING THIS
+set -eu
+
+LANG=en_US.UTF-8 snap list --all | awk '/disabled/{print $1, $3}' |
+    while read snapname revision; do
+        snap remove "$snapname" --revision="$revision"
+done
+</code></pre>
+
+<p><strong>۳-</strong> این فایل رو با کمک دستور زیر قابل اجرا میکنیم:</p>
+
+<pre><code>chmod +x remove-old-snaps
+</code></pre>
+
+<p><strong>۴-</strong> و  با دسترسی root اجراش میکنیم</p>
+
+<pre><code>sudo ./remove-old-snaps
+</code></pre>
+  </section>
+  
+  <section class="meta">
+    <span>        دسته بندی:          <a href="/categories/گنو-لینوکس/">گنو/لینوکس</a>        برچسب‌ها:          <a href="/tags/snap/">snap</a>،&nbsp;          <a href="/tags/disk/">disk</a>،&nbsp;          <a href="/tags/گنو-لینوکس/">گنو/لینوکس</a>،&nbsp;          <a href="/tags/ubuntu/">اوبونتو</a>،&nbsp;          <a href="/tags/اسنپ/">اسنپ</a>    </span>
+  </section>
+
+
+    <div class="contribute">
+در صورتیکه بعد از خواندن این یادداشت بخواهید به هر شکلی در تکمیلش مشارکت کنید، مثلا آن را اصلاح کنید یا مطلبی به آن اضافه کنید، منبع این یادداشت روی گیت‌هاب در این آدرس در دسترس است: <br>
+<a href="https://github.com/kiamazi/kiavash.one/blob/master/content/blog/2020-05-16-remove-old-snap-versions-to-free-up-disk-space.md">https://github.com/kiamazi/kiavash.one/blob/master/content/blog/2020-05-16-remove-old-snap-versions-to-free-up-disk-space.md</a><br>
+ میتوانید آن‌را ویرایش کنید. البته باید یادآوری کنم که هر ویرایشی قبل از اتشار نیاز به تایید دارد.
+    </div>
+
+<hr>
+<script async src="https://comments.app/js/widget.js?3" data-comments-app-website="X6-bEnpe" data-limit="5" data-dislikes="1" data-outlined="1" data-colorful="1"></script>
+<hr>
+    
+      این وبلاگ از disqus برای سیستم نظردهی استفاده می‌کند، اگر فرم نظردادن را نمی‌بینید احتمالا کسی به جای شما تشخیص داده که این سرویس مناسبتان نیست و آن را از دسترس شما خارج کرده، برای نظردادن در این شرایط از ابزار رفع فیلتر استفاده کنید
+<section class="comments">
+  <div id="disqus_thread">
+    <script>
+      var disqus_shortname = 'kiavash';
+      (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+    
+  </article>
+
+</section>
+
+<!-- Paging -->
+<section class="pagination">
+  <nav class="container">
+    
+      <a class="extend prev" rel="prev" href="/2020/06/03/gnu-linux-gaming-tip-how-to-pair-xbox-one-s-controller-via-bluetooth/">
+        <i><-</i>
+        <span>راهنمای بازی در گنو/لینوکس، اتصال دسته بازی Xbox One S</span>
+      </a>
+    
+    
+      <a class="extend next" rel="next" href="/2020/05/01/how-to-use-nmap-to-scan-for-open-ports/">
+        <i>-></i>
+        <span>چگونه با کمک nmap پورت‌های باز سرور خود را پیدا کنید</span>
+      </a>
+  </nav>
+</section>
+<!-- /Paging -->
+
+<!-- /Content -->
+<!-- Footer -->
+<footer>
+    <!--<section class="copyright">
+
+    </section>
+    <section class="container">
+      <div class="delimiter">
+        <a href="/" class="logo">
+          <img src="/static/img/logo.png">
+        </a>
+      </div>-->
+      <p>
+        
+          تمام حقوق محفوظ است<br>
+          مطالب تحت لیسانس <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" rel="license" target="_blank">کریتیو کامنز</a> منتشر می‌شوند
+          <p>قدرت گرفته توسط <a href="https://miraxy.github.io/fa/">میرا</a></p>
+        
+      </p>
+    </section>
+</footer>
+<!-- /Footer -->
+
+<!-- Scripts -->
+<script src="/static/theme/miramal/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>

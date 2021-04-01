@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="Farsi">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>markmoredown</title>
+        <meta name="keywords" content="">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="">
+        <meta property="og:url" content="">
+        <meta property="og:site_name" content="">
+        <meta property="og:description" content="">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="">
+        <meta name="twitter:description" content="">
+        <link rel="alternative" href="/projects/markmoredownatom.xml" title="" type="application/atom+xml">
+        <link rel="short icon" href="/static/img/logo.png">
+        <link rel="stylesheet" href="/static/theme/kiavone/css/kiavone.css" type="text/css">
+        <link rel="stylesheet" href="/static/theme/kiavone/css/magula.css" type="text/css">
+        <link href="https://cdn.rawgit.com/rastikerdar/sahel-font/v1.0.0-alpha17/dist/font-face.css" rel="stylesheet" type="text/css" />
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114921404-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-114921404-1');
+</script>
+
+    </head>
+
+<body>
+
+    <header>
+        <section id="intro">
+            <a href="">
+              
+            </a>
+        </section>
+        <section id="socials">
+                <ul>
+                    <li><a href="//github.com/kiamazi">گیت هاب</a></li>/
+                    <li><a href="//twitter.com/kiavash">توییتر</a></li>/
+                    <li><a href="/atom.xml">خوراک</a></li>
+                </ul>
+        </section>
+    </header>
+
+    <section class="main">
+        <section id="content" class="container">
+            
+                <article id="markmoredown" class="article article-type-" itemscope itemprop="blogPost">
+                    <h1 class="title" itemprop="name">
+                    <a href="/projects/markmoredown/markmoredown/" itemprop="url">مارک مور داون (مارک‌مود) / MarkMoreDown (markmod)</a>
+                    </h1>
+                    
+                    <h4 class="time"><time datetime="2018-04-14 11:28:05" itemprop="datePublished">شنبه، ۲۵&nbsp;فروردین&nbsp;۱۳۹۷</time></h4>
+	                
+                    <section class="content">
+                        <a name="more"></a>
+<p>برای کامل کردن <a href="http://miraxy.github.io">میرا</a> نیاز به یک تحلیل‌کننده‌ی متن به روز‌تر از تحلیل‌گر استاندارد مارک‌داون داشتم که علائم بیشتر و نگارش کامل‌تری داشته باشه، ازونجایی که میرا با پرل نوشته شده و چیزی که مورد نیازم بود با پرل نوشته نشده بود هنوز، ناچارا خودم دست به کار شدم.</p>
+
+<p>اول تصمیم داشتم مارک‌داون با طعم گیت‌هاب رو بازنویسی کنم، اما با مرور زمان نیازهای بیشتری رو دیدم، مخصوصا برای متن‌هایی که نیاز هست راست به چپ بنویسیم و هر از گاهی ممکنه بخوایم چیزی رو چپ به راست بنویسیم که باعث شد به این فکر بیفتم که <strong>مارک‌داون با طعم میرا</strong> رو بنویسم که بعد از مدتی هم اسمش رو به markmoredown یا ساده تر markmod، مارک‌مود تغییر دادم.</p>
+
+<ul>
+<li><a href="#معرفی">معرفی</a></li>
+<li><a href="#نصب">نصب</a></li>
+<li><a href="#دستور_زبان">دستور زبان</a>
+<ul>
+<li><a href="#سربرگ‌ها">سربرگ‌ها</a>
+<ul>
+<li><a href="#برچسب‌های_دلخواه_در_سربرگ">برچسب‌های دلخواه</a></li>
+</ul></li>
+<li><a href="#جداکننده‌های_افقی">جداکننده‌های افقی</a></li>
+<li><a href="#پاراگراف‌ها_و_خطوط_جدید">پاراگراف‌ها و خطوط جدید</a>
+<ul>
+<li><a href="#استایل_دادن_به_پاراگراف">استایل دادن به پاراگراف</a></li>
+</ul></li>
+<li><a href="#تایپوگرافی">تایپوگرافی</a>
+<ul>
+<li><a href="#متن_پررنگ_یا_قوی">متن پررنگ یا قوی</a></li>
+<li><a href="#متن_کج_یا_مورد_تاکید">متن کج یا مورد تاکید</a></li>
+<li><a href="#مارک_کردن">مارک کردن</a></li>
+<li><a href="#متن_اضافه_شده">متن اضافه شده</a></li>
+<li><a href="#متن_کوچک">متن کوچک</a></li>
+<li><a href="#متن_حذف_شده">متن حذف شده</a></li>
+<li><a href="#متن_حذف_اضافه_شده">متن حذف/اضافه شده</a></li>
+<li><a href="#متن_بالانویس">متن بالانویس</a></li>
+<li><a href="#متن_زیرنویس">متن زیرنویس</a></li>
+</ul></li>
+<li><a href="#لیست‌ها">لیست‌ها</a>
+<ul>
+<li><a href="#لیست‌های_ساده">لیست‌های ساده</a></li>
+<li><a href="#لیست‌های_شماره‌دار">لیست‌های شماره‌دار</a></li>
+<li><a href="#لیست‌های_تعریفی">لیست‌های تعریفی</a></li>
+<li><a href="#جداساز‌_لیست‌ها">جداساز‌ لیست‌ها</a></li>
+</ul></li>
+<li><a href="#نقل_قول‌ها">نقل قول‌ها</a>
+<ul>
+<li><a href="#جداساز_نقل_قول‌ها">جداساز نقل قول‌ها</a></li>
+</ul></li>
+<li><a href="#لینک‌ها">لینک‌ها</a>
+<ul>
+<li><a href="#لینک‌های_درون‌خطی">لینک‌های درون‌خطی</a></li>
+<li><a href="#لینک‌های_ارجاعی">لینک‌های ارجاعی</a></li>
+<li><a href="#تعیین_خواص_لینک‌ها">تعیین خواص لینک‌ها</a></li>
+</ul></li>
+<li><a href="#تصاویر">تصاویر</a>
+<ul>
+<li><a href="#تصاویر_درخط">تصاویر درخط</a></li>
+<li><a href="#تصاویر_ارجاعی">تصاویر ارجاعی</a></li>
+<li><a href="#تعیین_خواص_تصاویر">تعیین خواص تصاویر</a></li>
+</ul></li>
+<li><a href="#کد">کد (code)</a>
+<ul>
+<li><a href="#کدهای_درخط">کدهای درخط</a></li>
+<li><a href="#بلوک‌های_کد">بلوک‌های کد</a>
+<ul>
+<li><a href="#جداساز_بلوک‌های_کد">جداساز بلوک‌های کد</a></li>
+</ul></li>
+<li><a href="#بلوک‌های_کد_محصور">بلوک‌های کد محصور</a></li>
+</ul></li>
+<li><a href="#جداول">جداول</a></li>
+<li><a href="#فرمول‌های_ریاضی">فرمول‌های ریاضی</a>
+<ul>
+<li><a href="#نمایش_بلوکی_فرمول‌های_ریاضی">نمایش بلوکی فرمول‌های ریاضی</a></li>
+<li><a href="#نمایش_درخط_فرمول‌های_ریاضی">نمایش درخط فرمول‌های ریاضی</a></li>
+</ul></li>
+<li><a href="#پانویس">پانویس</a></li>
+<li><a href="#کتاب_نگاری">کتاب نگاری</a></li>
+</ul></li>
+</ul>
+
+<h2 id="معرفی">معرفی</h2>
+
+<p>مارک‌مورداون یک کتابخانه‌ی آزاد با لایسنس MIT است برای تبدیل متن‌های شبه مارک‌داون به html که از مارک‌داون استاندارد به همراه تعدادی اصلاحات و امکانات اضافه که اکثرا از پارسرهای دیگر مارک‌داون مانند PHP Markdown Extra, MultiMarkdown, kramdown و... الهام گرفته شده‌اند پشتیبانی می‌کند.</p>
+
+<h2 id="نصب">نصب</h2>
+
+<p>اگر خارج از محیط میرا بخواهید از مارک‌مود استفاده کنید نیاز به پرل دارید. بعد از مطمین شدن از نصب پرل با این دستور مارک‌مود را نصب کنید</p>
+
+<pre><code>cpan Text::Markmoredown
+</code></pre>
+
+<p>اگر بخواهید خارج از محیط برنامه نویسی از مارک‌مود استفاده کنید در خط فرمان این دستور را برای فایلی که نیاز به ترجمه دارد استفاده کنید:</p>
+
+<pre><code>markmod filename.md
+</code></pre>
+
+<p>به این ترتیب خروجی ترجمه شده روی خط فرمان نمایش داده میشود. یا میتوانید آن را در یک فایل ذخیره کنید</p>
+
+<pre><code>markmod filename &gt; name.html
+</code></pre>
+
+<p>همچنین کدهای منبع هم در <a href="https://github.com/kiamazi/markmoredown">مخزن گیت‌هاب پروژه</a> در دسترس هستند و میتونید از روی سورس نصبش کنید یا در گسترشش مشارکت کنید.</p>
+
+<h2 id="دستور_زبان">دستور زبان</h2>
+
+<h3 id="سربرگ‌ها">سربرگ‌ها</h3>
+
+<p>سربرگ‌ها از h1 تا h6 fh با کمک # ها ساخته می‌شوند.</p>
+
+<pre><code># h1 Heading
+## h2 Heading
+### h3 Heading
+#### h4 Heading
+##### h5 Heading
+###### h6 Heading
+
+&lt;h1&gt;h1 Heading&lt;/h1&gt;
+&lt;h2&gt;h2 Heading&lt;/h2&gt;
+&lt;h3&gt;h3 Heading&lt;/h3&gt;
+&lt;h4&gt;h4 Heading&lt;/h4&gt;
+&lt;h5&gt;h5 Heading&lt;/h5&gt;
+&lt;h6&gt;h6 Heading&lt;/h6&gt;
+</code></pre>
+
+<p>برای سربرگ‌های ۱ و ۲ دستور زبان متفاوتی هم وجود دارد:</p>
+
+<pre><code>Alt-H1
+======
+
+Alt-H2
+------
+
+&lt;h1&gt;Alt-H1&lt;/h1&gt;
+&lt;h2&gt;Alt-H2&lt;/h2&gt;
+</code></pre>
+
+<h4 id="برچسب‌های_دلخواه_در_سربرگ">برچسب‌های دلخواه در سربرگ</h4>
+
+<pre><code>## h2 #:head-label
+#### h4 ######## :my-label
+
+&lt;h2 id="head-label"&gt;h2&lt;/h2&gt;
+&lt;h4 id="my-label"&gt;h4&lt;/h4&gt;
+
+Alt-h1
+====== :my-label
+
+&lt;h1 id="my-label"&gt;Alt-H1&lt;/h1&gt;
+</code></pre>
+
+<h3 id="جداکننده‌های_افقی">جداکننده‌های افقی</h3>
+
+<p>جداکننده‌های افقی با استفاده از تکرار بیشتر از ۳تای - یا ـ یا * شناخته می‌شوند که میتوانند بینشان از یک فاصله‌ی دلخواه هم استفاده کرد</p>
+
+<pre><code>***
+---
+___
+* * * * * * * * *
+--------
+______________
+
+&lt;hr&gt;
+</code></pre>
+
+<hr>
+
+<h3 id="پاراگراف‌ها_و_خطوط_جدید">پاراگراف‌ها و خطوط جدید</h3>
+
+<p>پاراگراف‌ها <code>&lt;p&gt;</code> با استفاده از یک خط خالی بین دو بلوک متن مشخص می‌شوند و خطوط جدید<code>&lt;hr&gt;</code> با دو فاصله(space) در آخر خط شناخته می‌شوند.</p>
+
+<p style="font-family:mono;font-szie:12px;background-color:#EEE;padding:10px;">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
+<br><br>
+کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.⋅⋅
+در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>
+
+<p>در پاراگراف دوم ⋅⋅ به معنی ۲ فاصله(space) متوالی است. نتیجه دو پاراگراف فوق این است:</p>
+
+<p style="background-color:#EEE;padding:10px;">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
+
+<p style="background-color:#EEE;padding:10px;">کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. <br>
+در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>
+
+<h4 id="استایل_دادن_به_پاراگراف">استایل دادن به پاراگراف</h4>
+
+<p>برای استایل دادن به یک پاراگراف در آخر هر پاراگراف در یک خط جدید بین یک آکولاد و یک مساوی بلافاصله بعد از آن و آکولاد بسته میتوان کلاس‌ها، id و هر چیز موردد نیا دیگری را نوشت. هر کلاس با یک . و هر id با یک # در ابتدا مشخص میشوند و با یک فاصله از هم جدا میشوند. به جز جدا کردن این مشخصه ها از هم در هیچ جای دیگری از فاصله نباید استفاده شود.</p>
+
+<pre><code>{= .class #id style="..." dir="..." align="..." style="background:#DDD;font-size:12px;" more... }
+</code></pre>
+
+<pre><code>Lorem ipsum dolor sit amet, graecis denique ei vel, at duo primis mandamus.
+Et legere ocurreret pri, animal tacimates complectitur ad cum. Cu eum
+inermis inimicus efficiendi.⋅⋅
+Labore officiis his ex, soluta officiis
+concludaturque ei qui, vide sensibus vim ad.
+{= .class #entry .more align="center" #body width="200px" }
+</code></pre>
+
+<p class="class more" id="entry body" align="center" width="200px">Lorem ipsum dolor sit amet, graecis denique ei vel, at duo primis mandamus. Et legere ocurreret pri, animal tacimates complectitur ad cum. Cu eum inermis inimicus efficiendi.
+<br>
+Labore officiis his ex, soluta officiisconcludaturque ei qui, vide sensibus vim ad.</p>
+
+<h3 id="تایپوگرافی">تایپوگرافی</h3>
+
+<h4 id="متن_پررنگ_یا_قوی">متن پررنگ یا قوی</h4>
+
+<p>متن های پررنگ با تکرار دو ستاره قبل و بعد از کلمات مشخص میشوند</p>
+
+<p>این قسمت از متن **پر رنگ** یا **قوی** است.</p>
+
+<p>این قسمت از متن <strong>پر رنگ</strong> یا <strong>قوی</strong> است.</p>
+
+<h4 id="متن_کج_یا_مورد_تاکید">متن کج یا مورد تاکید</h4>
+
+<p>برای کج نوشتن یا موردتاکید قرار دادن یک کلمه از یک زیرخط _ قبل و بعد از کلمات استفاده می‌کنیم.</p>
+
+<pre><code>این کلمه _مورد تاکید_ است
+
+این کلمه &lt;em&gt;مورد تاکید&lt;/em&gt; است
+</code></pre>
+
+<p>این کلمه <em>مورد تاکید</em> است</p>
+
+<h4 id="مارک_کردن">مارک کردن</h4>
+
+<p>کلمات با دو مساوی = قبل و بعدشان مارک می‌شوند</p>
+
+<pre><code>می‌توان قسمتی از متن را ==مارک== کرد
+
+می‌توان قسمتی از متن را &lt;mark&gt;مارک&lt;/mark&gt; کرد
+</code></pre>
+
+<p>می‌توان قسمتی از متن را <mark>مارک</mark> کرد</p>
+
+<h4 id="متن_اضافه_شده">متن اضافه شده</h4>
+
+<p>با استفاده از دو بعلاوه + متن اضافه شده مشخص میشود</p>
+
+<pre><code>این یک متن است که این ++کلمه++ به آن اضافه شده است.
+
+این یک متن است که این &lt;ins&gt;کلمه&lt;/ins&gt; به آن اضافه شده است.
+</code></pre>
+
+<p>این یک متن است که این <ins>کلمه</ins> به آن اضافه شده است.</p>
+
+<h4 id="متن_کوچک">متن کوچک</h4>
+
+<p>با استفاده از دو منفی - قبل و بعد از هر کلمه آن را کوچک می‌کنیم</p>
+
+<pre><code>این کلمه --کوچک‌تر-- است
+
+این کلمه &lt;small&gt;کوچکتر&lt;/small&gt; است
+</code></pre>
+
+<p>این کلمه <small>کوچکتر</small> است</p>
+
+<h4 id="متن_حذف_شده">متن حذف شده</h4>
+
+<p>با استفاده از دو آکولاد ~ قبل و بعد از کلمات آن‌ها را حذف شده معرفی می‌کنیم</p>
+
+<pre><code>قسمتی از متن ~~ابتشاه~~ نوشته شده
+
+قسمتی از متن &lt;del&gt;ابتشاه&lt;/del&gt; نوشته شده
+</code></pre>
+
+<p>قسمتی از متن <del>ابتشاه</del> نوشته شده</p>
+
+<h4 id="متن_حذف_اضافه_شده">متن حذف/اضافه شده</h4>
+
+<pre><code>این قسمت از متن ~~ابتشاه~&gt;اشتباه~~ نوشته شده بود
+
+این قسمت از متن &lt;del&gt;ابتشاه&lt;/del&gt; &lt;ins&gt;اشتباه&lt;/ins&gt; نوشته شده بود
+</code></pre>
+
+<p>این قسمت از متن <del>ابتشاه</del> <ins>اشتباه</ins> نوشته شده بود</p>
+
+<p>قبل و بعد از ~> یک فاصله اختیاری است.</p>
+
+<h4 id="متن_بالانویس">متن بالانویس</h4>
+
+<pre><code>x ^y + z^
+
+x &lt;sup&gt;y + z&lt;/sup&gt;
+</code></pre>
+
+<p>اکس به توان وای بعلاوه زد یا اکس <sup>وای + زد</sup> در نظر گرفته شود. <br>
+x <sup>y + z</sup></p>
+
+<h4 id="متن_زیرنویس">متن زیرنویس</h4>
+
+<p>متن ~زیرنویس~</p>
+
+<p>متن <sub>زیرنویس</sub></p>
+
+<pre><code>C~6~H~12~O~6~
+
+C&lt;sub&gt;6&lt;/sub&gt;H&lt;sub&gt;12&lt;/sub&gt;O&lt;sub&gt;6&lt;/sub&gt;
+</code></pre>
+
+<p>C<sub>6</sub>H<sub>12</sub>O<sub>6</sub></p>
+
+<h3 id="لیست‌ها">لیست‌ها</h3>
+
+<h4 id="لیست‌های_ساده">لیست‌های ساده</h4>
+
+<p>لیست های ساده با خط تیره (-) علامت جمع (+) یا ستاره (*) در ابتدای خط مشخص میشوند. با هر بار تو رفتگی با چهار اسپیس میتوان یک زیر لیست در لیست قبلی مشخص کرد. ترتیب استفاده از علایم هیچ اهمیتی ندارد.</p>
+
+<pre><code>+ لورم ایپسوم
++ متن ساختگی
++ با تولید سادگی نامفهوم
++ از صنعت چاپ
++ و با استفاده از
++ طراحان گرافیک است.
+    - چاپگرها
+    - متون
+    - روزنامه
+    - مجله
+        * در ستون
+        * و سطرآنچنان که
+        * لازم است
+    - برای شرایط فعلی
+    - تکنولوژی مورد نیاز
++ کاربردهای متنوع
++ با هدف بهبود
++ ابزارهای کاربردی می باشد.
+
+&lt;ul&gt;
+  &lt;li&gt;لورم ایپسوم&lt;/li&gt;
+  ...
+  &lt;li&gt;طراحان گرافیک است.&lt;/li&gt;
+    &lt;ul&gt;
+      &lt;li&gt;چاپگرها&lt;/li&gt;
+      ...
+      &lt;li&gt;مجله&lt;/li&gt;
+        &lt;ul&gt;
+          &lt;li&gt;در ستون&lt;/li&gt;
+          ...
+          &lt;li&gt;لازم است
+        &lt;/ul&gt;
+      ...
+      &lt;li&gt;تکنولوژی مورد نیاز
+    &lt;/ul&gt;
+  ...
+  &lt;li&gt;ابزارهای کاربردی می باشد.&lt;/li&gt;
+</code></pre>
+
+<ul>
+<li>لورم ایپسوم</li>
+<li>متن ساختگی</li>
+<li>با تولید سادگی نامفهوم</li>
+<li>از صنعت چاپ</li>
+<li>و با استفاده از</li>
+<li>طراحان گرافیک است.
+<ul>
+<li>چاپگرها</li>
+<li>متون</li>
+<li>روزنامه</li>
+<li>مجله
+<ul>
+<li>در ستون</li>
+<li>و سطرآنچنان که</li>
+<li>لازم است</li>
+</ul></li>
+<li>برای شرایط فعلی</li>
+<li>تکنولوژی مورد نیاز</li>
+</ul></li>
+<li>کاربردهای متنوع</li>
+<li>با هدف بهبود</li>
+<li>ابزارهای کاربردی می باشد.</li>
+</ul>
+
+<h4 id="لیست‌های_شماره‌دار">لیست‌های شماره‌دار</h4>
+
+<p>این لیست‌ها با یک عدد در ابتدا به همراه یک نقطه بلافاصله بعد از آن شناخته می‌شوند.</p>
+
+<pre><code>1. لورم ایپسوم
+2. متن ساختگی
+3. با تولید سادگی نامفهوم
+  1. از صنعت چاپ
+  2. و با استفاده از
+4. طراحان گرافیک است.
+5. چاپگرها
+  - متون
+  - روزنامه
+  - مجله
+    1. در ستون
+    2. و سطرآنچنان که
+    3. لازم است
+6. برای شرایط فعلی
+7. تکنولوژی مورد نیاز
+8. کاربردهای متنوع
+  + با هدف بهبود
+  + ابزارهای کاربردی می باشد.
+</code></pre>
+
+<ol>
+<li>لورم ایپسوم</li>
+<li>متن ساختگی</li>
+<li>با تولید سادگی نامفهوم
+<ol>
+<li>از صنعت چاپ</li>
+<li>و با استفاده از</li>
+</ol></li>
+<li>طراحان گرافیک است.</li>
+<li>چاپگرها
+<ul>
+<li>متون</li>
+<li>روزنامه</li>
+<li>مجله
+<ol>
+<li>در ستون</li>
+<li>و سطرآنچنان که</li>
+<li>لازم است</li>
+</ol></li>
+</ul></li>
+<li>برای شرایط فعلی</li>
+<li>تکنولوژی مورد نیاز</li>
+<li>کاربردهای متنوع
+<ul>
+<li>با هدف بهبود</li>
+<li>ابزارهای کاربردی می باشد.</li>
+</ul></li>
+</ol>
+
+<h4 id="لیست‌های_تعریفی">لیست‌های تعریفی</h4>
+
+<pre><code>سیب
+:   درخت سیب (نام علمی: M. pumila) درختی برگریز از خانواده گلسرخیان است
+    که به خاطر میوه شیرین و گوشتی‌اش شناخته شده‌است.
+:   در برخی از منابع مذهبی به عنوان گیاه ممنوعه‌ای که باعث اخراج آدم از بهشت شد معرفی شده‌است.
+
+پرتقال
+:    میوه‌ای از خانواده مرکبات می‌باشد. درخت آن همیشه سبز و پر برگ است و ارتفاع آن تا ۱۰ متر هم می‌رسد.
+</code></pre>
+
+<p>برابر است با:</p>
+
+<pre><code>&lt;dl&gt;
+&lt;dt&gt;سیب&lt;/dt&gt;
+&lt;dd&gt;درخت سیب (نام علمی: M. pumila) درختی برگریز از خانواده گلسرخیان است که به خاطر میوه شیرین و گوشتی‌اش شناخته شده‌است.&lt;/dd&gt;
+&lt;dd&gt;در برخی از منابع مذهبی به عنوان گیاه ممنوعه‌ای که باعث اخراج آدم از بهشت شد معرفی شده‌است.&lt;/dd&gt;
+
+&lt;dt&gt;پرتقال&lt;/dt&gt;
+&lt;dd&gt;میوه‌ای از خانواده مرکبات می‌باشد. درخت آن همیشه سبز و پر برگ است و ارتفاع آن تا ۱۰ متر هم می‌رسد.&lt;/dd&gt;
+&lt;/dl&gt;
+</code></pre>
+
+<dl>
+<dt>سیب</dt>
+<dd>
+درخت سیب (نام علمی: M. pumila) درختی برگریز از خانواده گلسرخیان است
+که به خاطر میوه شیرین و گوشتی‌اش شناخته شده‌است.
+</dd>
+<dd>
+در برخی از منابع مذهبی به عنوان گیاه ممنوعه‌ای که باعث اخراج آدم از بهشت شد معرفی شده‌است.
+</dd>
+
+<dt>پرتقال</dt>
+<dd>
+میوه‌ای از خانواده مرکبات می‌باشد. درخت آن همیشه سبز و پر برگ است و ارتفاع آن تا ۱۰ متر هم می‌رسد.
+</dd>
+
+</dl>
+
+<h4 id="جداساز‌_لیست‌ها">جداساز‌ لیست‌ها</h4>
+
+<p>اگر می‌خواهید یک لیست بلافاصله بعد از لیست قبلی داشته باشید برای جدا کردن این لیست‌ها از یک خط که تنها یک ^ دارد بین دو لیست استفاده کنید.</p>
+
+<pre><code>* List one
+
+^
+
+* List two
+</code></pre>
+
+<h3 id="نقل_قول‌ها">نقل قول‌ها</h3>
+
+<p>خطوطی که با یک > در ابتدا شروع میشوند یک نقل قول هستند. نقل قول‌ها میتوانند تو در تو باشند و از یک نقل قول درون یک نقل قول دیگر استفاده کرد. همچنین سایر علایم مارک‌داون شامل لیست‌ها، سربرگ‌ها و کدها هم در بین نقل قول‌ها معتبر هستند.</p>
+
+<pre><code>&gt; این یک نقل قول در ۲پاراگراف است. نقل قول‌ها برای نمایش
+&gt; متنی سخن دیگران یا ارجاع دادن به مطالبی از منابع متفاوت و
+&gt; خارج از متن اصلی است
+&gt;
+&gt; ادامه نقل قول در پاراگراف دوم
+
+&lt;blockquote&gt;
+&lt;p&gt;
+این یک نقل قول در ۲پاراگراف است. نقل قول‌ها برای نمایش متنی سخن دیگران یا ارجاع دادن به مطالبی از منابع متفاوت و خارج از متن اصلی است
+&lt;/p&gt;
+&lt;p&gt;
+ادامه نقل قول در پاراگراف دوم
+&lt;/p&gt;
+&lt;/blockquote&gt;
+</code></pre>
+
+<p>مارک‌داون به شدت ساده‌گیر است و میتوان پاراگراف را مانند مثال بالا در چندین خط جدا از هم یا به شکل مثال پایین به صورت متوالی نوشت</p>
+
+<pre><code>&gt; این یک نقل قول در ۲پاراگراف است. نقل قول‌ها برای نمایش متنی سخن دیگران یا ارجاع دادن به مطالبی از منابع متفاوت و خارج از متن اصلی است
+
+&gt; ادامه نقل قول در پاراگراف دوم
+</code></pre>
+
+<p>همچنین در هر نقل قول میتوان از سایر اجزای مارک‌داون شامل نقل قول، سربرگ‌ها لیست ها و بلوک‌های کد استفاده کرد</p>
+
+<pre><code>&gt; این یک نقل قول است
+&gt;
+&gt; &gt; این یک نقل قول درون یک نقل قول دیگر است
+&gt;
+&gt; ## سربرگ سطح دو
+&gt;
+&gt;1. آیتم یک
+&gt;2. آیتم دوم
+&gt;
+&gt;        return shell_exec("echo $input | $markdown_script"); [بلوک کد]
+</code></pre>
+
+<blockquote>
+  <p>این یک نقل قول است</p>
+  
+  <blockquote>
+    <p>این یک نقل قول درون یک نقل قول دیگر است</p>
+  </blockquote>
+  
+  <h2 id="سربرگ_سطح_دو">سربرگ سطح دو</h2>
+  
+  <ol>
+  <li>آیتم یک</li>
+  <li><p>آیتم دوم</p>
+  
+  <p>return shell_exec("echo $input | $markdown_script"); [بلوک کد]</p></li>
+  </ol>
+</blockquote>
+
+<h4 id="جداساز_نقل_قول‌ها">جداساز نقل قول‌ها</h4>
+
+<p>اگر می‌خواهید یک نقل قول بلافاصله بعد از یک نقل قول دیگر داشته باشید برای جدا کردنشان از یک خط که تنها یک ^ دارد بین دو بلوک استفاده کنید.</p>
+
+<pre><code>&gt; block1
+
+^
+
+&gt; block2
+</code></pre>
+
+<h3 id="لینک‌ها">لینک‌ها</h3>
+
+<p>مارک‌داون از ۲ نوع لینک پشتیبانی میکند، لینک‌های درون خطی و لینک‌های ارجاعی.</p>
+
+<h4 id="لینک‌های_درون‌خطی">لینک‌های درون‌خطی</h4>
+
+<p>لینک‌های درون‌خطی را به این شکل میتوان ایجاد کرد</p>
+
+<pre><code>This is [an example](http://example.com/ "Title") inline link.
+
+[This link](http://example.net/) has no title attribute.
+
+---
+
+&lt;p&gt;This is &lt;a href="http://example.com/" title="Title"&gt;
+an example&lt;/a&gt; inline link.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://example.net/"&gt;This link&lt;/a&gt; has no
+title attribute.&lt;/p&gt;
+</code></pre>
+
+<h4 id="لینک‌های_ارجاعی">لینک‌های ارجاعی</h4>
+
+<p>و لینک های ارجاعی نیز ساختاری به این صورت دارند</p>
+
+<pre><code>This is [an example][id] reference-style link.
+یا
+This is [an example] [id] reference-style link.
+ادامه متن و متن و متن و متن.
+
+[id]: http://example.com/  "Optional Title Here"
+
+---
+
+&lt;p&gt;This is &lt;a href="http://example.com/" title="Optional Title Here"&gt;an example&lt;/a&gt; reference-style link.&lt;/p&gt;
+
+&lt;p&gt;This is &lt;a href="http://example.com/" title="Optional Title Here"&gt;an example&lt;/a&gt; reference-style link.&lt;/p&gt;
+
+&lt;p&gt;ادامه متن و متن و متن و متن.&lt;/p&gt;
+</code></pre>
+
+<p>همچنین لینک‌های ارجاعی رو به این صورت هم میتوان نوشت</p>
+
+<pre><code>my name is [kiavash][]
+
+سایر پاراگراف‌ها و....
+
+[kiavash]: https://kiavash.one/
+</code></pre>
+
+<h4 id="تعیین_خواص_لینک‌ها">تعیین خواص لینک‌ها</h4>
+
+<p>در مارک‌مود برای لینک‌ها میتوان خاصیت‌های شخصی هم تعریف کرد. برای اینکار باید بلافاصله بعد از پرانتز یا براکت پایانی یک آکولاد باز و بسته کرد و نشخصات را در آن تعریف کرد.</p>
+
+<pre><code>This is [an example][id]{.class1 .class2 #id1 style="..." #id3 other-attributes}
+یا
+[This link](http://kiavash.one/){.class1 .class2 #id1 style="..." #id3 name="link-name" other-attributes=""}
+
+&lt;a class="class1 class2" id="id1 id3" style="..." name="link-name" other-attributes=""&gt;This link&lt;/a&gt;
+</code></pre>
+
+<p><strong>از کاراکتر فاصله در مشخصات استفاده نکنید</strong></p>
+
+<pre><code>اشتباه
+style="border: 1px; width: 150px"
+
+صحیح
+style="border:1px;width:150px"
+</code></pre>
+
+<h3 id="تصاویر">تصاویر</h3>
+
+<p>برای اضافه کردن تصاویر از همان کاراکترهای مورد استفاده برای افزودن لینک‌ها استفاده میکنیم، تنها یک علامت تعجب اضافه در ابتدای آن باید قید شود.</p>
+
+<h4 id="تصاویر_درخط">تصاویر درخط</h4>
+
+<pre><code>![Alt text](/path/to/img.jpg)
+
+![Alt text](/path/to/img.jpg "Optional title")
+</code></pre>
+
+<h4 id="تصاویر_ارجاعی">تصاویر ارجاعی</h4>
+
+<pre><code>![Alt text][id]
+
+سایر پاراگراف‌ها و....
+
+[id]: url/to/image  "Optional title attribute"
+</code></pre>
+
+<h4 id="تعیین_خواص_تصاویر">تعیین خواص تصاویر</h4>
+
+<p>در مارک‌مود برای تصاویر میتوان خاصیت‌های شخصی هم تعریف کرد. برای اینکار باید بلافاصله بعد از پرانتز یا براکت پایانی یک آکولاد باز و بسته کرد و نشخصات را در آن تعریف کرد.</p>
+
+<pre><code>![Alt text](/path/to/img.jpg){.class1 .class2 #id1 style="..." #id3 width="100px" height="100px"}
+
+![Alt text][id]{.class1 .class2 #id1 style="border:2px;max-width:100%" #id3 other-attributes}
+</code></pre>
+
+<p><strong>از کاراکتر فاصله در مشخصات استفاده نکنید</strong></p>
+
+<pre><code>اشتباه
+style="border: 1px; width: 150px"
+
+صحیح
+style="border:1px;width:150px"
+</code></pre>
+
+<h3 id="کد">کد (code)</h3>
+
+<h4 id="کدهای_درخط">کدهای درخط</h4>
+
+<p>تنها کافی است قبل و بعد از هر کد درون خطی یک (`) گذاشته شود</p>
+
+<p>برای پرینت کردن در خروجی از `printf()` استفاده کنید</p>
+
+<p>برای پرینت کردن در خروجی از <code>printf()</code> استفاده کنید</p>
+
+<h4 id="بلوک‌های_کد">بلوک‌های کد</h4>
+
+<p>برای نوشتن یک بلوک کد تنها کافی است به اندازه‌ی یک tab یا ۴کاراکتر فاصله(space) در ابتدای هر خط خالی جلو برویم.</p>
+
+<pre><code>This is a normal paragraph:
+
+    This is a code block.
+</code></pre>
+
+<p>برابر است با</p>
+
+<pre><code>&lt;p&gt;This is a normal paragraph:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;This is a code block.
+&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
+
+<p>همچنین فرورفتگی‌ها در کدهای بلوکی حفظ می‌شوند.</p>
+
+<pre><code>Here is an example of AppleScript:
+
+    tell application "Foo"
+        beep
+    end tell
+</code></pre>
+
+<p>برابر است با:</p>
+
+<pre><code>&lt;p&gt;Here is an example of AppleScript:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;tell application "Foo"
+    beep
+end tell
+&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
+
+<h5 id="جداساز_بلوک‌های_کد">جداساز بلوک‌های کد</h5>
+
+<p>اگر می‌خواهید یک بلوک کد بلافاصله بعد از یک بلوک دیگر داشته باشید برای جدا کردنشان از یک خط که تنها یک ^ دارد بین دو بلوک استفاده کنید.</p>
+
+<pre><code>    code block1
+    code block1
+
+^
+
+    code block2
+    code block2
+</code></pre>
+
+<h4 id="بلوک‌های_کد_محصور">بلوک‌های کد محصور</h4>
+
+<p>از یک حصار ``` برای مشخص کردن این بلوک‌ها استفاده میشود و نیازی به اعمال فرورفتگی‌ها ندارند.</p>
+
+<pre><code>```
+codes...
+```
+</code></pre>
+
+<p>میتوان کلاس زبان یا خواص دیگر class را برای این حصارها مشخص کرد. اگر بعد از کلاس نام زبان برنامه نویسی مورد نظرتان را بنویسید کلاس زبان در نظر گرفته خواهد شد.</p>
+
+<pre><code>``` perl
+code...
+code...
+code...
+```
+
+&lt;pre&gt;&lt;code class="language-perl"&gt;
+    code...
+    code...
+    code...
+&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
+
+<p>و اگر با : بعد از حصار نام کلاس را بنویسید، کلاس شخصی در نظر گرفته خواهد شد.</p>
+
+<pre><code>``` :class-name
+some codes...
+```
+
+&lt;pre&gt;&lt;code class="class-name"&gt;
+some codes...
+&lt;/code&gt;&lt;/pre&gt;
+</code></pre>
+
+<h3 id="جداول">جداول</h3>
+
+<p>جدول ها به سادگی نمایششان با خطوط ساخته میشوند.</p>
+
+<pre><code>|              | Grouping                    ||
+| First Header | Second Header | Third Header |
+| ------------ | :-----------: | -----------: |
+| Content      | *Long Cell*                 ||
+| Content      | **Cell**     | Cell         |
+| New section  | More          | Data         |
+</code></pre>
+
+<table class="markmod_table">
+<col>
+<col align="center">
+<col align="right">
+<thead>
+<tr>
+	<th> </th>
+	<th colspan="2">Grouping</th>
+</tr>
+<tr>
+	<th>First Header</th>
+	<th>Second Header</th>
+	<th>Third Header</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td>Content</td>
+	<td colspan="2" align="center"><em>Long Cell</em></td>
+</tr>
+<tr>
+	<td>Content</td>
+	<td align="center"><strong>Cell</strong></td>
+	<td align="right">Cell</td>
+</tr>
+<tr>
+	<td>New section</td>
+	<td align="center">More</td>
+	<td align="right">Data</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="فرمول‌های_ریاضی">فرمول‌های ریاضی</h3>
+
+<p>فرمول‌های ریاضی را به صورت در خط و بلوکی میتوان نمایش داد. در حال حاضر مارک مود تنها از MathML2 پشتیبانی میکند.</p>
+
+<h4 id="نمایش_بلوکی_فرمول‌های_ریاضی">نمایش بلوکی فرمول‌های ریاضی</h4>
+
+<pre><code>$$
+{e}^{i\pi }+1=0
+$$
+</code></pre>
+
+<p>یا</p>
+
+<pre><code>    \\[
+    {(2x,+,17y,=,23),(x,-,y,=,5):}
+    \\]
+</code></pre>
+
+<p>که به ترتیب به این صورت به نمایش در میایند:<math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mstyle><msup><mrow><mo>{</mo><mi>e</mi><mo>}</mo></mrow><mrow><mi>i</mi><mi>&#x03C0;</mi></mrow></msup><mo>+</mo><mn>1</mn><mo>=</mo><mn>0</mn></mstyle></math>و<math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mstyle><mrow><mo>{</mo><mtable columnalign="left"><mtr><mtd><mn>2</mn><mi>x</mi></mtd><mtd><mo>+</mo></mtd><mtd><mn>17</mn><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd><mn>23</mn></mtd></mtr><mtr><mtd><mi>x</mi></mtd><mtd><mo>-</mo></mtd><mtd><mi>y</mi></mtd><mtd><mo>=</mo></mtd><mtd><mn>5</mn></mtd></mtr></mtable></mrow></mstyle></math><h4 id="نمایش_درخط_فرمول‌های_ریاضی">نمایش درخط فرمول‌های ریاضی</h4></p>
+
+<pre><code>    $Math formula$
+
+یا
+
+    \\(
+    formula
+    \\)
+</code></pre>
+
+<p>که به ترتیب به اینصورت استفاده میشوند</p>
+
+<p>تست یک فرمول \$sum_(i=1)<sup>n i</sup>3=((n(n+1))/2)^2\$ به صورت بر خط</p>
+
+<p dir="ltr">a formula test \\(sum_(i=1)<sup>n i</sup>3=((n(n+1))/2)^2\\)</p>
+
+<p>تست یک فرمول $sum_(i=1)<sup>n i</sup>3=((n(n+1))/2)^2$ به صورت بر خط</p>
+
+<p>تست همان فرمول <math xmlns="http://www.w3.org/1998/Math/MathML" display="inline"><mstyle><mrow><munderover><mo>&#x2211;</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover></mrow><msup><mi>i</mi><mn>3</mn></msup><mo>=</mo><msup><mrow><mo>(</mo><mfrac><mrow><mi>n</mi><mrow><mo>(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo>)</mo></mrow></mrow><mn>2</mn></mfrac><mo>)</mo></mrow><mn>2</mn></msup></mstyle></math> به شکل دیگر</p>
+
+<h3 id="پانویس">پانویس</h3>
+
+<p>برای مثال میتوان گفت که این کتابخانه با استفاده از پرل[^perl] نوشته شده است.</p>
+
+<p>[^perl]: پرل یک زبان برنامه نویسی است</p>
+
+<p>که نتیجه به این صورت خواهد بود:</p>
+
+<p>برای مثال میتوان گفت که این کتابخانه با استفاده از پرل<a href="#fn:perl" id="fnref:perl" class="footnote">1</a> نوشته شده است.</p>
+
+<h3 id="کتاب_نگاری">کتاب نگاری</h3>
+
+<p>این مطالب برگرفته از این کتاب بود [پاراگراف پنجم، خط دوم][#منبع]</p>
+
+<p>[#منبع]: یک کتاب تخیلی، فصل سوم، پاراگراف پنجم، خط دوم، نوشته شده توسط کیاوش، انتشارات نامعلوم</p>
+
+<p>که به این صورت نمایش داده خواهد شد:</p>
+
+<p>این مطالب برگرفته از این کتاب بود <span class="markdowncitation"> (<a href="#منبع">1</a>, <span class="locator">پاراگراف پنجم، خط دوم</span>)</span></p>
+
+<div class="footnotes">
+<hr>
+<ol>
+
+<li id="fn:perl"><p>پرل یک زبان برنامه نویسی است<a href="#fnref:perl" class="reversefootnote">&#160;&#8617;</a></p></li>
+
+</ol>
+</div>
+
+<div class="bibliography">
+<hr>
+
+<div id="منبع"><p>[1] <span class="item">یک کتاب تخیلی، فصل سوم، پاراگراف پنجم، خط دوم، نوشته شده توسط کیاوش، انتشارات نامعلوم</span></p></div>
+
+</div>
+                    </section>
+
+                    <section class="meta">
+                    <hr>
+                        <span>                        </span>
+                    </section>
+                </article>
+            
+        </section>
+
+<!-- Paging -->
+        <section id="pager">
+            <nav class="container">
+            
+
+			
+            </nav>
+        </section>
+<!-- /Paging -->
+<!-- /Content -->
+
+    </section>
+    
+    <section class="sidebar">
+        <section id="intro">
+            <a href="/">
+            
+            </a>
+        </section>
+
+        <section id="socials">
+            <ul>
+                <li><a href="//github.com/kiamazi">گیت هاب</a></li>
+                <li><a href="//twitter.com/kiavash">توییتر</a></li>
+                <li><a href="/atom.xml">خوراک</a></li>
+            </ul>
+        </section>
+
+        <section class="archivebar">			        </section>
+    </section>
+
+    <!-- Footer -->
+<footer>
+        <section class="copyright">
+            <p class="container">
+            مطالب تحت لیسانس <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" rel="license" target="_blank">کریتیو کامنز</a> منتشر می‌شوند.
+            </p>
+            <p>قدرت گرفته توسط <a href="https://miraxy.github.io/fa/">میرا</a></p>
+        </section>
+    </footer>
+<!-- /Footer -->
+<!-- Scripts -->
+
+    <script src="/js/highlight.pack.js"></script>
+    <script src="/js/highlightjs-line-numbers.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+        hljs.initLineNumbersOnLoad();
+    </script>
+
+<!-- /Scripts -->
+
+</body>
+</html>

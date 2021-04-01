@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="Farsi">
+<head>
+  <title> | اتصال دامنه شخصی به صفحات گیت‌هاب و فعال کردن https با کمک cloudflare</title>
+
+  <meta charset="utf-8">
+  <meta name="description" content="در ستایش تجربه کردن و یادگرفتن همیشگی / open experience">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="اتصال دامنه شخصی به صفحات گیت‌هاب و فعال کردن https با کمک cloudflare">
+  <meta property="og:url" content="http://kiavash.one/">
+  <meta property="og:site_name" content="تجربه باز">
+  <meta property="og:description" content="&lt;p&gt;من برای مدیریت dns سایت از cloudflare استفاده می‌کنم و از اونجایی که این سایت رو به صورت استاتیک می‌سازم و از قابلیت صفحه‌های گیت‌هاب برای میزبانی استفاده می‌کنم دلایل زیادی برای این انتخاب دارم، مثلا فعال کردن https برای دامین یا استفاده از cdnهای cloudflar یا محافظت در مقابل حمله‌هایی که ممکنه به سایت بشه، لود شدن سریع‌تر سایت و... و تمام این امکانات رو هم با استفاده از نسخه‌ی رایگان این سرویس می‌گیرم، البته اگر از سرور خودتون استفاده کنید این امکانات رو میتونید خودتون روی سرور فعال کنید، اما اگر دانش یا وقت کافی برای مدیریت سرور نداشته باشیم باز هم استفاده از سرویس‌هایی مثل cloudflare راه م&lt;/p&gt;">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="اتصال دامنه شخصی به صفحات گیت‌هاب و فعال کردن https با کمک cloudflare">
+  <meta name="twitter:description" content="&lt;p&gt;من برای مدیریت dns سایت از cloudflare ...">
+
+  <link rel="alternative" href="/atom.xml" title="تجربه باز" type="application/atom+xml">
+  <link rel="short icon" href="/static/img/logo.png">
+  <link rel="stylesheet" href="/static/theme/miramal/css/style.css" type="text/css">
+
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <section class="container">
+    <nav>
+      <h1 class="name-title"><a href="/">تجربه باز</a></h1>
+      <ul>
+        
+          <li><a href="/atom.xml">atom</a></li>
+          <li><a href="/">فهرست</a></li>
+          <li><a href="/about/">درباره</a></li>
+          <li><a href="http://github.com/kiamazi" target="_blank">گیت‌هاب</a></li>
+          <li><a href="http://twitter.com/kiavash" target="_blank">توییتر</a></li>
+        
+      </ul>
+    </nav>
+    <div class="logo">
+       
+         <h1>اتصال دامنه شخصی به صفحات گیت‌هاب و فعال کردن https با کمک cloudflare</h1>
+         <h4></h4>
+        
+    </div>
+  </section>
+</header>
+<!-- /Header -->
+
+<section id="content" class="container">
+
+  <article id="cloudflare" class="article article-type-post" itemscope itemprop="blogPost">
+    <!--<h2 class="title" itemprop="name">اتصال دامنه شخصی به صفحات گیت‌هاب و فعال کردن https با کمک cloudflare</h2>-->
+ 
+    
+      <h4 class="time">
+    <time datetime="2018-03-13 21:54:13" itemprop="datePublished">سه‌شنبه‌، ۲۲ اسفند ۱۳۹۶</time>
+  </h4>
+    
+
+    <section class="content">
+    <a name="more"></a>
+<p>من برای مدیریت dns سایت از cloudflare استفاده می‌کنم و از اونجایی که این سایت رو به صورت استاتیک می‌سازم و از قابلیت صفحه‌های گیت‌هاب برای میزبانی استفاده می‌کنم دلایل زیادی برای این انتخاب دارم، مثلا فعال کردن https برای دامین یا استفاده از cdnهای cloudflar یا محافظت در مقابل حمله‌هایی که ممکنه به سایت بشه، لود شدن سریع‌تر سایت و... و تمام این امکانات رو هم با استفاده از نسخه‌ی رایگان این سرویس می‌گیرم، البته اگر از سرور خودتون استفاده کنید این امکانات رو میتونید خودتون روی سرور فعال کنید، اما اگر دانش یا وقت کافی برای مدیریت سرور نداشته باشیم باز هم استفاده از سرویس‌هایی مثل cloudflare راه مطمین‌تری هست که میدونیم تقریبا به صورت تمام وقت فعال هستن و توسط افراد با تجربه‌ای هم مدیریت و اداره میشن.</p>
+
+<p>اما این مواردی که گفتم چه اهمیتی دارن؟ مثلا چرا باید مهم باشه که از https استفاده کنیم؟ بزارید به صورت ساده و خلاصه یه نگاه به تفاوت http و https بندازیم. وقتی از http استفاده می‌کنیم هر کسی که بین ما و سایت مورد نظر باشه میتونه محتوای ارسال و دریافت شده رو، شامل متن سایت، رمزهایی که وارد می‌کنیم، عکس‌هاو هرچیز دیگه‌ای رو میتونه ببینه و حتی تغییر بده. اما وقتی از https استفاده میکنیم داده‌های رد و بدل شده رمز نگاری میشه و برای افراد و کامپیوترهایی که بین ما و سایت موردنظرمون هستن غیرقابل فهم.</p>
+
+<p>خوب چه کار کنیم که cloudflare رو به عنوان واسط بین دامین و گیت‌هاب فعال کنیم؟ </p>
+
+<p>۱ - اول مراجعه به <a href="https://www.cloudflare.com/">cloudflare</a> و ساختن یک اکانت.</p>
+
+<p>۲ - وارد کردن نام سایت و کلیک بر روی begin scan</p>
+
+<p><img src="/images/2018-03-13-cloudflare1.png" alt="add site" id="add_site"></p>
+
+<p>صبر کنید تا اسکن تمام شود، تمام dnsهای فعال روی سایت نمایش داده می‌شوند و dnsهای جدیدی به شما برای جایگزین کردن پیشنهاد می‌شود. به پنجره‌ مدیریت دامین خود بروید و dnsهای cloudflare را با dns های خودتان جایگزین کنید. باید بین چند دقیقه تا چند ساعت، صبر کنید تا dnsهای جدید بر روی دامین شما فعال شود. بعد از فعال شدنشنان، میتوانیم از این به بعد dnsهای خودمان را با استفاده از cloudflare مدیریت کنیم.</p>
+
+<p>برای مثال من ۲ رکورد A ساخته‌ام که به IPهای گیت هاب اشاره میکنند و یک cname برای یکی کردن آدرس سایت با و بدون www</p>
+
+<table class="markmod_table">
+<col align="center">
+<col align="left">
+<col align="left">
+<thead>
+<tr>
+	<th>type</th>
+	<th>name</th>
+	<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+	<td align="center">a</td>
+	<td align="left">site.com</td>
+	<td align="left">192.30.252.153</td>
+</tr>
+<tr>
+	<td align="center">a</td>
+	<td align="left">site.com</td>
+	<td align="left">192.30.252.154</td>
+</tr>
+<tr>
+	<td align="center">CNAME</td>
+	<td align="left">www</td>
+	<td align="left">site.com</td>
+</tr>
+</tbody>
+</table>
+
+<p>تمام شد، به همین سادگی. البته خیلی چیزهای بیشتری برای تنظیم کردن در پنل مدیریت هست که منتظر شما هستند.</p>
+  </section>
+  
+  <section class="meta">
+    <span>        دسته بندی:          <a href="/categories/education/">آموزش</a>        برچسب‌ها:          <a href="/tags/cloudflare/">cloudflare</a>،&nbsp;          <a href="/tags/https/">https</a>،&nbsp;          <a href="/tags/github/">github</a>،&nbsp;          <a href="/tags/گیت‌هاب/">گیت‌هاب</a>،&nbsp;          <a href="/tags/education/">آموزش</a>،&nbsp;          <a href="/tags/اینترنت/">اینترنت</a>    </span>
+  </section>
+
+
+    <div class="contribute">
+در صورتیکه بعد از خواندن این یادداشت بخواهید به هر شکلی در تکمیلش مشارکت کنید، مثلا آن را اصلاح کنید یا مطلبی به آن اضافه کنید، منبع این یادداشت روی گیت‌هاب در این آدرس در دسترس است: <br>
+<a href="https://github.com/kiamazi/kiavash.one/blob/master/content/blog/2018-03-13-cloudflare.md">https://github.com/kiamazi/kiavash.one/blob/master/content/blog/2018-03-13-cloudflare.md</a><br>
+ میتوانید آن‌را ویرایش کنید. البته باید یادآوری کنم که هر ویرایشی قبل از اتشار نیاز به تایید دارد.
+    </div>
+
+<hr>
+<script async src="https://comments.app/js/widget.js?3" data-comments-app-website="X6-bEnpe" data-limit="5" data-dislikes="1" data-outlined="1" data-colorful="1"></script>
+<hr>
+    
+      این وبلاگ از disqus برای سیستم نظردهی استفاده می‌کند، اگر فرم نظردادن را نمی‌بینید احتمالا کسی به جای شما تشخیص داده که این سرویس مناسبتان نیست و آن را از دسترس شما خارج کرده، برای نظردادن در این شرایط از ابزار رفع فیلتر استفاده کنید
+<section class="comments">
+  <div id="disqus_thread">
+    <script>
+      var disqus_shortname = 'kiavash';
+      (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+    
+  </article>
+
+</section>
+
+<!-- Paging -->
+<section class="pagination">
+  <nav class="container">
+    
+      <a class="extend prev" rel="prev" href="/2018/03/17/hacking-gmail-to-use-custom-domains-for-free-with-mailgun/">
+        <i><-</i>
+        <span>هک کردن جی‌میل برای استفاده کردن روی دامنه شخصی با کمک mailgun</span>
+      </a>
+    
+    
+      <a class="extend next" rel="next" href="/2018/03/11/weblog-with-mira-and-github/">
+        <i>-></i>
+        <span>راه اندازی یک وبلاگ استاتیک با کمک میرا و گیت‌هاب</span>
+      </a>
+  </nav>
+</section>
+<!-- /Paging -->
+
+<!-- /Content -->
+<!-- Footer -->
+<footer>
+    <!--<section class="copyright">
+
+    </section>
+    <section class="container">
+      <div class="delimiter">
+        <a href="/" class="logo">
+          <img src="/static/img/logo.png">
+        </a>
+      </div>-->
+      <p>
+        
+          تمام حقوق محفوظ است<br>
+          مطالب تحت لیسانس <a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" rel="license" target="_blank">کریتیو کامنز</a> منتشر می‌شوند
+          <p>قدرت گرفته توسط <a href="https://miraxy.github.io/fa/">میرا</a></p>
+        
+      </p>
+    </section>
+</footer>
+<!-- /Footer -->
+
+<!-- Scripts -->
+<script src="/static/theme/miramal/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
