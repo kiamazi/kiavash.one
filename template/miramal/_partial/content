@@ -24,7 +24,9 @@
  میتوانید آن‌را ویرایش کنید. البته باید یادآوری کنم که هر ویرایشی قبل از اتشار نیاز به تایید دارد.
     </div>
 {{ END }}
-
+<hr>
+<script async src="https://comments.app/js/widget.js?3" data-comments-app-website="X6-bEnpe" data-limit="5" data-dislikes="1" data-outlined="1" data-colorful="1"></script>
+<hr>
     {{ IF IS_POST }}
       {{ INCLUDE _partial/_post/comment }}
     {{ END }}

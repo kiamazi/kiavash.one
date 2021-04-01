@@ -5,6 +5,7 @@ title: راهنمای بازی در گنو/لینوکس، اتصال دسته ب
 _index: gnu linux gaming tip: how to pair xbox one S controller via bluetooth
 description: سری راهنمای بازی در گنو/لینوکس: اتصال دسته‌های بازی از طریق اتصال بلوتوث
 contribute_offer: yes
+hint: https://ubuntuforums.org/showthread.php?t=2339212
 collection: gaming on gnu/linux
 categories:
   - گنو/لینوکس
