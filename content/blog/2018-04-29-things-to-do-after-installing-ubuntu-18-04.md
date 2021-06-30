@@ -263,6 +263,7 @@ sudo apt-get install paper-icon-theme
 * Mailspring   - مدیریت ای‌میل
 * Corebird      - اپلیکیشن توییتر
 * Simplenote  - یادداشت برداری با پشتیبانی ابری
+* megasync - پشتیبان گیری ابری و بک اپ اتوماتیک برای سایت mega
 
 _ _ _
 #### پانویس
