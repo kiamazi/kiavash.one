@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: kiavash.one
+Token: 8cbb6175876e0cdb1cb9261ae4da071a479e8c047f2a598b79ad1a746fbabb2c
