@@ -5,7 +5,7 @@
   <link href="http://kiavash.one//feed.xml" rel="self"/>
   <link href="http://kiavash.one/"/>
 
-  <updated>2021-06-30T17:01:34+0330</updated>
+  <updated>2023-04-24T03:06:51+0330</updated>
   <id>http://kiavash.one/</id>
   
   <author>
@@ -213,7 +213,7 @@ vlc   3.0.9-1  768  stable    videolan✓    disabled
 
 <p>که جای <code>Name</code> و <code>Rev</code> باید اسم برنامه و ریویژنی که میخوایم حذف بشه رو بنویسیم، از اونجایی که توی لیست نمایش داده شده، ستون اول اسم برنامه و ستون سوم ریویژن اون برنامه هست، پس فیلتری که نوشته بودم رو با این دستور ترکیب کردم و به این دستور رسیدم:</p>
 
-<pre><code class="language-bash">snap list --all | perl -lanE 'say qx{snap remove "$F[0]" --revision="$f[2]} if $F[5] eq "disabled"'
+<pre><code class="language-bash">snap list --all | perl -lanE 'say qx{snap remove "$F[0]" --revision="$f[2]"} if $F[5] eq "disabled"'
 
 # --- توضیحات ---
 # شمارش ستون‌ها رو از صفر شروع میکنیم، پس
