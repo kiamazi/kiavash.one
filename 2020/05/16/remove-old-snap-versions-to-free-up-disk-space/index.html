@@ -101,9 +101,9 @@ vlc   3.0.9-2  770  stable    videolan✓     -
 ...
 </code></pre>
 
-<p>همونطوری که مشخصه، نسخه‌های قدیمی‌تر که در اصل نسخه‌ی غیر فعال شده هستن، با متن 'disabled' در ستون آخر مشخص شدن، برای دیدن فقط این نسخه‌ها میتونیم یه فیلتر کوچیک روی خروجی اعمال کنیم که اگر متن ستون آخر با disabled برابر بود، اون خط رو نمایش بده:</p>
+<p>همونطوری که مشخصه، نسخه‌های قدیمی‌تر که در اصل نسخه‌ی غیر فعال شده هستن، با متن 'disabled' در ستون آخر مشخص شدن، برای دیدن فقط این نسخه‌ها میتونیم یه فیلتر کوچیک روی خروجی اعمال کنیم که اگر توی متن ستون آخر کلمه disabled استفاده شده بود، اون خط رو نمایش بده:</p>
 
-<pre><code>snap list --all | perl -lanE 'say if $F[5] eq "disabled"'
+<pre><code>snap list --all | perl -lanE 'say if $F[5] =~ /disabled/'
 </code></pre>
 
 <p>الان باید خروجی شبیه به این شده باشه:</p>
@@ -119,12 +119,13 @@ vlc   3.0.9-1  768  stable    videolan✓    disabled
 
 <p>که جای <code>Name</code> و <code>Rev</code> باید اسم برنامه و ریویژنی که میخوایم حذف بشه رو بنویسیم، از اونجایی که توی لیست نمایش داده شده، ستون اول اسم برنامه و ستون سوم ریویژن اون برنامه هست، پس فیلتری که نوشته بودم رو با این دستور ترکیب کردم و به این دستور رسیدم:</p>
 
-<pre><code class="language-bash">snap list --all | perl -lanE 'say qx{snap remove "$F[0]" --revision="$f[2]"} if $F[5] eq "disabled"'
+<pre><code class="language-bash">snap list --all | perl -lanE 'say qx{snap remove "$F[0]" --revision="$f[2]"} if $F[5] =~ /disabled/'
 
 # --- توضیحات ---
 # شمارش ستون‌ها رو از صفر شروع میکنیم، پس
-# ستون اول: F[0]
-# ستون سوم: F[2]
+# F[0]: ستون اول - اسم برنامه
+# F[2]: ستون سوم - ورژن مورد نظرمون
+# F[5]: ستون ششم، فعال یا غیرفعال بودن این ورژن
 </code></pre>
 
 <p><strong>توصیه:</strong> بهتره قبل از حذف ورژن‌های قدیمی، مطمین باشیم تمام اسنپ‌های در حال اجرا رو متوقف کردیم</p>
@@ -157,7 +158,7 @@ gimp (revision 113) removed
 
 <p>قبل از انتشار برای اطمینان از درست بودن تمام چیزهایی که نوشتم یه جست و جوی نهایی کردم و به این مطلب رسیدم، <a href="https://www.linuxuprising.com/2019/04/how-to-remove-old-snap-versions-to-free.html">How To Remove Old Snap Versions To Free Up Disk Space</a> که با توجه به چیزی که توی اون مقاله نوشته شده، برای استفاده بدون دردسر روی سیستم‌هایی که زبان محلی سیستم‌عامل چیزی به جز انگلیسی هست میتونیم یه تغییر خیلی کوچیک دیگه هم اضافه کنیم و اسنپ رو به حالت انگلیسی اجرا کنیم:</p>
 
-<pre><code>LANG=en_US.UTF-8 snap list --all | perl -lanE 'say qx{snap remove "$F[0]" --revision="$f[2]} if $F[5] eq "disabled"'
+<pre><code>LANG=en_US.UTF-8 snap list --all | perl -lanE 'say qx{snap remove "$F[0]" --revision="$f[2]} if $F[5] =~ /disabled/'
 </code></pre>
 
 <p>توی اون مقاله برای حذف کردن ورژن‌های قدیمی اسنپ، از یک اسکریپت <code>bash</code> به عنوان راه حل استفاده کرده، که به شکل خلاصه توضیحش میدم:</p>
